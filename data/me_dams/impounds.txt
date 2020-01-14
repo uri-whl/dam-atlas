@@ -1,0 +1,634 @@
+Identification_Information:  
+	SMMS_Type:  1
+	Citation:  
+		Citation_Information:  
+			Originator:  Army Corp of Engineers (USACE), Maine Emergency Management Agency (MEMA), Maine Department of Environmental Protection (MEDEP)(comp., ed.), Maine Office of Geographic Information Systems (comp., ed.)
+			Publication_Date:  20060404
+			Title:  impounds
+			Geospatial_Data_Presentation_Form:  vector digital data
+			Series_Information:  
+				Series_Name:  Maine GIS
+				Issue_Identification:  SDE server; Internet Data Catalog
+			Publication_Information:  
+				Publication_Place:  Augusta ME
+				Publisher:  Maine Office of Geographic Information Systems (MEGIS)
+			Other_Citation_Details:  1:24000
+			Online_Linkage:  http://megis.maine.gov/catalog/
+			SMMS_Citation_Linkages_Hyperlinked:  true
+			SMMS_Citation_Source_Scale:  24000
+			SMMS_Citation_Source_Media:  online
+			SMMS_Citation_Source_Time_Period:  
+				Time_Period_Information:  
+					Range_of_Dates/Times:  
+						Beginning_Date:  1982
+						Beginning_Time:  Unknown
+						Ending_Date:  20040212
+						Ending_Time:  Unknown
+			SMMS_Citation_Source_Currentness:  source dates
+	Description:  
+		Abstract:  IMPOUNDS contains point locations of dams, levees, and impoundments in Maine at 1:24000 scale. Original data were from the U.S. Army Corp of Engineers (USACE) 1987 Dam Survey.  Additional points were added by Maine Department of Environmental Protection (MEDEP), Bureau of Land & Water Quality (BL&WQ) staff for use with BL&WQ projects. In 2004, MEDEP made the data available for use by the Maine Emergency Management Agency (MEMA) . For MEMA, all point locations were reviewed, against existing orthophotography or digital raster graphic base layers. Feature metadata (FM) items were added to the IMPOUNDS attribute set. Points were compiled to the raster base layer. References for the update were added the FM fields.
+		Purpose:  IMPOUNDS was designed for display and  reference only.
+	Time_Period_of_Content:  
+		Time_Period_Information:  
+			Range_of_Dates/Times:  
+				Beginning_Date:  1987
+				Beginning_Time:  Unknown
+				Ending_Date:  20040212
+				Ending_Time:  Unknown
+		Currentness_Reference:  source dates
+	Status:  
+		Progress:  Complete
+		Maintenance_and_Update_Frequency:  As needed
+	Spatial_Domain:  
+		Bounding_Coordinates:  
+			West_Bounding_Coordinate:  -70.95979
+			East_Bounding_Coordinate:  -66.97067
+			North_Bounding_Coordinate:  47.17216
+			South_Bounding_Coordinate:  43.0936
+	Keywords:  
+		Theme:  
+			Theme_Keyword_Thesaurus:  ISO Keyword Thesaurus
+			Theme_Keyword:  inlandWaters
+			Theme_Keyword:  structure
+		Theme:  
+			Theme_Keyword_Thesaurus:  Maine GIS Thesaurus-Theme
+			Theme_Keyword:  dams
+			Theme_Keyword:  impoundment
+			Theme_Keyword:  hydrography
+			Theme_Keyword:  infrastructure
+			Theme_Keyword:  emergency preparedness
+		Place:  
+			Place_Keyword_Thesaurus:  Maine GIS Thesaurus-Place
+			Place_Keyword:  Maine
+			Place_Keyword:  United States
+		Stratum:  
+			Stratum_Keyword_Thesaurus:  GCMD Parameter Keyword
+			Stratum_Keyword:  hydrosphere
+			Stratum_Keyword:  human dimensions
+	Access_Constraints:  none
+	Use_Constraints:  Users must assume responsibility in determining the usability of this data for their purposes. Digital maps retain the accuracy of their source materials. The best use of data mapped at scales of 1:500,000 and 1:250,000 is in statewide planning and studies; at 1:100,000 in regional planning and studies; at 1:62,500 and 1:24,000 in detailed studies and local planning; and at 1:12,000 and 1:5,000 or larger scales in parcel level studies and detailed local planning. In the use of Maine GIS data, please check sources, scale, accuracy, currentness and other available information. Please confirm that you are using the correct copy of both data and metadata from the Maine GIS Data Catalog. Updates, corrections, and feedback, incorporated in the Maine GIS database are made in accordance with "Data Standards for Maine Geographic Information Systems", 2002 and coordinated by MEGIS
+	Point_of_Contact:  
+		Contact_Information:  
+			Contact_Organization_Primary:  
+				Contact_Organization:  (MEMA) Maine Emergency Management Agency
+			Contact_Address:  
+				Address_Type:  mailing and physical address
+				Address:  45 Commerce Center Drive, Suite 2 (State House Station 72)
+				City:  Augusta
+				State_or_Province:  ME
+				Postal_Code:  04333 0072
+				Country:  USA
+			Contact_Voice_Telephone:  207 624 4400
+			Contact_Facsimile_Telephone:  207 287 3178
+			SMMS_Contact_Email_Hyperlinked:  false
+			Hours_of_Service:  Monday through Friday 0800 - 1700 EST
+	Data_Set_Credit:  Credit should always be given to the data source and/or originator when the data is transferred or printed.
+	Native_Data_Set_Environment:  Maine Office of Information Technology (OIT) Oracle 9i, Maine Office of Geographic Information Systems (MEGIS), Maine GIS SDE, SDEUSER, SDE.DEFAULT, Maine GIS Internet Data Catalog http://megis.maine.gov/catalog/, Maine GIS ArcIMS Statewide Incident Management System (SWIMS)
+	SMMS_Dataset_Capture_Browse:  false
+	SMMS_Dataset:  
+		SMMS_Dataset_NorthArrow:  0
+		SMMS_Dataset_Legand:  0
+		SMMS_DatasetLayer:  
+			SMMS_DatasetLayer_Order:  0
+			SMMS_DatasetLayer_Type:  1
+			SMMS_DatasetLayer_Location:  \\oit-teaqfsemc01\oit-mgis\crypt83\state
+			SMMS_DatasetLayer_Name:  DUMMYSTATE
+			SMMS_DatasetLayer_LabelVisible:  0
+			SMMS_DatasetLayer_LabelAttribute:  state
+			SMMS_DatasetLayer_Style1:  0
+			SMMS_DatasetLayer_Color:  0
+			SMMS_DatasetLayer_Weight:  0
+			SMMS_DatasetLayer_Connect:  INI=\\oit-teaqfsemc01\oit-mgis\crypt83\state\state.ini
+		SMMS_DatasetLayer:  
+			SMMS_DatasetLayer_Order:  1
+			SMMS_DatasetLayer_Type:  0
+			SMMS_DatasetLayer_LabelVisible:  0
+			SMMS_DatasetLayer_Style1:  0
+			SMMS_DatasetLayer_Color:  0
+			SMMS_DatasetLayer_Weight:  0
+Data_Quality_Information:  
+	Completeness_Report:  Data set is complete.
+	Positional_Accuracy:  
+		Horizontal_Positional_Accuracy:  
+			Horizontal_Positional_Accuracy_Report:  Approximate horizontal accuracy is 10 meters or better, assuming source data meets National Map Accuracy Standards.
+			Quantitative_Horizontal_Positional_Accuracy_Assessment:  
+				Horizontal_Positional_Accuracy_Value:  1
+				Horizontal_Positional_Accuracy_Explanation:  83 or 782 points have been recompiled by visual comparison to ORTHO_HF. The accuracy and quality of the CITIPIX ODIs in ORTHOS_HF meet National Map Accuracy  Standards 1:1,200 scale, plus/minus 1 meter or 3.33 feet, and is accurate for mapping applications at 1" = 100'.
+			Quantitative_Horizontal_Positional_Accuracy_Assessment:  
+				Horizontal_Positional_Accuracy_Value:  10
+				Horizontal_Positional_Accuracy_Explanation:  685 of 782 points have been recompiled by visual comparison to USGS Digital Orthophoto Quarter Quadrangles (DOQQ) data whose field control is acquired by third order or better survey methods sufficiently spaced to meet National Map Accuracy Standards (NMAS) for 1:12,000-scale products.
+			Quantitative_Horizontal_Positional_Accuracy_Assessment:  
+				Horizontal_Positional_Accuracy_Value:  12
+				Horizontal_Positional_Accuracy_Explanation:  5 of 782 points have been recompiled by visual comparison to USGS Digital Raster Graphics which retain the horizontal accuracy of their source maps, 7.5 minute series 1:24,000 topographic quadrangles.
+	Lineage:  
+		Source_Information:  
+			Source_Citation:  
+				Citation_Information:  
+					Originator:  US Army Corps of Engineers in cooperation with FEMA's National Dam Safety Program
+					Publication_Date:  multiple dates
+					Title:  (USACENID) National Inventory of Dams, Water Control Infrastructure
+					Geospatial_Data_Presentation_Form:  tabular data
+					Series_Information:  
+						Series_Name:  National Dams Survey
+						Issue_Identification:  1986-present
+					Publication_Information:  
+						Publication_Place:  Washington DC
+						Publisher:  Federal Emergency Management Agency
+					Other_Citation_Details:  The National Inventory of Dams (NID) is a Congressionally authorized dam safety and management tool, which documents dams in the U.S. and its territories. The NID was reauthorized in Section 215 of the Water Resources Development Act of 1996 (Public Law 104-303). The NID includes dams that are at least 25 feet high, or impound at least 50 acre-feet of water at maximum pool level (as defined in law). The NID is maintained by the U.S. Army Corps of Engineers, in cooperation with the Association of State Dam Safety Officials (ASDSO), the states and territories, and dam owning Federal Agencies. Information on dams in the United States can be accessed through the National Inventory of Dams website .
+					Online_Linkage:  http://crunch.tec.army.mil/nid/webpages/nid.cfm
+					SMMS_Citation_Linkages_Hyperlinked:  false
+					SMMS_Citation_Source_Scale:  250000
+					SMMS_Citation_Source_Media:  tape
+					SMMS_Citation_Source_Time_Period:  
+						Time_Period_Information:  
+							Range_of_Dates/Times:  
+								Beginning_Date:  19860101
+								Beginning_Time:  Unknown
+								Ending_Date:  Present
+								Ending_Time:  Unknown
+					SMMS_Citation_Source_Currentness:  publication date
+			Source_Scale_Denominator:  250000
+			Type_of_Source_Media:  tape
+			Source_Time_Period_of_Content:  
+				Time_Period_Information:  
+					Range_of_Dates/Times:  
+						Beginning_Date:  19860101
+						Beginning_Time:  Unknown
+						Ending_Date:  Present
+						Ending_Time:  Unknown
+				Source_Currentness_Reference:  publication date
+			Source_Citation_Abbreviation:  usacenid
+			Source_Contribution:  Original data were from U.S. Army Corps of Engineers (USACE) 1987 Dam Survey.
+		Source_Information:  
+			Source_Citation:  
+				Citation_Information:  
+					Originator:  Maine Department of Environmental Protection (MEDEP), Bureau of Land & Water Quality (BL&WQ)
+					Publication_Date:  Unpublished Material
+					Title:  (MEDEPBLWQIM)Impoundments
+					Publication_Information:  
+						Publication_Place:  Augusta ME
+						Publisher:  Maine Department of Environmental Protection
+					Other_Citation_Details:  Impoundments that impact water quality are mapped by BL&WQ for classification purposes.
+					SMMS_Citation_Linkages_Hyperlinked:  false
+					SMMS_Citation_Source_Scale:  24000
+					SMMS_Citation_Source_Time_Period:  
+						Time_Period_Information:  
+							Single_Date/Time:  
+								Calendar_Date:  20031231
+								Time_of_Day:  Unknown
+			Source_Scale_Denominator:  24000
+			Source_Time_Period_of_Content:  
+				Time_Period_Information:  
+					Single_Date/Time:  
+						Calendar_Date:  20031231
+						Time_of_Day:  Unknown
+			Source_Citation_Abbreviation:  medepblwqim
+			Source_Contribution:  Through 12/31/2003, additional points were added to IMPOUNDS, by Maine Department of Environmental Protection (MEDEP) Bureau of Land & Water Quality (BL&WQ).
+		Process_Step:  
+			Process_Description:  For MEMA, all point locations were reviewed, against existing orthophotography or digital raster graphic base layers. Feature metadata (FM) items were added to the IMPOUNDS attribute set. Points were compiled to the raster base layer. References for the update were added the FM fields.
+			Process_Date:  20040212
+			Process_Contact:  
+				Contact_Information:  
+					Contact_Organization_Primary:  
+						Contact_Organization:  (MEGIS) Maine Office of Geographic Information Systems
+						Contact_Person:  GIS Coordinator
+					Contact_Position:  GIS Coordinator
+					Contact_Address:  
+						Address_Type:  mailing address
+						Address:  State House Station 174
+						City:  Augusta
+						State_or_Province:  ME
+						Postal_Code:  04333-0174
+						Country:  USA
+					Contact_Voice_Telephone:  207 624-7700
+					Contact_Facsimile_Telephone:  207 287-3842
+					SMMS_Contact_Email_Hyperlinked:  false
+					Hours_of_Service:  Monday through Friday 0800 - 1700 EST
+		Process_Step:  
+			Process_Description:  Original data were from the U.S. Army Corp of Engineers (USACE) 1987 Dam Survey.  Additional points were added by Maine Department of Environmental Protection (MEDEP), Bureau of Land & Water Quality (BL&WQ) staff for use with BL&WQ projects. In 2004, MEDEP made the data available for use by the Maine Emergency Management Agency (MEMA) .
+			Process_Date:  20031231
+			Process_Contact:  
+				Contact_Information:  
+					Contact_Organization_Primary:  
+						Contact_Organization:  (MEDEP) Maine Department of Environmental Protection
+					Contact_Position:  Senior Database Analyst
+					Contact_Address:  
+						Address_Type:  mailing address
+						Address:  SHS 17
+						City:  Augusta
+						State_or_Province:  ME
+						Postal_Code:  04333
+						Country:  USA
+					Contact_Voice_Telephone:  (207)287-4292
+					Contact_Facsimile_Telephone:  (207)287-7896
+					SMMS_Contact_Email_Hyperlinked:  false
+	Cloud_Cover:  0
+Spatial_Data_Organization_Information:  
+	Direct_Spatial_Reference_Method:  Vector
+	Point_and_Vector_Object_Information:  
+		SDTS_Terms_Description:  
+			SDTS_Point_and_Vector_Object_Type:  Entity point
+			Point_and_Vector_Object_Count:  782
+			SMMS_Captured:  false
+	SMMS_Captured:  false
+Spatial_Reference_Information:  
+	Horizontal_Coordinate_System_Definition:  
+		Planar:  
+			Grid_Coordinate_System:  
+				Grid_Coordinate_System_Name:  Universal Transverse Mercator 1983
+				Universal_Transverse_Mercator:  
+					UTM_Zone_Number:  19
+					Transverse_Mercator:  
+						Scale_Factor_at_Central_Meridian:  0.9996
+						Longitude_of_Central_Meridian:  -69
+						Latitude_of_Projection_Origin:  0
+						False_Easting:  500000
+						False_Northing:  0
+			Planar_Coordinate_Information:  
+				Planar_Coordinate_Encoding_Method:  Coordinate Pair
+				Coordinate_Representation:  
+					Abscissa_Resolution:  1
+					Ordinate_Resolution:  1
+		Geodetic_Model:  
+			Horizontal_Datum_Name:  North American Datum of 1983
+			Ellipsoid_Name:  Geodetic Reference System 80
+			Semi-major_Axis:  6378137
+			Denominator_of_Flattening_Ratio:  298.257
+Entity_and_Attribute_Information:  
+	Detailed_Description:  
+		Entity_Type:  
+			Entity_Type_Label:  IMPOUNDS
+			Entity_Type_Definition:  point feature class
+			Entity_Type_Definition_Source:  Environmental Systems Research Institute, Inc. (ESRI)
+		Attribute:  
+			Attribute_Label:  AMUPDDAT
+			Attribute_Definition:  date of attribute update
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  AMUPDORG
+			Attribute_Definition:  organization responsible for attribute update
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  COMMENTS
+			Attribute_Definition:  comments of MEDEP project staff
+			Attribute_Definition_Source:  MEDEP BL&WQ
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  DELORME_NA
+			Attribute_Definition:  point mapped from paper Delorme Atlas
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  DEP_ID
+			Attribute_Definition:  MEDEP BL&WQ ID
+			Attribute_Definition_Source:  Water Resource Regulation
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  DIST_CITY
+			Attribute_Definition:  Distance from the dam to the nearest affected City/Town/Village, to the nearest mile (and tenth if appropriate).
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  DONE
+			Attribute_Definition:  used for tracking update
+			Attribute_Definition_Source:  MEGIS
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  FMPROCSS
+			Attribute_Definition:  12 character field defined 12 12 C; this FM item refers to a PROCESS OR ACTION which is explanatory of quality or accuracy of a feature; can be used for cross reference in the Process Description or Source Produced Citation Abbreviation elements, part of the Data Quality/Process Step and Source Information sections of FGDC metadata.
+			Attribute_Definition_Source:  Maine GIS Technical Group, Feature Metadata subcommittee (More information on FM items, codes, definitions, and the use of feature metadata is available at http://megis.maine.gov/standards/flmeta/fmbrief.htm, Maine GIS Standards & Guidelines link.
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  FMSRC
+			Attribute_Definition:  12 character field defined 12 12 C; this FM item names a SOURCE (general or specific) used for the location of a feature; standardized codes for this item can be used for cross reference in the Source Citation Abbreviation element, part of the Data Quality/Source Information section of FGDC metadata.
+			Attribute_Definition_Source:  Maine GIS Technical Group, Feature Metadata subcommittee (More information on FM items, codes, definitions, and the use of feature metadata is available at http://megis.maine.gov/standards/flmeta/fmbrief.htm, Maine GIS Standards & Guidelines link.
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  FMUPDDAT
+			Attribute_Definition:  default Arc/Info date field defined 8, 10, D; the FM item FMUPDAT refers to the date of update on the location of a feature; can be used as cross reference to Process Date, part of the Data Quality/Process Step sections of FGDC metadata
+			Attribute_Definition_Source:  Maine GIS Technical Group, Feature Metadata subcommittee (More information on FM items, codes, definitions, and the use of feature metadata is available at http://megis.maine.gov/standards/flmeta/fmbrief.htm, Maine GIS Standards & Guidelines link.
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  FMUPDORG
+			Attribute_Definition:  12 character field defined 12, 12, C, the FM item FMUPDORG refers to the EDIT ORGANIZATION responsible for the location of a feature; codes for this are standardized acronyms (ME prefix for Maine state agencies, US prefix for USA federal agencies, all lower-case, no hyphens, no punctuation, confirmed), cross references can be made between this item and the element Process Contact, part of the Data Quality/Process Step sections of FGDC metadata.
+			Attribute_Definition_Source:  Maine GIS Technical Group, Feature Metadata subcommittee (More information on FM items, codes, definitions, and the use of feature metadata is available at http://megis.maine.gov/standards/flmeta/fmbrief.htm, Maine GIS Standards & Guidelines link.
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  HAZARD_CD
+			Attribute_Definition:  potential downstream hazard code
+			Attribute_Definition_Source:  USACE
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  L
+					Enumerated_Domain_Value_Definition:  low
+					Enumerated_Domain_Value:  S
+					Enumerated_Domain_Value_Definition:  significant
+					Enumerated_Domain_Value:  H
+					Enumerated_Domain_Value_Definition:  high
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  HOTLINK
+			Attribute_Definition:  URL address for Statewide Incident Management System (SWIMS) representation of this dam.
+			Attribute_Definition_Source:  SWIMS
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  HYDRAUL_HGT
+			Attribute_Definition:  Hydraulic height of the dam, in feet to the nearest foot, which is defined as the vertical difference between the maximum design water level and the lowest point in the original streambed.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  ID
+			Attribute_Definition:  national ID (COE ID number) first two characters are State Postal Code
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  INSP_INIT
+			Attribute_Definition:  date of most recent inspection
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  LAST_UPD
+			Attribute_Definition:  date of last update
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  MAJ_PURPOSE
+			Attribute_Definition:  major purpose of the dam/impoundment
+			Attribute_Definition_Source:  USACE
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  I
+					Enumerated_Domain_Value_Definition:  irrigation
+					Enumerated_Domain_Value:  H
+					Enumerated_Domain_Value_Definition:  hydroelectric
+					Enumerated_Domain_Value:  C
+					Enumerated_Domain_Value_Definition:  flood control & storm water management
+					Enumerated_Domain_Value:  N
+					Enumerated_Domain_Value_Definition:  navigation
+					Enumerated_Domain_Value:  S
+					Enumerated_Domain_Value_Definition:  water supply
+					Enumerated_Domain_Value:  R
+					Enumerated_Domain_Value_Definition:  recreation
+					Enumerated_Domain_Value:  P
+					Enumerated_Domain_Value_Definition:  fire protection, stock, or small farm pond
+					Enumerated_Domain_Value:  F
+					Enumerated_Domain_Value_Definition:  fish & wildlife pond
+					Enumerated_Domain_Value:  D
+					Enumerated_Domain_Value_Definition:  debris control
+					Enumerated_Domain_Value:  T
+					Enumerated_Domain_Value_Definition:  tailings
+					Enumerated_Domain_Value:  O
+					Enumerated_Domain_Value_Definition:  other
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  MAJ_TYPE
+			Attribute_Definition:  major type of constuction
+			Attribute_Definition_Source:  USACE
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  RE
+					Enumerated_Domain_Value_Definition:  earth
+					Enumerated_Domain_Value:  ER
+					Enumerated_Domain_Value_Definition:  rockfill
+					Enumerated_Domain_Value:  PG
+					Enumerated_Domain_Value_Definition:  gravity
+					Enumerated_Domain_Value:  CB
+					Enumerated_Domain_Value_Definition:  buttress
+					Enumerated_Domain_Value:  VA
+					Enumerated_Domain_Value_Definition:  arch
+					Enumerated_Domain_Value:  MV
+					Enumerated_Domain_Value_Definition:  multi-arch
+					Enumerated_Domain_Value:  CN
+					Enumerated_Domain_Value_Definition:  concrete
+					Enumerated_Domain_Value:  MS
+					Enumerated_Domain_Value_Definition:  masonry
+					Enumerated_Domain_Value:  ST
+					Enumerated_Domain_Value_Definition:  stone
+					Enumerated_Domain_Value:  TC
+					Enumerated_Domain_Value_Definition:  Timber Crib
+					Enumerated_Domain_Value:  OT
+					Enumerated_Domain_Value_Definition:  other
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  MAX_CAP
+			Attribute_Definition:  Maximum storage, in acre-feet, which is defined as the total storage space in a reservoir below the maximum attainable water surface elevation, including any surcharge storage.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  MAX_DISC
+			Attribute_Definition:  Number of cubic feet per second (cu ft/sec) which the spillway is capable of discharging when the reservoir is at its maximum designed water surface elevation.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  MEMA_ID
+			Attribute_Definition:  Maine Emergency Management (MEMA) identifier
+			Attribute_Definition_Source:  MEMA
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  NAME
+			Attribute_Definition:  name of dam/impoundment
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  NORM_CAP
+			Attribute_Definition:  Normal storage, in acre-feet, which is defined as the total storage space in a reservoir below the normal retention level, including dead and inactive storage and excluding any flood control or surcharge storage.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  OWNER
+			Attribute_Definition:  owner of the dam/impoundment
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  OWNER_CODE
+			Attribute_Definition:  type of ownership
+			Attribute_Definition_Source:  USACE
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  F
+					Enumerated_Domain_Value_Definition:  federal
+					Enumerated_Domain_Value:  S
+					Enumerated_Domain_Value_Definition:  state
+					Enumerated_Domain_Value:  L
+					Enumerated_Domain_Value_Definition:  local government
+					Enumerated_Domain_Value:  U
+					Enumerated_Domain_Value_Definition:  public utility
+					Enumerated_Domain_Value:  P
+					Enumerated_Domain_Value_Definition:  private
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  P1_INSP
+			Attribute_Definition:  term indicating whether this dam was inspected in the Phase I Inspection Program
+			Attribute_Definition_Source:  National Program of Inspection of Non-Federal Dams
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  Y
+					Enumerated_Domain_Value_Definition:  yes
+					Enumerated_Domain_Value:  N
+					Enumerated_Domain_Value_Definition:  no
+					Enumerated_Domain_Value:  blank
+					Enumerated_Domain_Value_Definition:  unknown
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  POP_NAME
+			Attribute_Definition:  local or popular name
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  PVT_FED
+			Attribute_Definition:  Private Dam On Federal Property
+				Code indicating whether the dam is a private dam located on federal property.
+			Attribute_Definition_Source:  USACE
+			Attribute_Domain_Values:  
+				Enumerated_Domain:  
+					Enumerated_Domain_Value:  Y
+					Enumerated_Domain_Value_Definition:  yes
+					Enumerated_Domain_Value:  N
+					Enumerated_Domain_Value_Definition:  no
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  RIVER
+			Attribute_Definition:  Official name of the river or stream on which the dam is built. If the stream is unnamed, it is identified as a tributary ("TR") to the named river. If the dam is located offstream, the name of the river or stream is entered plus "-OS" or "OFFSTREAM".
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  SOURCE
+			Attribute_Definition:  project identifier for data source used in update
+			Attribute_Definition_Source:  MEGIS
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  STATE_REG
+			Attribute_Definition:  Name of the primary state agency with regulatory or approval authority over the dam.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  STRUCT_HGT
+			Attribute_Definition:  Structural height of the dam, in feet to the nearest foot, which is defined as the vertical distance from the lowest point of the excavated foundation to the top of the dam.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  UNIQUEID
+			Attribute_Definition:  numeric unique identifier for dam/impoundment
+			SMMS_Captured:  false
+		Attribute:  
+			Attribute_Label:  YEAR_COMPLETED
+			Attribute_Definition:  Year when the original main dam structure was completed, optionally followed by code ("E") to indicate an estimated date. If unknown, and reasonable estimate is unavailable, "0000" will be used.
+			Attribute_Definition_Source:  USACE
+			SMMS_Captured:  false
+	Overview_Description:  
+		Entity_and_Attribute_Overview:  IMPOUNDS is attributed with the MEDEP water resource regulation ID and the USACE national COE ID number. Other attributes from MEDEP and USACE include information on height, length, construction type, completion year, reservoir storage, purpose, regulatory authority, ownership, ownership type, river impounded, as well as proximity and hazard to nearby locations.
+		Entity_and_Attribute_Detail_Citation:  The  ArcView shapefile and ArcGIS geodatabase formats, commonly used for Maine GIS data, carry default identifiers and attributes that are software generated and/or important for internal recordkeeping. These are listed here to avoid repetition for every layer, and may not be repeated in the attribute descriptions and definitions of each layer. Common software generated identifiers and attributes in Maine GIS data include: FID (feature identifier), Shape (feature geometry), OBJECTID and SHAPE_lengt.  In addition, most GIS formats will carry fields for PERIMETER, AREA and/or LENGTH according to feature geometry. These fields are typically available by default, with the units based on coordinate system or projection units of GIS data. Most GIS software packages also provide a means to calculate these values. It is important to test any columns containing PERIMETER, AREA or LENGTH values before using them for analysis purposes. These important values can be carried from format to format and become out-dated. Verify that the values are correct. Also, in your GIS software, please view the properties of data layers for the map units used to calculate these fields, and for the units set for display purposes.
+Distribution_Information:  
+	SMMS_Distribution_Name:  Standard
+	Distributor:  
+		Contact_Information:  
+			Contact_Organization_Primary:  
+				Contact_Organization:  (MEGIS) Maine Office of Geographic Information Systems
+				Contact_Person:  GIS Coordinator
+			Contact_Position:  GIS Coordinator
+			Contact_Address:  
+				Address_Type:  mailing address
+				Address:  State House Station 174
+				City:  Augusta
+				State_or_Province:  ME
+				Postal_Code:  04333-0174
+				Country:  USA
+			Contact_Voice_Telephone:  207 624-7700
+			Contact_Facsimile_Telephone:  207 287-3842
+			SMMS_Contact_Email_Hyperlinked:  false
+			Hours_of_Service:  Monday through Friday 0800 - 1700 EST
+	Resource_Description:  http://megis.maine.gov/catalog/
+	Distribution_Liability:  Users must assume responsibility to determine the usability of this data for their purposes. Although these data have been processed successfully on a computer system at the Maine Office of Geographic Information Systems, no warranty expressed or implied is made by MEGIS regarding the utility of the data on any other system, nor shall the act of distribution constitute any such warranty. Neither the Maine Office of Geographic Information Systems, nor any of its contributors, is liable for misuse of the data, for damage, for transmission of viruses, or for computer contamination through the distribution of these data sets.
+	Standard_Order_Process:  
+		Digital_Form:  
+			Digital_Transfer_Information:  
+				Format_Name:  ESRI Shapefile
+				Format_Version_Number:  ARC Version 9.x
+				Format_Specification:  ArcView Shapefile Format
+				ASCII_File_Structure:  
+					Case_Sensitive:  false
+				Format_Information_Content:  MEGIS has made all vector layers, in the Maine GIS Internet Data Catalog, available in ESRI's ArcView shapefile format. A shapefile is a simple non-topological format that stores the geometry and attribute information for a set of geographic features as a set of vector (point, line, polygon) coordinates. Shapefiles draw quickly and directly in ArcView, ArcGIS, ArcExplorer. Shapefiles are a compatible data type for many other types of GIS software. Three files are fundamental to each shapefile: .shp stores the feature geometry (shape and location information); .shx stores the index of the feature geometry; .dbf a dBASE (TM) file stores the attribute information for the features. Other index files may be created to help speed analysis and query: these file formats are .sbn  .sbx  .ain .aix .fbn and .fbx. In addition you may find projection .prj, and metadata .xml, files associated with shapefiles.
+				File_Decompression_Technique:  Data available from this website is in .zip compressed format. WinZip is a Windows based, PKZip-compatible compression utility. You will need a program like this to extract the data. A link to a trial copy WinZip software is available at http://megis.maine.gov/links/.
+			Digital_Transfer_Option:  
+				Online_Option:  
+					Computer_Contact_Information:  
+						Network_Address:  
+							Network_Resource_Name:  http://megis.maine.gov/catalog/
+							SMMS_Hyperlinked:  -1
+					Access_Instructions:  These data are available to Internet browsers for download from the Maine GIS Internet Data Catalog - http://megis.maine.gov/catalog/
+						
+						
+						Data available from this website is in .zip compressed format. WinZip is a Windows based, PKZip-compatible compression utility. You will need a program like this to extract the data. A link to a trial copy WinZip software is available at http://megis.maine.gov/links/
+						
+						If you are not already a GIS user, free software for viewing these files is available from Environmental Systems Research Institute, Inc. (ESRI) - www.esri.com
+						
+						See http://megis.maine.gov/links/ for a link to ArcExplorer 9.x .
+				SMMS_Distribution_Type:  1
+		Fees:  Data may be downloaded from Maine GIS Internet Data Catalog at no charge.
+		Turnaround:  Data is available for immediate download from the Maine GIS Internet Data Catalog.
+		SMMS_Distribution_Type:  1
+	Technical_Prerequisites:  If you are not already a GIS user, free software for viewing these files is available from Environmental Systems Research Institute, Inc. (ESRI)  http://www.esri.com/ 
+		
+		You may also see http://megis.maine.gov/links/ for a link to ArcExplorer 9.x
+	Available_Time_Period:  
+		Time_Period_Information:  
+			Range_of_Dates/Times:  
+				Beginning_Date:  20031204
+				Ending_Date:  Present
+Distribution_Information:  
+	SMMS_Distribution_Name:  Standard ArcSDE
+	Distributor:  
+		Contact_Information:  
+			Contact_Organization_Primary:  
+				Contact_Organization:  Maine Office of Geographic Information Systems
+			Contact_Position:  GIS Coordinator
+			Contact_Address:  
+				Address_Type:  mailing address
+				Address:  State House Station 174
+				City:  Augusta
+				State_or_Province:  ME
+				Postal_Code:  04333-0174
+				Country:  USA
+			Contact_Voice_Telephone:  (207) 624-7700
+			Contact_Facsimile_Telephone:  (207) 287-3842
+			SMMS_Contact_Email_Hyperlinked:  false
+			Hours_of_Service:  Monday through Friday 0800 - 1700 EST
+	Distribution_Liability:  Users must assume responsibility to determine the usability of this data for their purposes.
+	Standard_Order_Process:  
+		Digital_Form:  
+			Digital_Transfer_Information:  
+				Format_Name:  ARCSDE
+				Format_Version_Number:  ArcSDE 9.x
+				ASCII_File_Structure:  
+					Case_Sensitive:  false
+				Format_Information_Content:  Oracle 9i
+			Digital_Transfer_Option:  
+				Online_Option:  
+					Access_Instructions:  Please contact the Maine Office of GIS (MEGIS) for access instructions.
+				SMMS_Distribution_Type:  1
+		Fees:  Access is available through Maine's wide area network;  WAN users may contact the Maine Office of Information Technology, Maine Office of Geographic Information Systems (MEGIS) for a login.
+		SMMS_Distribution_Type:  1
+Metadata_Reference_Information:  
+	Metadata_Date:  20021017
+	Metadata_Review_Date:  20100114
+	Metadata_Future_Review_Date:  
+	Metadata_Contact:  
+		Contact_Information:  
+			Contact_Organization_Primary:  
+				Contact_Organization:  (MEGIS) Maine Office of Geographic Information Systems
+				Contact_Person:  GIS Coordinator
+			Contact_Position:  GIS Coordinator
+			Contact_Address:  
+				Address_Type:  mailing address
+				Address:  State House Station 174
+				City:  Augusta
+				State_or_Province:  ME
+				Postal_Code:  04333-0174
+				Country:  USA
+			Contact_Voice_Telephone:  207 624-7700
+			Contact_Facsimile_Telephone:  207 287-3842
+			SMMS_Contact_Email_Hyperlinked:  false
+			Hours_of_Service:  Monday through Friday 0800 - 1700 EST
+	Metadata_Standard_Name:  FGDC Content Standards for Digital Geospatial Metadata
+	Metadata_Standard_Version:  FGDC-STD-001-1998
+	Metadata_Access_Constraints:  None
+	Metadata_Use_Constraints:  None

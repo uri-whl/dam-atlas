@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin/>
+<pubdate>20120101</pubdate>
+<title>Dams</title>
+<geoform>vector digital data</geoform>
+<pubinfo>
+<pubplace/>
+<publish>RIGIS</publish>
+</pubinfo>
+<othercit>Suggested bibliographic reference: RIGIS, 2014. Dams; dams12. Rhode Island Geographic Information System (RIGIS) Data Distribution System, URL: http://www.rigis.org, Environmental Data Center, University of Rhode Island, Kingston, Rhode Island (last date accessed: 10 September 2014).</othercit>
+<onlink>http://services2.arcgis.com/S8zZg9pg23JUEexQ/arcgis/rest/services/Dams/FeatureServer</onlink>
+<lworkcit>
+<citeinfo>
+<pubdate>19930101</pubdate>
+<title>Rhode Island Geographic Information System (RIGIS) Data Distribution System</title>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</citation>
+<descript>
+<abstract>This dataset was originally created for use by the Rhode Island Dept. Of Environmental Management as a general aid in locating dams for inspection under the Division of Compliance &amp;amp; Inspections Dam Safety Program. 
+
+The dataset does not include all of the height, width, spillway elevation, impoundment size, construction date &amp;amp; material, etc, found in earlier versions. The most important attribute of this dataset is the hazard class. A high or significant hazard does not imply that a failure is imminent, only that failure would result in loss of life and property. There are known errors in the attributes. Persons desiring detailed information on any of the locations described in this data should contact the Rhode Island Dept of Environmental Management, Office of Compliance and Inspection http://www.dem.ri.gov/programs/benviron/compinsp/dams.htm.</abstract>
+<purpose>Point dataset describing the general location of dams and related structures on rivers or streams within Rhode Island.</purpose>
+<supplinf>The dataset does not include all of the height, width, spillway elevation, impoundment size, construction date &amp; material, etc, found in earlier versions. The most important attribute of this dataset is the hazard class. A high or significant hazard does not imply that a failure is imminent, only that failure would result in loss of life and property. There are known errors in the attributes. Persons desiring detailed information on any of the locations described in this data should contact the Rhode Island Dept of Environmental Management, Office of Compliance and Inspection (http://www.dem.ri.gov/programs/benviron/compinsp/dams.htm; last date accessed: 10 September 2014).</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>20120101</caldate>
+</sngdate>
+</timeinfo>
+<current>publication date</current>
+</timeperd>
+<status>
+<progress>In work</progress>
+<update>Irregular</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-180</westbc>
+<eastbc>180</eastbc>
+<northbc>90</northbc>
+<southbc>-90</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>017</themekey>
+<themekey>structure</themekey>
+</theme>
+<theme>
+<themekt>None</themekt>
+<themekey>flood</themekey>
+<themekey>impoundments</themekey>
+<themekey>fish ladder</themekey>
+<themekey>dams</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>New England</placekey>
+<placekey>Rhode Island</placekey>
+<placekey>Northeast</placekey>
+<placekey>United State</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>These data are shared under the RIGIS license agreement, which can be viewed below: This
+ dataset is provided as is.’ The producer(s) of this dataset, 
+contributors to this dataset, the Rhode Island Geographic Information 
+System (RIGIS) consortium, the State of Rhode Island, and the University
+ of Rhode Island do not make any warranties of any kind for this 
+dataset, and are not liable for any loss or damage however and whenever 
+caused by any use of this dataset.Please acknowledge both RIGIS 
+and the primary producer(s) of this dataset in any derived products.  
+Versions of the RIGIS logo suitable for both printed and web-based 
+products are available at http://www.rigis.org/logos.</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>State of Rhode Island, Department of Environmental Management</cntorg>
+<cntper>Paul Jordan</cntper>
+</cntorgp>
+<cntpos>GIS Manager</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>RIDEM / GIS Program 235 Promenade Street</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02980</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>401-222-2776 x4315</cntvoice>
+<cntfax>401-222-2069</cntfax>
+<cntemail>paul.jordan@dem.ri.us</cntemail>
+<hours>8:30am to 4:30pm (Eastern)</hours>
+<cntinst>e-mail preferred</cntinst>
+</cntinfo>
+</ptcontac>
+<datacred>URI EDC, RIGIS; RI Dept. of Environmental Management; RI Dam Safety Inspector. Icon Credit: Creative Stall via The Noun Project</datacred>
+<native>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.4.1.5686</native>
+</idinfo>
+<dataqual>
+<attracc>
+<attraccr>There are known errors in the attributes. Persons desiring detailed information on any of the locations described in this data should contact the Rhode Island Dept of Environmental Management, Office of Compliance and Inspection</attraccr>
+</attracc>
+<logic>point features present</logic>
+<complete>Point Data is complete for all dams in Rhode Island known to the State Dam Safety Inspector</complete>
+<posacc>
+<horizpa>
+<horizpar>No comprehensive analysis has been done on locational accuracy.</horizpar>
+</horizpa>
+</posacc>
+<lineage>
+<procstep>
+<procdesc>Original source data came from a database maintained by the state dam safety inspector, maintained via field inspections and research. Original dam locations determined by using USGS 1:24,000 Topo Maps. Location of dams further refined with the assistance of recent generations of statewide orthophotography available from RIGIS.</procdesc>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>State of Rhode Island, Department of Environmental Management</cntorg>
+<cntper>Paul Jordan</cntper>
+</cntorgp>
+<cntpos>GIS Manager</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>RIDEM / GIS Program 235 Promenade Street</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02980</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>401-222-2776 x4315</cntvoice>
+<cntfax>401-222-2069</cntfax>
+<cntemail>pjordan@dem.state.ri.us</cntemail>
+<hours>8:30am to 4:30pm (Eastern)</hours>
+<cntinst>e-mail preferred</cntinst>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Data contributed to RIGIS by the Rhode Island Department of Environmental Management. Metadata reviewed, with minor corrections and updates made to formatting and content.</procdesc>
+<procdate>20140904</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Erica Tefft</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-5054</cntvoice>
+<cntemail>erica_tefft@mail.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</proccont>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>Entity point</sdtstype>
+<ptvctcnt>540</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>FACILITY_Dams</enttypl>
+<enttypd>point attribute table</enttypd>
+<enttypds>RI Dept of Environmental Management</enttypds>
+</enttyp>
+<attr>
+<attrlabl>OBJECTID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>NAME</attrlabl>
+<attrdef>Official state name of the dam.</attrdef>
+<attrdefs>RI DEM</attrdefs>
+<attrdomv>
+					<udom>Unique</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>ID</attrlabl>
+</attr>
+<attr>
+<attrlabl>NAT_ID</attrlabl>
+<attrdef>Area of feature in internal units squared.</attrdef>
+<attrdefs>Official national identification of the dam</attrdefs>
+<attrdomv>
+					<udom>Unique.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>COUNTY</attrlabl>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Defines the shape of the objects.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>AKA</attrlabl>
+</attr>
+<attr>
+<attrlabl>TOWN</attrlabl>
+</attr>
+<attr>
+<attrlabl>RIVER</attrlabl>
+</attr>
+<attr>
+<attrlabl>NEAR_TOWN</attrlabl>
+</attr>
+<attr>
+<attrlabl>TYPE</attrlabl>
+</attr>
+<attr>
+<attrlabl>PURPOSE</attrlabl>
+</attr>
+<attr>
+<attrlabl>COMPLETED</attrlabl>
+</attr>
+<attr>
+<attrlabl>DAM_LEN</attrlabl>
+</attr>
+<attr>
+<attrlabl>DAM_HGT</attrlabl>
+</attr>
+<attr>
+<attrlabl>MAX_DISCHG</attrlabl>
+</attr>
+<attr>
+<attrlabl>MAX_STOR</attrlabl>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Greg Bonynge</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-2180</cntvoice>
+<cntemail>greg@edc.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</distrib>
+<distliab>See access and use constraints information.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>Esri shapefile</formname>
+<filedec>ZIP</filedec>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://www.rigis.org</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>No fee for downloading directly from the RIGIS Data Distribution System located at http://www.rigis.org.</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20161115</metd>
+<metrd>20140916</metrd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>State of Rhode Island, Department of Environmental Management</cntorg>
+<cntper>Paul Jordan</cntper>
+</cntorgp>
+<cntpos>GIS Manager</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>RIDEM / GIS Program 235 Promenade Street</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02980</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>401-222-2776 x4315</cntvoice>
+<cntfax>401-222-2069</cntfax>
+<cntemail>pjordan@dem.state.ri.us</cntemail>
+<hours>8:30am to 4:30pm (Eastern)</hours>
+<cntinst>e-mail preferred</cntinst>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>
