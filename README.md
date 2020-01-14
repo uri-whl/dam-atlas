@@ -24,17 +24,17 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
 4. _(Optional)_ You can now install additional packages.
 
-    a. Thought you can install packages from within ArcGIS Pro, it seems to get hung up, as conda actually prompts you to proceed. Re-open the `Python Command Prompt` - you'll be in the `dam-atlas` environment.
+  a. Thought you can install packages from within ArcGIS Pro, it seems to get hung up, as conda actually prompts you to proceed. Re-open the `Python Command Prompt` - you'll be in the `dam-atlas` environment.
 
-    b. We recommend Spyder as an IDE. Type:
+  b. We recommend Spyder as an IDE. Type:
 
-        ```bash
-        dam-atlas>conda install spyder
-        ```
+    ```bash
+    dam-atlas>conda install spyder
+    ```
 
-        and then 'y' when prompted to proceed. Various packages will be downloaded and updated to 'solve' the environment - i.e., choose versions of packages which will actually work with eachother. You'll be returned to the command prompt when finished.
+    and then 'y' when prompted to proceed. Various packages will be downloaded and updated to 'solve' the environment - i.e., choose versions of packages which will actually work with eachother. You'll be returned to the command prompt when finished.
 
-    c. Open up Spyder and proceed as usual.
+  c. Open up Spyder and proceed as usual.
 
 ## Contents
 
