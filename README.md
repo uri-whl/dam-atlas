@@ -27,11 +27,11 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
     2. We recommend Spyder as an IDE. Type:
 
-    ```bash
-    dam-atlas>conda install spyder
-    ```
+       ```bash
+        dam-atlas>conda install spyder
+        ```
 
-    and then 'y' when prompted to proceed. Various packages will be downloaded and updated to 'solve' the environment - i.e., choose versions of packages which will actually work with eachother. You'll be returned to the command prompt when finished.
+       and then 'y' when prompted to proceed. Various packages will be downloaded and updated to 'solve' the environment - i.e., choose versions of packages which will actually work with eachother. You'll be returned to the command prompt when finished.
 
     3. Open up Spyder and proceed as usual.
 
