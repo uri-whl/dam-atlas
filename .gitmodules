@@ -1,0 +1,3 @@
+[submodule "src/arcutils"]
+	path = src/arcutils
+	url = https://github.com/joshpsawyer/arcutils.git
