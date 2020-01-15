@@ -37,6 +37,26 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
     3. Open up Spyder and proceed as usual.
 
+## Running
+
+The only caveat with this project is that some scripts depend on the output of other scripts. You must first run, in order:
+
+1. `aggregate_harmonize_dam_data.py`
+2. `snap_dam_to_nhdplushr.py`
+
+At this point, you will have:
+
+- A shapefile containing all harmonized attribute data, snapped where possible to NHDPlus HR, with a column indicating whether snapping was successful, `all_dams_harmonized`
+- A shapefile containing the attribute data and points for only those dams which were succesfully snapped, `all_dams_snapped`
+
+Every subsequent script builds upon `all_dams_snapped`, using the unique ID to generate either associated polygon data or additional attribute data.
+
+When ready to load data into MapBox, run the final script `build_geojson_data.py` which will join all attribute data together (where appropriate) and generate GeoJSON data for the dams. Additionally, you will want to run:
+
+- `build_geojson_hydro.py` to build HUC, waterbody and hydroline GeoJSON files
+- `build_geojson_dam_wsheds.py` to build the GeoJSON corresponding to the delineated watersheds for the dams
+
+
 ## Contents
 
 - `data` - Source data for the dams collected from state websites. Large datasets which are easily obtained are not included - specifically:
