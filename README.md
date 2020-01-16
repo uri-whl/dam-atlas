@@ -4,6 +4,10 @@ This repository scripts and source data (where size is reasonable) for generatin
 
 ## Overview
 
+In aggregate, this project combines data on dams from multiple states (RI, CT, MA, ME, NH, VT), aligns it to an established flow network (NHDPlus High Resolution), discards any dams that cannot be aligned or are not in the target area and runs various calculations to bring in additional information. The 'target area' is defined as those dams residing in HUC 01 - the watershed that encompasses almost the entirety of New England. At least for now, dams in southwestern VT and northwestern MA that drain to the west and outside of this 2-digit HUC will not be included.
+
+The goal of this project is to script the creation of various GeoJSON datasets for use in a Mapbox website.
+
 ## Installation
 
 These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary - though they may be backwards compatible with ArcGIS Desktop 32-bit python 2). ArcGIS Pro ships with Conda pre-installed which allows you to create an environment specific for a project without destroying your base environment. If you'd like to set up a project specific environment, you can do the following:
