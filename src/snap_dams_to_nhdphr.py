@@ -7,11 +7,12 @@ Created on Tue Jan 14 15:20:42 2020
 
 import arcpy
 
-# combined dataset of all dams - leave attributes alone for now
+# starting with combined dataset
 
-# add x,y, rename to save
+# snap to flowline of nhd - there are 10 nhdplus datasets that are being considered
+# so iteratively snap against each one, only retrying those points that did not snap
 
-# snap
+# alternatively, subset the data by 
 
 # add x, y again
 
