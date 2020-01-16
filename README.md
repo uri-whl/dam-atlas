@@ -1,6 +1,9 @@
-# Dam Atlas Project
+# New England Dam Atlas (NEWDAT) - Data Manipulation & Creation Repository
 
-This repository scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project. Due to the nature of programmatically working with geospatial data, this is a collection of scripts.
+This repository scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project. Due to the nature of programmatically working with geospatial data, this is a collection of scripts. Other NEWDAT repositories include:
+
+- [NEWDAT Data](https://github.com/uri-whl/newdat-data)
+- [NEWDAT Website](https://github.com/uri-whl/newdat-website)
 
 ## Overview
 
