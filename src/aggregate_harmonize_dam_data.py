@@ -2,7 +2,14 @@
 """
 Created on Tue Jan 14 15:20:42 2020
 
-@author: Josh
+The below script takes state dam data shapefiles and combines them into
+one master dam data file, cross-walking the state-specific attributes into
+a series of canonical field names (i.e., canonical for this dataset) for use
+in various analyses. It's designed generally enough that you should be able
+to take this script and apply it to any collection of state dam datasets that
+you want to harmonize and aggregate.
+
+@author: Josh P. Sawyer
 """
 
 import sys
