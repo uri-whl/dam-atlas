@@ -26,6 +26,7 @@ if __name__ == "__main__":
     
     output_dir = str(here('./results/', warn=False))
     
+    # output to geojson
     arcpy.FeaturesToJSON_conversion(
         dams,
         os.path.join(output_dir, "dams_gj.geojson"),
@@ -35,3 +36,7 @@ if __name__ == "__main__":
         "GEOJSON",
         "WGS84"
     )
+    
+    # the location of the dam-specific watersheds
+    
+    # the location of the various NHD watersheds
