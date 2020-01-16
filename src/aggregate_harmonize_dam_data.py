@@ -24,7 +24,6 @@ from arcutils import arcutils as au
 from arcutils.common_logger import setup_logging
 import logging
 from datetime import date
-import pandas as pd
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -50,12 +49,12 @@ canonical_fields = {
 
 # paths to the shapefiles containing dam data
 dams = {
-    'CT': str(here('./data/ct_dams/DAM.shp')),
-    'MA': str(here('./data/ma_dams/DAMS_PT.shp')),
-    'ME': str(here('./data/me_dams/impounds.shp')),
-    'NH': str(here('./data/nh_dams/damsnh.shp')),
-    'RI': str(here('./data/ri_dams/Dams.shp')),
-    'VT': str(here('./data/vt_dams/Dams.shp')),
+    'CT': str(here('./results/results.gdb/ct_dams_f', warn=False)),
+    'MA': str(here('./results/results.gdb/ma_dams_f', warn=False)),
+    'ME': str(here('./results/results.gdb/me_dams_f', warn=False)),
+    'NH': str(here('./results/results.gdb/nh_dams_f', warn=False)),
+    'RI': str(here('./results/results.gdb/ri_dams_f', warn=False)),
+    'VT': str(here('./results/results.gdb/vt_dams_f', warn=False))
 }
 
 # where the data was downloaded from - make it easier for the end user

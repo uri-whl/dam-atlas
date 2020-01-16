@@ -6,7 +6,7 @@ This repository scripts and source data (where size is reasonable) for generatin
 
 In aggregate, this project combines data on dams from multiple states (RI, CT, MA, ME, NH, VT), aligns it to an established flow network (NHDPlus High Resolution), discards any dams that cannot be aligned or are not in the target area and runs various calculations to bring in additional information. The 'target area' is defined as those dams residing in HUC 01 - the watershed that encompasses almost the entirety of New England. At least for now, dams in southwestern VT and northwestern MA that drain to the west and outside of this 2-digit HUC will not be included.
 
-The goal of this project is to script the creation of various GeoJSON datasets for use in a Mapbox website.
+The goal of this project is to script the creation of various GeoJSON datasets for use in a Mapbox website and eliminate some of the noise within the datasets.
 
 ## Installation
 
@@ -49,21 +49,19 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
 The only caveat with this project is that some scripts depend on the output of other scripts. You must first run, in order:
 
-1. `aggregate_harmonize_dam_data.py`
-2. `snap_dam_to_nhdplushr.py`
+1. `filter_dam_data.py` - filters known problematic data from the source datasets.
+2. `aggregate_harmonize_dam_data.py` - combines all the filtered datasets into one dataset and crosswalks the attributes to common names.
+3. `snap_dam_to_nhdplushr.py` - snaps all the dams to NHD flowlines for HUC 01*
+4. `cut_dam_dataset_to_ri.py` - this is an optional step but one that we'll do for now. it eliminates all the dams that either don't drain into a RI watershed and aren't within the RI boundary. if either condition is true, the dam is retained.
 
 At this point, you will have:
 
-- A shapefile containing all harmonized attribute data, snapped where possible to NHDPlus HR, with a column indicating whether snapping was successful, `all_dams_harmonized`
-- A shapefile containing the attribute data and points for only those dams which were succesfully snapped, `all_dams_snapped`
+- A feature class containing all harmonized attribute data, snapped where possible to NHDPlus HR, with a column indicating whether snapping was successful, `all_dams_harmonized`
+- A feature class containing the attribute data and points for only those dams which were succesfully snapped, `all_dams_snapped`
 
 Every subsequent script builds upon `all_dams_snapped`, using the unique ID to generate either associated polygon data or additional attribute data.
 
-When ready to load data into MapBox, run the final script `build_geojson_data.py` which will join all attribute data together (where appropriate) and generate GeoJSON data for the dams. Additionally, you will want to run:
-
-- `build_geojson_hydro.py` to build HUC, waterbody and hydroline GeoJSON files
-- `build_geojson_dam_wsheds.py` to build the GeoJSON corresponding to the delineated watersheds for the dams
-
+When ready to load data into MapBox, run the final script `build_geojson_data.py` which will generates .geojson files for upload to mapbox.
 
 ## Contents
 
@@ -74,9 +72,12 @@ When ready to load data into MapBox, run the final script `build_geojson_data.py
 - `results` - This folder contains the output of the scripts located in `src`, _when the size is reasonable_. For instance, a file geodatabase containing NHDPlus HR products is not included - but a GeoJSON file describing dams would be.
 - `src` - The scripts which generate additional dam data. Specifically:
 
-    - `aggregate_harmonize_dam_data.py` combines the source dam data and assigns a state column, then harmonizes the remaining column based on rules derived from the metadata in `doc/`.
+    - `filter_dam_data.py` filters the source data sets to remove known problems
+    - `aggregate_harmonize_dam_data.py` combines the filtered dam data and assigns a state column, then harmonizes the remaining column based on rules derived from the metadata in `doc/`.
     - `snap_dam_to_nhdplushr.py` aligns dam points (with arcpy `Snap`) to NHD Plus HR, generating lat / long values and a column describing whether it snapped. it then recalculates the hucs - 2-digit through 12-digit for the new locations.
-
+    - `cut_dam_dataset_to_ri.py`
+    - `build_geojson`
+    
 ## References
 
 1. Franey, T. (2018). Exploring New England Dams Analysis Using the High Resolution National Hydrography Dataset [MESM Major Paper, University of Rhode Island]. <http://www.edc.uri.edu/mesm/Docs/MajorPapers/Franey_2018.pdf>
