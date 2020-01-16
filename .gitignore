@@ -137,3 +137,7 @@ dmypy.json
 # arcgis stuff
 results.gdb
 *.lock
+
+# the geoJSON files... don't want to add them here, they should go
+# into the oper repo
+*.geojson
