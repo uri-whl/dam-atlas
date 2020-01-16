@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jan 14 15:20:42 2020
+Simply converts all of the generated data to geoJSON for use in MapBox.
 
 @author: Josh
 """
-import sys
+
 import os.path
 
 import arcpy
