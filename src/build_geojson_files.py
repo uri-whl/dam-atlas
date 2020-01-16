@@ -7,9 +7,6 @@ Created on Tue Jan 14 15:20:42 2020
 import sys
 import os.path
 
-# self append to grab arcutils module
-sys.path.append(os.path.dirname(__file__))
-
 import arcpy
 from pyprojroot import here
 import logging
@@ -21,6 +18,11 @@ arcpy.env.outputMFlag = "Disabled"
 arcpy.env.overwriteOutput = True
 
 if __name__ == "__main__":
+    logger = logging.getLogger(__name__)
+
+    logger.info("Building geoJSON files")
+    
+    logger.info("Building dam file")
     # the location of our snapped dam data
     dams = str(here('./results/results.gdb/merged_dams', warn=False))
     
@@ -38,5 +40,9 @@ if __name__ == "__main__":
     )
     
     # the location of the dam-specific watersheds
+    # logger.info("Building dam watershed file")
     
     # the location of the various NHD watersheds
+    # logger.info("Building NHD watershed file")
+    
+    logger.info("geoJSON files complete")
