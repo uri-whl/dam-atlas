@@ -61,6 +61,10 @@ dam_sources = {
     'VT': "vt gis",
 }
 
+# this nested dictionary defines the relationship between state fields from the
+# state specific shape files to the canonical field names - i.e., the crosswalk
+# relationship. additionally, it defines any necessary conversion to bring them
+# into common units, as sometimes state data is stored in feet or meters.
 state_to_canonical_map = {
     'NAT_ID' : {
         'VT' : {
@@ -110,13 +114,14 @@ if __name__ == "__main__":
     setup_logging()
     logger = logging.getLogger(__name__)
     
-    logger.info("Aggregating dam data to common file")
+    logger.info("Aggregating dam data to common file started")
 
     wgs84 = au.get_sr_wgs84()
     
-    # reproject all data into wgs84
+    logger.info("State data housekeeping")
     
     for key, value in dams.items():
+        # reproject all data into wgs84
         dams_wgs84[key] = au.get_unused_scratch_fc()
         arcpy.Project_management(value, dams_wgs84[key], wgs84)
         
@@ -152,15 +157,18 @@ if __name__ == "__main__":
                                         "'" + date_data_downloaded + "'", "PYTHON3")
 
     # combine datasets
+    logger.info("Merging into one feature class")
+        
     merged_dams = au.get_unused_scratch_fc()
     arcpy.Merge_management(list(dams_wgs84.values()), merged_dams)
+
+    logger.info("Migrating state fields to canonical fields")
 
     # add canonical fields
     for k, v in canonical_fields.items():
         arcpy.AddField_management(merged_dams, k, v)
-    
-    
-    # populated canonical from state fields
+        
+    # populate canonical from state fields
     field_list = arcpy.ListFields(merged_dams)
     field_names = [field.name for field in field_list]
     
@@ -193,9 +201,6 @@ if __name__ == "__main__":
                             row[dfield_i] = row[sfield_i]
                             
                         cursor.updateRow(row)
-
-                            
-            
     
     # discard all non-canonical fields
     field_list = arcpy.ListFields(merged_dams)
@@ -207,7 +212,6 @@ if __name__ == "__main__":
                 fields_to_discard.append(field.name)
 
     arcpy.DeleteField_management(merged_dams, fields_to_discard)
-    
 
     # add x / y & rename to sane names
     arcpy.AddXY_management(merged_dams)
@@ -225,3 +229,5 @@ if __name__ == "__main__":
     output_loc = str(here('./results/results.gdb/merged_dams', warn=False))
     
     arcpy.CopyFeatures_management(merged_dams, output_loc)
+
+    logger.info("Aggreation finished")
