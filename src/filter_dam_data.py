@@ -19,11 +19,8 @@ sys.path.append(os.path.dirname(__file__))
 
 import arcpy
 from pyprojroot import here
-from arcutils import arcutils as au
 from arcutils.common_logger import setup_logging
 import logging
-from datetime import date
-import pandas as pd
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
