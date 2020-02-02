@@ -218,11 +218,6 @@ if __name__ == "__main__":
                 fields_to_discard.append(field.name)
 
     arcpy.DeleteField_management(merged_dams, fields_to_discard)
-
-    # add x / y & rename to sane names
-    arcpy.AddXY_management(merged_dams)
-    arcpy.AlterField_management(merged_dams, "POINT_X", "LONGITUDE", "LONGITUDE")
-    arcpy.AlterField_management(merged_dams, "POINT_Y", "LATITUDE", "LATITUDE")
     
     results_dir = str(here('./results/'))
     output_gdb = 'results.gdb'
