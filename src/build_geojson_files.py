@@ -2,7 +2,7 @@
 """
 Simply converts all of the generated data to geoJSON for use in MapBox.
 
-@author: Josh
+@author: Josh P. Sawyer
 """
 
 import os.path
