@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jan 14 15:20:42 2020
+Created on 2020-01-16
 
-@author: Josh
+@author: Josh P. Sawyer
 """
 
 import sys
@@ -16,7 +16,6 @@ from pyprojroot import here
 from arcutils import arcutils as au
 from arcutils.common_logger import setup_logging
 import logging
-from datetime import date
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -102,3 +101,8 @@ if __name__ == "__main__":
     
     arcpy.Intersect_analysis([dam_sub, flow_sub],
                              dam_snapped)
+
+    # add new x / y & rename to sane names
+    arcpy.AddXY_management(merged_dams)
+    arcpy.AlterField_management(merged_dams, "POINT_X", "LONGITUDE", "LONGITUDE")
+    arcpy.AlterField_management(merged_dams, "POINT_Y", "LATITUDE", "LATITUDE")
