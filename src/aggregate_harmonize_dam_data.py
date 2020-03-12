@@ -12,18 +12,13 @@ you want to harmonize and aggregate.
 @author: Josh P. Sawyer
 """
 
-import sys
 import os.path
 
-# self append to grab arcutils module
-sys.path.append(os.path.dirname(__file__))
-
 import arcpy
-from pyprojroot import here
-from arcutils import arcutils as au
-from arcutils.common_logger import setup_logging
+from pyhere import here
 import logging
 from datetime import date
+import extarc as ea
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -49,12 +44,12 @@ canonical_fields = {
 
 # paths to the shapefiles containing dam data
 dams = {
-    'CT': str(here('./results/results.gdb/ct_dams_f', warn=False)),
-    'MA': str(here('./results/results.gdb/ma_dams_f', warn=False)),
-    'ME': str(here('./results/results.gdb/me_dams_f', warn=False)),
-    'NH': str(here('./results/results.gdb/nh_dams_f', warn=False)),
-    'RI': str(here('./results/results.gdb/ri_dams_f', warn=False)),
-    'VT': str(here('./results/results.gdb/vt_dams_f', warn=False))
+    'CT': str(here("results", "results.gdb", "ct_dams_f")),
+    'MA': str(here("results", "results.gdb", "ma_dams_f")),
+    'ME': str(here("results", "results.gdb", "me_dams_f")),
+    'NH': str(here("results", "results.gdb", "nh_dams_f")),
+    'RI': str(here("results", "results.gdb", "ri_dams_f")),
+    'VT': str(here("results", "results.gdb", "vt_dams_f"))
 }
 
 # where the data was downloaded from - make it easier for the end user
@@ -117,21 +112,23 @@ date_data_downloaded = str(date(2020, 1, 16))
 # empty dictionary for reprojected dams
 dams_wgs84 = {
 }
-arcpy.env.scratchWorkspace = str(here('./results/scratch'))
+
+arcpy.env.scratchWorkspace = str(here("results", "scratch"))
+
 if __name__ == "__main__":
     # create a logger
-    setup_logging()
+    ea.logging.setup_logging()
     logger = logging.getLogger(__name__)
     
     logger.info("Aggregating dam data to common file started")
 
-    wgs84 = au.get_sr_wgs84()
+    wgs84 = ea.sr.get_sr_wgs84()
     
     logger.info("State data housekeeping")
     
     for key, value in dams.items():
         # reproject all data into wgs84
-        dams_wgs84[key] = au.get_unused_scratch_fc()
+        dams_wgs84[key] = ea.obj.get_unused_scratch_fc()
         arcpy.Project_management(value, dams_wgs84[key], wgs84)
         
         # alter the name of each field to avoid merge collisions
@@ -168,7 +165,7 @@ if __name__ == "__main__":
     # combine datasets
     logger.info("Merging into one feature class")
         
-    merged_dams = au.get_unused_scratch_fc()
+    merged_dams = ea.obj.get_unused_scratch_fc()
     arcpy.Merge_management(list(dams_wgs84.values()), merged_dams)
 
     logger.info("Migrating state fields to canonical fields")
@@ -228,12 +225,12 @@ if __name__ == "__main__":
     
     dam_proj_id = "NEDAT_ID"
     
-    oid_fname = "!" + au.get_oid_fieldname(merged_dams) + "!"
+    oid_fname = "!" + ea.table.get_oid_fieldname(merged_dams) + "!"
     
     arcpy.AddField_management(merged_dams, dam_proj_id, "LONG")
     arcpy.CalculateField_management(merged_dams, dam_proj_id, oid_fname)
     
-    results_dir = str(here('./results/'))
+    results_dir = str(here('results'))
     output_gdb = 'results.gdb'
     
     # check if there's a results gdb and create if not
@@ -241,7 +238,7 @@ if __name__ == "__main__":
         arcpy.CreateFileGDB_management(results_dir, output_gdb)
     
     # save to results folder
-    output_loc = str(here('./results/results.gdb/merged_dams', warn=False))
+    output_loc = str(here("results", "results.gdb", "merged_dams"))
     
     arcpy.CopyFeatures_management(merged_dams, output_loc)
 
