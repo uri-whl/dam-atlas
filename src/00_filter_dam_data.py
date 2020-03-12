@@ -11,15 +11,9 @@ prefiltering here.
 @author: Josh P. Sawyer
 """
 
-import sys
-import os.path
-
-# self append to grab arcutils module
-sys.path.append(os.path.dirname(__file__))
-
 import arcpy
-from pyprojroot import here
-from arcutils.common_logger import setup_logging
+from pyhere import here
+import extarc as ea
 import logging
 
 # set environment flags - we don't want Z / M, we do want overwrite on
@@ -30,21 +24,21 @@ arcpy.env.overwriteOutput = True
 
 # paths to the shapefiles containing dam data
 dams = {
-    'CT': str(here('./data/ct_dams/DAM.shp')),
-    'MA': str(here('./data/ma_dams/DAMS_PT.shp')),
-    'ME': str(here('./data/me_dams/impounds.shp')),
-    'NH': str(here('./data/nh_dams/damsnh.shp')),
-    'RI': str(here('./data/ri_dams/Dams.shp')),
-    'VT': str(here('./data/vt_dams/Dams.shp')),
+    'CT': str(here("data", "ct_dams", "DAM.shp")),
+    'MA': str(here("data", "ma_dams", "DAMS_PT.shp")),
+    'ME': str(here("data", "me_dams", "impounds.shp")),
+    'NH': str(here("data", "nh_dams", "damsnh.shp")),
+    'RI': str(here("data", "ri_dams", "Dams.shp")),
+    'VT': str(here("data", "vt_dams", "Dams.shp")),
 }
 
 dams_f = {
-    'CT': str(here('./results/results.gdb/ct_dams_f', warn=False)),
-    'MA': str(here('./results/results.gdb/ma_dams_f', warn=False)),
-    'ME': str(here('./results/results.gdb/me_dams_f', warn=False)),
-    'NH': str(here('./results/results.gdb/nh_dams_f', warn=False)),
-    'RI': str(here('./results/results.gdb/ri_dams_f', warn=False)),
-    'VT': str(here('./results/results.gdb/vt_dams_f', warn=False))
+    'CT': str(here("results", "results.gdb", "ct_dams_f")),
+    'MA': str(here("results", "results.gdb", "ma_dams_f")),
+    'ME': str(here("results", "results.gdb", "me_dams_f")),
+    'NH': str(here("results", "results.gdb", "nh_dams_f")),
+    'RI': str(here("results", "results.gdb", "ri_dams_f")),
+    'VT': str(here("results", "results.gdb", "vt_dams_f"))
 }
 
 layer = {
@@ -56,9 +50,9 @@ layer = {
     'VT': 'vt_dams_layer'
 }
 
+
 if __name__ == "__main__":
-    # create a logger
-    setup_logging()
+    ea.logger.setup_logging(here("src", "logging.yaml"))
     logger = logging.getLogger(__name__)
     
     logger.info("Filtering dam data for known issues")
@@ -68,15 +62,16 @@ if __name__ == "__main__":
     
     logger.info("Filtering NH dams for 0,0 coordinates")
     
+    # get rid of erroneous dams from in the new hampshire data set
     arcpy.SelectLayerByAttribute_management(
         layer['NH'], "NEW_SELECTION", '"LATITUDE" <> 0 AND "LONGITUDE" <> 0')
     
-    results_dir = str(here('./results/'))
+    results_dir = here("results")
     output_gdb = 'results.gdb'
     
     # check if there's a results gdb and create if not
-    if (not arcpy.Exists(os.path.join(results_dir, output_gdb))):
-        arcpy.CreateFileGDB_management(results_dir, output_gdb)
+    if (not results_dir.joinpath(output_gdb).exists()):
+        arcpy.CreateFileGDB_management(str(results_dir), output_gdb)
     
     logger.info("Writing filtered data")
     
