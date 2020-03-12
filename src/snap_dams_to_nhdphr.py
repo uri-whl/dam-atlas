@@ -39,6 +39,8 @@ nhd_hucs = [
     '0110'
 ]
 
+arcpy.env.scratchWorkspace = str(here('./results/scratch'))
+
 if __name__ == "__main__":
     # create a logger
     setup_logging()
@@ -97,7 +99,7 @@ if __name__ == "__main__":
     arcpy.Snap_edit(dam_sub, [[flow_sub, "EDGE", snap_distance]])
     
     # interesect with flowline to get only those that were snapped
-    dam_snapped = str(here('./results/results.gdb/dams_snapped', warn=False))
+    dam_snapped = str(here('./results/results.gdb/all_snapped_dams', warn=False))
     
     arcpy.Intersect_analysis([dam_sub, flow_sub],
                              dam_snapped)

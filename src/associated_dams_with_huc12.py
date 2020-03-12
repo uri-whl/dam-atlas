@@ -76,7 +76,7 @@ if __name__ == "__main__":
     arcpy.Merge_management(huc12s, m_huc12s)
       
     # use identify to associated dam FIDs with huc12s
-    merged_dams = str(here('./results/results.gdb/merged_dams', warn=False))
+    merged_dams = str(here('./results/results.gdb/all_snapped_dams', warn=False))
     
     m_dam_huc12s = ea.object.get_unused_scratch_gdb_obj() 
     
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
 
     # save to results folder
-    output_loc = str(here('./results/results.gdb/merged_dams_hucs', warn=False))
+    output_loc = str(here('./results/results.gdb/all_snapped_dams_w_hucs', warn=False))
     
     arcpy.CopyFeatures_management(m_dam_huc12s, output_loc)
 

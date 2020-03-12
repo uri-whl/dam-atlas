@@ -85,6 +85,9 @@ state_to_canonical_map = {
         'NH' : {
             'name': 'NATDAMID',
         },
+        'RI' : {
+            'name': 'NID'
+        }
     },
     'DAM_NAME': {  
         'VT' : {
@@ -114,7 +117,7 @@ date_data_downloaded = str(date(2020, 1, 16))
 # empty dictionary for reprojected dams
 dams_wgs84 = {
 }
-
+arcpy.env.scratchWorkspace = str(here('./results/scratch'))
 if __name__ == "__main__":
     # create a logger
     setup_logging()
@@ -218,6 +221,17 @@ if __name__ == "__main__":
                 fields_to_discard.append(field.name)
 
     arcpy.DeleteField_management(merged_dams, fields_to_discard)
+    
+    # we're going to add one last thing - a dam project ID field.
+    # this will allow us to join these dams with other generated data as
+    # FIDs in feature classes mutate
+    
+    dam_proj_id = "NEDAT_ID"
+    
+    oid_fname = "!" + au.get_oid_fieldname(merged_dams) + "!"
+    
+    arcpy.AddField_management(merged_dams, dam_proj_id, "LONG")
+    arcpy.CalculateField_management(merged_dams, dam_proj_id, oid_fname)
     
     results_dir = str(here('./results/'))
     output_gdb = 'results.gdb'

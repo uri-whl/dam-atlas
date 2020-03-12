@@ -5,8 +5,6 @@ Created on 2020-01-16
 @author: Josh P. Sawyer
 """
 
-import sys
-import os.path
 import extarc as ea
 
 import arcpy
@@ -24,7 +22,7 @@ if __name__ == "__main__":
     ea.logger.setup_logging(here("./src/logging.yaml"))
     ea.logger.send("associating dams with huc12")
     
-    all_dams_hucs = str(here('./results/results.gdb/merged_dams_hucs', warn=False))
+    all_dams_hucs = str(here('./results/results.gdb/all_snapped_dams_w_hucs', warn=False))
     
     # make flayer, select only dams in RI OR in wsheds of interest, make copy
     
@@ -59,6 +57,6 @@ if __name__ == "__main__":
     )
     
     # save to results folder
-    output_loc = str(here('./results/results.gdb/aoi_dams_hucs', warn=False))
+    output_loc = str(here('./results/results.gdb/snapped_aoi_dams', warn=False))
     
     arcpy.CopyFeatures_management(dams_flayer, output_loc)

@@ -17,6 +17,8 @@ arcpy.env.outputZFlag = "Disabled"
 arcpy.env.outputMFlag = "Disabled"
 arcpy.env.overwriteOutput = True
 
+arcpy.env.scratchWorkspace = str(here('./results/scratch'))
+
 if __name__ == "__main__":
     logger = logging.getLogger(__name__)
 
@@ -24,7 +26,7 @@ if __name__ == "__main__":
     
     logger.info("Building dam file")
     # the location of our snapped dam data
-    dams = str(here('./results/results.gdb/merged_dams', warn=False))
+    dams = str(here('./results/results.gdb/snapped_aoi_dams', warn=False))
     
     output_dir = str(here('./results/', warn=False))
     
