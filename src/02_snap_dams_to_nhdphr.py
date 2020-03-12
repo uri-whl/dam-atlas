@@ -103,4 +103,4 @@ if __name__ == "__main__":
     arcpy.AlterField_management(dam_snapped, "POINT_Y", "LATITUDE", "LATITUDE")
     
     logger.info("finished snapping dams")
-    logger.info("results in {}".format(merged_dams))
+    logger.info("results in {}".format(dam_snapped))
