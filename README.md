@@ -1,9 +1,9 @@
-# New England Dam Atlas (NEWDAT) - Data Manipulation & Creation Repository
+# New England Dam ATlas (NEDAT) - Data Manipulation & Creation Repository
 
-This repository scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project. Due to the nature of programmatically working with geospatial data, this is a collection of scripts. Other NEWDAT repositories include:
+This repository scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project. Due to the nature of programmatically working with geospatial data, this is a collection of scripts. Other NEDAT repositories include:
 
-- [NEWDAT Data](https://github.com/uri-whl/newdat-data)
-- [NEWDAT Website](https://github.com/uri-whl/newdat-website)
+- [NEDAT Data](https://github.com/uri-whl/nedat-data)
+- [NEDAT Website](https://github.com/uri-whl/nedat-website)
 
 ## Overview
 
@@ -45,17 +45,18 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
     3. You must install the following packages as well (commands included - sometimes on different channels):
 
         ```bash
-        dam-atlas> conda install -c conda-forge pyprojroot
+        dam-atlas> pip install pyhere=1.0.0
+        dam-atlas> pip install extarc=0.0.1
         ```
 
 ## Running
 
 The only caveat with this project is that some scripts depend on the output of other scripts. You must first run, in order:
 
-1. `filter_dam_data.py` - filters known problematic data from the source datasets.
-2. `aggregate_harmonize_dam_data.py` - combines all the filtered datasets into one dataset and crosswalks the attributes to common names.
-3. `snap_dam_to_nhdplushr.py` - snaps all the dams to NHD flowlines for HUC 01*
-4. `cut_dam_dataset_to_ri.py` - this is an optional step but one that we'll do for now. it eliminates all the dams that either don't drain into a RI watershed and aren't within the RI boundary. if either condition is true, the dam is retained.
+1. `00_filter_dam_data.py` - filters known problematic data from the source datasets.
+2. `01_aggregate_harmonize_dam_data.py` - combines all the filtered datasets into one dataset and crosswalks the attributes to common names.
+3. `02_snap_dam_to_nhdplushr.py` - snaps all the dams to NHD flowlines for HUC 01*
+4. `03_cut_dam_dataset_to_ri.py` - this is an optional step but one that we'll do for now. it eliminates all the dams that either don't drain into a RI watershed and aren't within the RI boundary. if either condition is true, the dam is retained.
 
 At this point, you will have:
 
