@@ -12,8 +12,6 @@ you want to harmonize and aggregate.
 @author: Josh P. Sawyer
 """
 
-import os.path
-
 import arcpy
 from pyhere import here
 import logging
@@ -116,8 +114,7 @@ dams_wgs84 = {
 arcpy.env.scratchWorkspace = str(here("results", "scratch"))
 
 if __name__ == "__main__":
-    # create a logger
-    ea.logging.setup_logging()
+    ea.logger.setup_logging(here("src", "logging.yaml"))
     logger = logging.getLogger(__name__)
     
     logger.info("Aggregating dam data to common file started")
@@ -128,7 +125,7 @@ if __name__ == "__main__":
     
     for key, value in dams.items():
         # reproject all data into wgs84
-        dams_wgs84[key] = ea.obj.get_unused_scratch_fc()
+        dams_wgs84[key] = ea.obj.get_unused_scratch_gdb_obj()
         arcpy.Project_management(value, dams_wgs84[key], wgs84)
         
         # alter the name of each field to avoid merge collisions
@@ -165,7 +162,7 @@ if __name__ == "__main__":
     # combine datasets
     logger.info("Merging into one feature class")
         
-    merged_dams = ea.obj.get_unused_scratch_fc()
+    merged_dams = ea.obj.get_unused_scratch_gdb_obj()
     arcpy.Merge_management(list(dams_wgs84.values()), merged_dams)
 
     logger.info("Migrating state fields to canonical fields")
@@ -230,16 +227,10 @@ if __name__ == "__main__":
     arcpy.AddField_management(merged_dams, dam_proj_id, "LONG")
     arcpy.CalculateField_management(merged_dams, dam_proj_id, oid_fname)
     
-    results_dir = str(here('results'))
-    output_gdb = 'results.gdb'
-    
-    # check if there's a results gdb and create if not
-    if (not arcpy.Exists(os.path.join(results_dir, output_gdb))):
-        arcpy.CreateFileGDB_management(results_dir, output_gdb)
-    
     # save to results folder
     output_loc = str(here("results", "results.gdb", "merged_dams"))
     
     arcpy.CopyFeatures_management(merged_dams, output_loc)
 
     logger.info("Aggreation finished")
+    logger.info("Results in: {}".format(output_loc))
