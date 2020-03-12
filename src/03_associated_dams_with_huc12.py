@@ -5,11 +5,10 @@ Created on 2020-01-16
 @author: Josh P. Sawyer
 """
 
-import os.path
 import extarc as ea
-
+import logging
 import arcpy
-from pyprojroot import here
+from pyhere import here
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -33,28 +32,29 @@ nhd_hucs = [
     '0110'
 ]
 
-arcpy.env.scratchWorkspace = str(here('./results/scratch'))
+arcpy.env.scratchWorkspace = str(here("results", "scratch"))
 
 if __name__ == "__main__":
-    ea.logger.setup_logging(here("./src/logging.yaml"))
-    ea.logger.send("associating dams with huc12")
+    ea.logger.setup_logging(here("src", "logging.yaml"))
+    logger = logging.getLogger(__name__)
+    
+    logger.info("associating dams with huc12")
     
     huc12s = []
     
     # there are 10 nhdplus datasets so we combine their huc12 files
     for huc in nhd_hucs:
-        nhd_loc = str(here('./data/nhdplus_h/'))
+        nhd_loc = here("data", "nhdplus_h")
         nhd_gdb = nhd_gdb_p + huc + nhd_gdb_s
-        huc_path = 'WBD' + os.path.sep + 'WBDHU12'
-        huc12 = os.path.join(nhd_loc, nhd_gdb, huc_path)
+        huc12 = nhd_loc / nhd_gdb / "WBD" / "WBDHU12"
     
         # error is throwing merging datasets - there's something going on with
         # the field names are values, but we only care about the HUC12, so get
         # rid of everything else
     
-        huc12_clean = ea.object.get_unused_scratch_gdb_obj()
+        huc12_clean = ea.obj.get_unused_scratch_gdb_obj()
         
-        arcpy.CopyFeatures_management(huc12, huc12_clean)
+        arcpy.CopyFeatures_management(str(huc12), huc12_clean)
 
         fields_to_keep = ["HUC12"]
         fields_to_keep.append(ea.table.get_oid_fieldname(huc12_clean))
@@ -71,14 +71,14 @@ if __name__ == "__main__":
 
         huc12s.append(huc12_clean)
       
-    m_huc12s = ea.object.get_unused_scratch_gdb_obj()
+    m_huc12s = ea.obj.get_unused_scratch_gdb_obj()
     
     arcpy.Merge_management(huc12s, m_huc12s)
       
     # use identify to associated dam FIDs with huc12s
-    merged_dams = str(here('./results/results.gdb/all_snapped_dams', warn=False))
+    merged_dams = str(here("results", "results.gdb", "all_snapped_dams"))
     
-    m_dam_huc12s = ea.object.get_unused_scratch_gdb_obj() 
+    m_dam_huc12s = ea.obj.get_unused_scratch_gdb_obj() 
     
     arcpy.Identity_analysis(merged_dams, m_huc12s, m_dam_huc12s)
     
@@ -105,8 +105,8 @@ if __name__ == "__main__":
 
 
     # save to results folder
-    output_loc = str(here('./results/results.gdb/all_snapped_dams_w_hucs', warn=False))
+    output_loc = str(here("results", "results.gdb", "all_snapped_dams_w_hucs"))
     
     arcpy.CopyFeatures_management(m_dam_huc12s, output_loc)
 
-    ea.logger.send("HUC association finish")
+    logger.info("HUC association finish")

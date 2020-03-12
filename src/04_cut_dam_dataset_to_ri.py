@@ -6,7 +6,6 @@ Created on 2020-01-16
 """
 
 import extarc as ea
-
 import arcpy
 from pyprojroot import here
 
@@ -16,13 +15,13 @@ arcpy.env.outputZFlag = "Disabled"
 arcpy.env.outputMFlag = "Disabled"
 arcpy.env.overwriteOutput = True
 
-arcpy.env.scratchWorkspace = str(here('./results/scratch'))
+arcpy.env.scratchWorkspace = str(here("results", "scratch"))
 
 if __name__ == "__main__":
-    ea.logger.setup_logging(here("./src/logging.yaml"))
+    ea.logger.setup_logging(here("src", "logging.yaml"))
     ea.logger.send("associating dams with huc12")
     
-    all_dams_hucs = str(here('./results/results.gdb/all_snapped_dams_w_hucs', warn=False))
+    all_dams_hucs = str(here("results", "results.gdb", "all_snapped_dams_w_hucs"))
     
     # make flayer, select only dams in RI OR in wsheds of interest, make copy
     
@@ -57,6 +56,6 @@ if __name__ == "__main__":
     )
     
     # save to results folder
-    output_loc = str(here('./results/results.gdb/snapped_aoi_dams', warn=False))
+    output_loc = str(here("results", "results.gdb", "snapped_aoi_dams"))
     
     arcpy.CopyFeatures_management(dams_flayer, output_loc)
