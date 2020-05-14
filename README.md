@@ -13,7 +13,7 @@ The goal of this project is to script the creation of various GeoJSON datasets f
 
 ## Installation
 
-These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary - though they may be backwards compatible with ArcGIS Desktop 32-bit python 2). ArcGIS Pro ships with Conda pre-installed which allows you to create an environment specific for a project without destroying your base environment. If you'd like to set up a project specific environment, you can do the following:
+These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary - though they may be backwards compatible with ArcGIS Desktop 32-bit python 2). ArcGIS Pro ships with Conda pre-installed which allows you to create an environment specific for a project without destroying your base environment. If you'd like to set up a project specific environment, you can do the following (If you have admin rights on your machine, you can install the packages to the base environment):
 
 1. In Start Menu, navigate to `ArcGIS > Python Command Prompt`, _not_ `Python (Command Line)`. You'll know if you got the right one because you'll see:
 
@@ -47,7 +47,16 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
         ```bash
         dam-atlas> pip install pyhere=1.0.0
         dam-atlas> pip install extarc=0.0.1
+        dam-atlas> conda install pyyaml
         ```
+
+    4. Optionally, if you want to use the mapbox CLI, you need to install their module, `mapbox-tilesets`
+
+        ```bash
+        dam-atlas> pip install mapbox-tilesets
+        ```
+
+        See [doc/mapbox_data_creation.md][Mapbox Data Creation].
 
 ## Running
 
