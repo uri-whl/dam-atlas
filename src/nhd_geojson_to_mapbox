@@ -1,0 +1,28 @@
+#!/bin/bash
+export MAPBOX_ACCESS_TOKEN=sk.ey3t2bkj23hkhwefkwdf98983...
+
+# variables
+USERNAME = jsawyeruri
+
+NHDFLOW = ../results/geojson/nhd_flowlines/
+NHDWBS = ../results/geojson/nhd_wbs/
+NHDHUC8 = ../results/geojson/nhd_huc8/
+NHDHUC10 = ../results/geojson/nhd_huc10/
+NHDHUC12 = ../results/geojson/nhd_huc12/
+
+# add geojson to sources
+tilesets add-source $USERNAME nhd_flowlines $NHDFLOW
+tilesets add-source $USERNAME nhd_wbodies $NHDWBS
+tilesets add-source $USERNAME nhd_huc8 $NHDHUC8
+tilesets add-source $USERNAME nhd_huc10 $NHDHUC10
+tilesets add-source $USERNAME nhd_huc12 $NHDHUC12
+
+# create tilesets from sources + recipes
+tilesets create $USERNAME.nhd_flowlines --recipe ../results/mapbox-recipes/nhd_flowlines.json --name "NHD Flowlines"
+tilesets create $USERNAME.nhd_hucs --recipe ../results/mapbox-recipes/nhd_hucs.json --name "NHD HUCs"
+tilesets create $USERNAME.nhd_wbody --recipe ../results/mapbox-recipes/nhd_wbody.json --name "NHD Water Bodies"
+
+# publish tilesets
+tilesets publish $USERNAME.nhd_flowlines
+tilesets publish $USERNAME.nhd_hucs
+tilesets publish $USERNAME.nhd_wbody
