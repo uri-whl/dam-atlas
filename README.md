@@ -1,13 +1,10 @@
-# New England Dam ATlas (NEDAT) - Data Manipulation & Creation Repository
+# New England Dam Atlas
 
-This repository scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project. Due to the nature of programmatically working with geospatial data, this is a collection of scripts. Other NEDAT repositories include:
-
-- [NEDAT Data](https://github.com/uri-whl/nedat-data)
-- [NEDAT Website](https://github.com/uri-whl/nedat-website)
+This repository contains scripts and source data (where size is reasonable) for generating the data used in the Dam Atlas project.
 
 ## Overview
 
-In aggregate, this project combines data on dams from multiple states (RI, CT, MA, ME, NH, VT), aligns it to an established flow network (NHDPlus High Resolution), discards any dams that cannot be aligned or are not in the target area and runs various calculations to bring in additional information. The 'target area' is defined as those dams residing in HUC 01 - the watershed that encompasses almost the entirety of New England. At least for now, dams in southwestern VT and northwestern MA that drain to the west and outside of this 2-digit HUC will not be included.
+In aggregate, this project combines data on dams from multiple states (RI, CT, MA), aligns it to an established flow network (NHDPlus High Resolution), discards any dams that cannot be aligned or are not in the target area and runs various calculations to bring in additional information.
 
 The goal of this project is to script the creation of various GeoJSON datasets for use in a Mapbox website and eliminate some of the noise within the datasets.
 
@@ -82,15 +79,18 @@ When ready to load data into MapBox, run the final script `build_geojson_data.py
   - NHD Plus HR Vector Datasets, all downloadable from [The National Map](https://viewer.nationalmap.gov/basic/). The ones used for this are all 4 digit HUCs beginning 01 to cover the bulk of New England.
 
 - `doc`
-- `results` - This folder contains the output of the scripts located in `src`, _when the size is reasonable_. For instance, a file geodatabase containing NHDPlus HR products is not included - but a GeoJSON file describing dams would be.
 - `src` - The scripts which generate additional dam data. Specifically:
+  - `00_aggregate_harmonize_dam_data` crosswalks the RI / CT / MA data and joins it to NID data and American Rivers data.
+  - `02_snap_dam_to_nhdplushr.py` aligns dam points (with arcpy `Snap`) to NHD Plus HR, generating lat / long values and a column describing whether it snapped. it then recalculates the hucs - 2-digit through 12-digit for the new locations.
+  - `03_associated_dams_with_huc12.py`
+  - `04_cut_dam_dataset_to_ri.py`
+  - `50_build_geojson_files.py`
+  - `nhd_to_geojson.py`
+  - `nhd_geojson_to_mapbox` is a bash script that adds geojson as sources to mapbox and then creates tilesets from the recipes in `results/mapbox-recipes`. It needs a real access token and probably a new ID to run.
+- `results` - This folder contains the output of the scripts located in `src`, _when the size is reasonable_. For instance, a file geodatabase containing NHDPlus HR products is not included - but a GeoJSON file describing dams might be.
+  - `geojson` contains data in GeoJSON format for use with Mapbox.
+  - `mapbox-recipes` contains the recipes used to create tilesets within mapbox.
 
-    - `filter_dam_data.py` filters the source data sets to remove known problems
-    - `aggregate_harmonize_dam_data.py` combines the filtered dam data and assigns a state column, then harmonizes the remaining column based on rules derived from the metadata in `doc/`.
-    - `snap_dam_to_nhdplushr.py` aligns dam points (with arcpy `Snap`) to NHD Plus HR, generating lat / long values and a column describing whether it snapped. it then recalculates the hucs - 2-digit through 12-digit for the new locations.
-    - `cut_dam_dataset_to_ri.py`
-    - `build_geojson`
-    
 ## References
 
 1. Franey, T. (2018). Exploring New England Dams Analysis Using the High Resolution National Hydrography Dataset [MESM Major Paper, University of Rhode Island]. <http://www.edc.uri.edu/mesm/Docs/MajorPapers/Franey_2018.pdf>
