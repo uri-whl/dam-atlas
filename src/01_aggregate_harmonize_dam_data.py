@@ -44,20 +44,20 @@ canonical_fields = {
 dams = {
     'CT': str(here("results", "results.gdb", "ct_dams_f")),
     'MA': str(here("results", "results.gdb", "ma_dams_f")),
-    'ME': str(here("results", "results.gdb", "me_dams_f")),
-    'NH': str(here("results", "results.gdb", "nh_dams_f")),
+    # 'ME': str(here("results", "results.gdb", "me_dams_f")),
+    # 'NH': str(here("results", "results.gdb", "nh_dams_f")),
     'RI': str(here("results", "results.gdb", "ri_dams_f")),
-    'VT': str(here("results", "results.gdb", "vt_dams_f"))
+    # 'VT': str(here("results", "results.gdb", "vt_dams_f"))
 }
 
 # where the data was downloaded from - make it easier for the end user
 dam_sources = {
     'CT': "ct gis",
     'MA': "ma gis",
-    'ME': "me gis",
-    'NH': "nh gis",
+    # 'ME': "me gis",
+    # 'NH': "nh gis",
     'RI': "ri gis",
-    'VT': "vt gis",
+    # 'VT': "vt gis",
 }
 
 # this nested dictionary defines the relationship between state fields from the
@@ -219,13 +219,23 @@ if __name__ == "__main__":
     # we're going to add one last thing - a dam project ID field.
     # this will allow us to join these dams with other generated data as
     # FIDs in feature classes mutate
+
+    #
+    # Earlier, we ran this script without having filtered out a lot of dams
+    # and the data was set around with NEDAT_ID, off which scripts were built.
+    # We now can't regenerate a new set of IDs because it will result in a
+    # major problem... but the scope of this has been pretty narrowly limited
+    # to RI and its watersheds, so we also don't need all this extraneous
+    # new england data. Thus, dam ID assignment will happen through identity
+    # of the dams against the file originally created for this - yes, it's
+    # very convoluted.
     
-    dam_proj_id = "NEDAT_ID"
+    # dam_proj_id = "NEDAT_ID"
     
-    oid_fname = "!" + ea.table.get_oid_fieldname(merged_dams) + "!"
+    # oid_fname = "!" + ea.table.get_oid_fieldname(merged_dams) + "!"
     
-    arcpy.AddField_management(merged_dams, dam_proj_id, "LONG")
-    arcpy.CalculateField_management(merged_dams, dam_proj_id, oid_fname)
+    # arcpy.AddField_management(merged_dams, dam_proj_id, "LONG")
+    # arcpy.CalculateField_management(merged_dams, dam_proj_id, oid_fname)
     
     # save to results folder
     output_loc = str(here("results", "results.gdb", "merged_dams"))

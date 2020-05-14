@@ -7,7 +7,8 @@ Created on 2020-01-16
 
 import extarc as ea
 import arcpy
-from pyprojroot import here
+from pyhere import here
+import logging
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -19,7 +20,8 @@ arcpy.env.scratchWorkspace = str(here("results", "scratch"))
 
 if __name__ == "__main__":
     ea.logger.setup_logging(here("src", "logging.yaml"))
-    ea.logger.send("associating dams with huc12")
+    logger = logging.getLogger(__name__)
+    logger.info("associating dams with huc12")
     
     all_dams_hucs = str(here("results", "results.gdb", "all_snapped_dams_w_hucs"))
     
@@ -59,3 +61,8 @@ if __name__ == "__main__":
     output_loc = str(here("results", "results.gdb", "snapped_aoi_dams"))
     
     arcpy.CopyFeatures_management(dams_flayer, output_loc)
+    
+    # also grab a csv for easy reference
+    dams_df = ea.table.get_arcgis_table_as_df(output_loc)
+    dams_df.to_csv(here("results", "dam_attributes.csv"))
+    

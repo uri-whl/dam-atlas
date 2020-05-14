@@ -43,7 +43,7 @@ if __name__ == "__main__":
     logger.info("Snapping dams to NHD HR Flowline")
 
     # starting with combined dataset
-    merged_dams = str(here("results", "results.gdb", "merged_dams"))
+    merged_dams = str(here("results", "results.gdb", "merged_dams_2"))
     
     # make a copy - snap edits in place
     dam_copy = ea.obj.get_unused_scratch_gdb_obj()

@@ -9,6 +9,8 @@ import extarc as ea
 import logging
 import arcpy
 from pyhere import here
+import sys
+sys.path.append(str(here("src")))
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -18,6 +20,8 @@ arcpy.env.overwriteOutput = True
 
 nhd_gdb_p = "NHDPLUS_H_"
 nhd_gdb_s = "_HU4_GDB.gdb"
+
+from definitions import nhd_hucs
 
 nhd_hucs = [
     '0101',

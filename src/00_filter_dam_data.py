@@ -5,8 +5,9 @@ Created 2020-01-16
 
 While aggregate_harmonize_dam_data.py combines the datasets in an unopinionated
 way, there's a lot of junk in these datasets. For instance, there are multiple
-dams that have 0,0 as their coordinates in the dam datasets. We do some
-prefiltering here.
+dams that have 0,0 as their coordinates in the dam datasets. Also, there are
+several dams that have been removed and we need to pull them out without
+affecting the original datasets. We do some prefiltering here.
 
 @author: Josh P. Sawyer
 """
