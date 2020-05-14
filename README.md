@@ -56,7 +56,7 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
         dam-atlas> pip install mapbox-tilesets
         ```
 
-        See [doc/mapbox_data_creation.md][Mapbox Data Creation].
+        See [Mapbox Data Creation](doc/mapbox_data_creation.md).
 
 ## Running
 
