@@ -1,0 +1,20 @@
+{
+    "version": 1,
+    "layers": {
+        "nhd_huc8": {
+            "source": "mapbox://tileset-source/jsawyeruri/nhd_huc8",
+            "minzoom": 4,
+            "maxzoom": 8
+        },
+        "nhd_huc10": {
+            "source": "mapbox://tileset-source/jsawyeruri/nhd_huc10",
+            "minzoom": 4,
+            "maxzoom": 8
+        },
+        "nhd_huc12": {
+            "source": "mapbox://tileset-source/jsawyeruri/nhd_huc12",
+            "minzoom": 4,
+            "maxzoom": 8
+        }
+    }
+}
