@@ -1,0 +1,1189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0066)http://www.cteco.uconn.edu/metadata/dep/document/DAM_FGDC_Plus.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Connecticut Dams</title><link rel="schema.dc" href="http://dublincore.org/documents/dces/">
+      <meta name="dc.title" content="Connecticut Dams">
+      <meta name="dc.creator" content="State of Connecticut, Department of Environmental Protection (data compiler, editor and publisher)">
+      <meta name="dc.subject" content="environment inlandWaters utilitiesCommunication dam impoundment">
+      <meta name="dc.description" content="Connecticut Dams is a 1:24,000-scale, point feature-based layer that displays the locations of dams in Connecticut that are owned and operated by individuals, businesses, corporations, water and electric utilities, local, state, and federal governments. Each dam is assigned a unique dam number. This information was compiled in 1996 and is based on dam safety information from the Inland Water Resources Division, Connecticut Department of Environmental Protection. The dams were mapped on 7½ Minute U.S. Geological Survey topographic quadrangle maps and digitized at 1:24,000 scale. Attributes include dam number and name, dam hazard classification, ownership type, town name and number, and major, regional and subregional basin numbers. This layer does not include all dams in Connecticut and has not been updated since its creation in 1996.">
+      <meta name="dc.publisher" content="State of Connecticut, Department of Environmental Protection">
+      <meta name="dc.contributor" content="James Bogar from the Natural Resources Center, DEP originally mapped dam locations at 1:24,000 scale by compiling information primarily available from the Dam Safety program, Inland Water Resources Division, Bureau of Water Protection and Land Reuse, DEP. Tom Nosal and Ann Kuzyk, also from DEP, digitized the maps compiled by James Bogar to create the first statewide digital spatial dataset of Connecticut dams.">
+      <meta name="dc.date" content="1996">
+      <meta name="dc.type" content="data.vector digital data">
+      <meta name="dc.format" content="SDE Feature Class">
+      <meta name="dc.identifier" content="http://www.ct.gov/deep">
+      <meta name="dc.source" content="Connecticut Dams">
+      <meta name="dc.lang" content="en">
+      <meta name="dc.coverage.x.min" scheme="DD" content="-73.736037">
+      <meta name="dc.coverage.x.max" scheme="DD" content="-71.785953">
+      <meta name="dc.coverage.y.min" scheme="DD" content="41.021394">
+      <meta name="dc.coverage.y.max" scheme="DD" content="42.046431">
+      <meta name="dc.coverage.placeName" content="Connecticut">
+      <meta name="dc.coverage.placeName" content="CT">
+      <meta name="dc.coverage.placeName" content="United States of America">
+      <meta name="dc.coverage.placeName" content="USA">
+      <meta name="dc.rights" content="Access constraints: None. The data is in the public domain and may be redistributed.;  Use constraints: No restrictions or legal prerequisites for using the data. The data is suitable for use at appropriate scale, and is not intended for maps printed at scales greater or more detailed than 1:24,000 scale (1 inch = 2,000 feet). Although this data set has been used by the State of Connecticut, Department of Environmental Protection, no warranty, expressed or implied, is made by the State of Connecticut, Department of Environmental Protection as to the accuracy of the data and or related materials. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the State of Connecticut, Department of Environmental Protection in the use of these data or related materials. The user assumes the entire risk related to the use of these data. Once the data is distributed to the user, modifications made to the data by the user should be noted in the metadata. When printing this data on a map or using it in a software application, analysis, or report, please acknowledge the State of Connecticut, Department of Environmental Protection as the source for this information. For example, include the following data source description when printing this layer on a map: Dams - From the Connecticut Dams layer, compiled and published by CT DEP. Source map scale is 1:24,000.">
+      <style>
+body								{font-family: Verdana,sans-serif; font-size: 9pt; color: #000000; background-color: #FBFBFB; cursor: default;}
+
+#md-clickdef					{font-family: Arial,sans-serif; font-size: 9pt; color: #0000FF; cursor: pointer; text-align: center; padding: 0px; margin-left: 0px; margin-left: 0px; margin-top: 5px; margin-bottom: 10px;}
+.md-link						{text-decoration: none;}
+.md-over						{text-decoration: underline;}
+
+#md-menu						{font-family: Arial,sans-serif; font-size: 9pt; text-align: center; text-align: center; padding: 0px; margin-left: 0px; margin-left: 0px; margin-top: 5px; margin-bottom: 0px;}
+.md-menuitem				{color: #0000FF; padding-left: 6px; padding-right: 6px; padding-top: 2px; text-decoration: none; border-right: solid 1px #FBFBFB; border-top: solid 2px #FBFBFB; cursor: pointer; }
+.md-menuitemover			{color: #0000FF; padding-left: 6px; padding-right: 6px; padding-top: 2px; text-decoration: underline; border-right: solid 1px #FBFBFB; border-top: solid 2px #FBFBFB; cursor: pointer; }
+.md-menuitemactive		{background-color: #6495ED; color: #FFFFFF; padding-left: 6px; padding-right: 6px; padding-top: 2px; text-decoration: none; border-right: solid 1px #FBFBFB; border-top: solid 2px #DCDCDC; cursor: pointer; }
+
+#md-description				{display: block;}
+#md-graphic					{display: block;}
+#md-spatial					{display: block;}
+#md-structure				{display: block;}
+#md-quality					{display: block;}
+#md-source					{display: block;}
+#md-distribution				{display: block;}
+#md-metadata				{display: block;}
+#md-thumbnail				{height: 144px; border: solid 1px #B0C4DE; float: left; margin-top: 5px; margin-left: 3px; margin-right: 10px;}
+
+.md-title						{font-family: Arial,sans-serif; font-weight: bold; font-size: 15pt; color: #0000FF; text-align: center; padding: 0px; margin: 3px; cursor: pointer; text-decoration: none;}
+.md-titleover					{font-family: Arial,sans-serif; font-weight: bold; font-size: 15pt; color: #0000FF; text-align: center; padding: 0px; margin: 3px; cursor: pointer; text-decoration: underline;}
+
+.md-subtitle					{font-family: Arial,sans-serif; font-size: 10pt; text-align: center; padding: 0px; margin: 3px;}
+
+.md-mastertitle 				{font-weight: bold; color: #FFFFFF; font-size: 11pt; text-align: center; padding: 0px; cursor: pointer; text-decoration: none;}
+.md-mastertitleover 		{font-weight: bold; color: #FFFFFF; font-size: 11pt; text-align: center; padding: 0px; cursor: pointer; text-decoration: underline;}
+
+.md-masterhide				{padding: 0px; margin: 0px; display:block;}
+
+.md-detailtitle  				{font-weight: bold; color: #0000FF; padding: 0px; cursor: pointer; text-decoration: none;}
+.md-detailtitleover 			{font-weight: bold; color: #0000FF; padding: 0px; cursor: pointer; text-decoration: underline;}
+
+.md-detailhide				{background-color: #FFFFFF; padding: 10px; display:none;}
+.md-detailshow				{background-color: #FFFFFF; padding: 10px; display:block;}
+.md-detailhelp				{background-color: #FFFFFF; padding: 10px; display:none;}
+
+.md-item  						{color: #0000FF; font-style: italic; font-weight: bold; padding: 1px; margin-left: 0px; margin-top: 5px; cursor: pointer; text-decoration: none;}
+.md-itemover 				{color: #0000FF; font-style: italic; font-weight: bold; padding: 1px; margin-left: 0px; margin-top: 5px; cursor: pointer; text-decoration: underline;}
+
+.md-itemlist  					{color: #0000FF; font-style: italic; font-weight: bold; padding: 1px; margin-left: 0px; margin-top: 5px; cursor: pointer; text-decoration: none;}
+.md-itemlistover 			{color: #0000FF; font-style: italic; font-weight: bold; padding: 1px; margin-left: 0px; margin-top: 5px; cursor: pointer; text-decoration: underline;}
+
+.md-itemhide					{padding: 5px; margin-left: 20px; display:none;}
+.md-itemshow				{padding: 5px; margin-left: 20px; display:block;}
+
+.md-color 							   					{border: solid 2px #6495ED; padding: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; margin-bottom: 10px;}
+.md-color .md-master 				    		{background-color: #6495ED; padding: 1px;}
+.md-color .md-masterhide .md-separator	{background-color: #6495ED; padding: 4px;}
+.md-color .md-masterhide .md-detail	    {background-color: #FFFFCC; border-top: solid 1px #6495ED; padding-left: 6px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;}
+
+.md-def							{color: #DC143C; font-style: italic; padding-left: 2px; padding-right: 0px; padding-top: 0px; padding-bottom: 5px; display: none;}
+
+.md-grid						{border-collapse: collapse; padding: 2px; margin: 1px;}
+
+.md-grid th					{font-size: 9pt; border: solid 1px #6495ED; padding: 2px; vertical-align: top; font-style: italic; background-color: #F0F8FF;} 
+
+.md-grid td					{font-size: 9pt; border: solid 1px #6495ED; padding: 2px; vertical-align: top;}
+
+.md-grid td.md-italic		{font-family: Arial,sans-serif; font-size: 8pt; font-style: italic; border: solid 1px #6495ED; padding: 2px; vertical-align: top;}
+
+.md-bgraphicimg			{background-color: #DCDCDC;}
+
+.md-bgraphic					{color: #0000FF; cursor: pointer; text-decoration: none;}
+.md-bgraphicover   		{color: #0000FF; cursor: pointer; text-decoration: underline;}
+
+div b  							{font-weight:bold; font-style: italic;}
+
+.md								{padding: 2px;}
+
+.md-indent						{padding: 1px; margin-left: 20px;}
+
+.md-block						{padding-left: 0px; padding-right: 0px; padding-top: 3px; padding-bottom: 3px;}
+.md-indentblock				{padding-left: 0px; padding-right: 0px; padding-top: 3px; padding-bottom: 3px; margin-left: 20px;}
+.md-indentblockstep		{padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 3px; margin-left: 20px;}
+
+.md-footer						{font-family: Arial,sans-serif; font-size: 10pt; text-align: center;}
+
+a:link							{text-decoration: none;}
+a:active							{text-decoration: none;}
+a:visited						{text-decoration: none;}
+a:hover							{text-decoration: underline;}
+</style><script type="text/javascript" language="JavaScript1.3">
+// Onload function assigns event handler functions to DIV elements according to className
+window.onload = function() {
+	var elem = document.getElementById("md-body");
+	// Remove white space text nodes in Netscape 7 and Mozilla Firefox in order to 
+	// use same set of javascript functions that work in IE to navigate through HTML.
+	removewhitespace(elem);
+	// Assign event handler functions to children of md-title element
+	elem = document.getElementById("md-title");
+	setuptitle(elem);
+	// Assign event handler functions to md-clickdef element
+	elem = document.getElementById("md-clickdef");
+	setupclickdef(elem);
+	// Assign event handler functions to children of md-menu element
+	elem = document.getElementById("md-menu");
+	setupmenu(elem);
+	// Assign event handler functions md-mastertitle, md-detailtitle, md-item, md-itemlist, and md-bgraphic elements
+	elem = document.getElementById("md-description");
+	setupmaster(elem);
+	elem = document.getElementById("md-graphic");
+	setupmaster(elem);
+	elem = document.getElementById("md-spatial");
+	setupmaster(elem);
+	elem = document.getElementById("md-structure");
+	setupmaster(elem);
+	elem = document.getElementById("md-quality");
+	setupmaster(elem);
+	elem = document.getElementById("md-source");
+	setupmaster(elem);			
+	elem = document.getElementById("md-distribution");
+	setupmaster(elem);
+	elem = document.getElementById("md-metadata");
+	setupmaster(elem);
+	elem = document.getElementById("tax");
+	setuptaxonomy(elem);
+	/* Parse Text - Find each <pre> element with an Id="fixvalue" and
+	call fixvalue() function to parse text to respect line breaks,
+	replace <pre> element with <div> elememt, and convert URL address
+	strings in text to <a href> element. */
+	elem = document.getElementById("fixvalue");
+	while (Boolean(elem != null)) {
+		fixvalue(elem);
+		elem = document.getElementById("fixvalue");
+	}
+	window.focus()
+}
+
+// Remove white space text nodes in Netscape 7 and Mozilla Firefox in order to 
+// use same set of javascript functions that work in IE to navigate through HTML. 
+// Although not necessary, this function is called by onload function even for IE.
+function removewhitespace(elem) {
+	for (var i = 0; i < elem.childNodes.length; i++) {
+		var c = elem.childNodes[i]
+		if (c.nodeType == 1) {
+			removewhitespace(c);
+		}
+		// Use regular expression to test for white space text nodes and remove
+		if (((/^\s+$/.test(c.nodeValue))) && (c.nodeType == 3)) {
+			elem.removeChild(elem.childNodes[i--]);
+		}
+	}
+}
+
+// Assign event handler functions to md-title element
+function setuptitle(elem) {
+	if (Boolean(elem != null)) {
+		if (elem.className == "md-title") {
+			elem.onclick = clicktitle;
+			elem.onmouseover = overtitle;
+			elem.onmouseout = overtitle;
+		}
+	}
+}
+
+// Assign event handler functions to md-clickdef element
+function setupclickdef(elem) {
+	if (Boolean(elem != null)) {
+		if (elem.className == "md-link") {
+			elem.onclick = clickdef;
+			elem.onmouseover = overlink;
+			elem.onmouseout = overlink;
+		}
+	}
+}
+
+// Assign event handler functions to md-menuitem elements
+function setupmenu(elem) {
+	if (Boolean(elem != null)) {
+		for (var i = 0; i < elem.childNodes.length; i++) {
+			c = elem.childNodes[i];			
+			if (c.className == "md-menuitem") {
+				c.onclick = clickmenuitem;
+				c.onmouseover = overmenuitem;
+				c.onmouseout = overmenuitem;
+			}
+			if (c.className == "md-menuitemactive") {
+				c.onclick = clickmenuitem;
+				c.onmouseover = overmenuitem;
+				c.onmouseout = overmenuitem;
+			}
+		}
+	}
+}
+
+// Assign event handler functions to md-mastertitle, md-detailtitle, md-item, md-itemlist, and md-bgraphic elements
+function setupmaster(elem) {
+	if (Boolean(elem != null)) {
+			var c // child
+			var gc 	// grandchild
+			var ggc // great grandchild
+			var gggc // great great grandchild
+			var ggggc // great great great grandchild
+			var gggggc // great great great great grandchild
+		for (var i = 0; i < elem.childNodes.length; i++) {
+			c = elem.childNodes[i];			
+			for (var j = 0; j < c.childNodes.length; j++) {
+				gc = c.childNodes[j];
+				if (gc.className == "md-mastertitle") {
+					gc.onclick = clickmaster;
+					gc.onmouseover = overmaster;
+					gc.onmouseout = overmaster;
+					// begin name with + symbol to indicate clicking it can open/close content
+					// gc.innerHTML = "+ " + gc.innerHTML;
+				} 
+				for (var k = 0; k < gc.childNodes.length; k++) {
+					ggc = gc.childNodes[k];
+					if (ggc.className == "md-detailtitle") {
+						ggc.onclick = clickdetail;
+						ggc.onmouseover = overdetail;
+						ggc.onmouseout = overdetail;
+					}
+					if (ggc.className == "md-item") {
+						ggc.onclick = clickitem;
+						ggc.onmouseover = overitem;
+						ggc.onmouseout = overitem;
+					}
+					if (ggc.className == "md-itemlist") {
+						ggc.onclick = clickitemlist;
+						ggc.onmouseover = overitemlist;
+						ggc.onmouseout = overitemlist;
+					}
+					for (var l = 0; l < ggc.childNodes.length; l++) {
+						gggc = ggc.childNodes[l];
+						if (gggc.className == "md") {
+							for (var m = 0; m < gggc.childNodes.length; m++) {
+								ggggc = gggc.childNodes[m];						
+								if (ggggc.className == "md-bgraphic") {
+									ggggc.onclick = clickbgraphic;
+									ggggc.onmouseover = overbgraphic;
+									ggggc.onmouseout = overbgraphic;
+								}
+							}
+						}
+						if (gggc.className == "md-item") {
+							gggc.onclick = clickitem;
+							gggc.onmouseover = overitem;
+							gggc.onmouseout = overitem;
+						}
+						if (gggc.className == "md-itemlist") {
+							gggc.onclick = clickitemlist;
+							gggc.onmouseover = overitemlist;
+							gggc.onmouseout = overitemlist;
+						}
+						for (var n = 0; n < gggc.childNodes.length; n++) {
+							ggggc = gggc.childNodes[n];
+							if (ggggc.className == "md-item") {
+								ggggc.onclick = clickitem;
+								ggggc.onmouseover = overitem;
+								ggggc.onmouseout = overitem;
+							}
+							if (ggggc.className == "md-itemlist") {
+								ggggc.onclick = clickitemlist;
+								ggggc.onmouseover = overitemlist;
+								ggggc.onmouseout = overitemlist;
+							}
+							for (var o = 0; o < ggggc.childNodes.length; o++) {
+								gggggc = ggggc.childNodes[o];
+								if (gggggc.className == "md-item") {
+									gggggc.onclick = clickitem;
+									gggggc.onmouseover = overitem;
+									gggggc.onmouseout = overitem;
+								}
+								if (gggggc.className == "md-itemlist") {
+									gggggc.onclick = clickitemlist;
+									gggggc.onmouseover = overitemlist;
+									gggggc.onmouseout = overitemlist;
+								}
+							}					
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Assign event handler functions to taxonomy classification elements
+function setuptaxonomy(elem) {
+	while (Boolean(elem != null)) {
+		elem.onclick = clickitem;
+		elem.onmouseover = overitem;
+		elem.onmouseout = overitem;
+		elem.id="";
+		elem = document.getElementById("tax");
+	}
+}
+	
+/* Fix value - Parse text in <pre> element to respect line breaks introduced in ArcCatalog
+by the metadata author who intentionally introduced single line breaks to start new lines
+or even more than one consecutive line break to further separate text to form paragraphs.
+Note, fixvalue() calls the addtext() function, which adds text to DIV elements, which are
+sequentially added to a parent DIV element to form separate lines and paragraphs of text. */
+
+function fixvalue(elem) {
+	elem.id = "";
+	var n
+	var val = String("");
+	var pos = Number(0);
+	// Make a newline character to use for basis for splitting string into 
+	// an array of strings that are processed and turned into separate div
+	// elements with either new line or paragraphic-like style.
+	var newline = String.fromCharCode(10);
+	var par = elem.parentNode;
+	if (elem.innerText) {
+		// Position of first newline character in IE
+		n = elem;
+		val = n.innerText;
+		pos = val.indexOf(newline);
+	} else {
+		// Position of first newline character in NS, Firefox
+		n = elem.childNodes[0];
+		val = n.nodeValue;
+		pos = val.indexOf(newline);
+	}
+	if (pos > 0) {
+		// Text string contains at least one white space character
+		var sValue = new String ("");
+		// Split entire text string value on newline character
+		// in order to create an array of string values to process	
+		var aValues = val.split(newline);
+		var padBottom = Number(0);
+		var add = Boolean("false");
+		// Loop thru each potential new line or paragraph and append <DIV>
+		// element and set its className accordingly.				
+		for (var i = 0; i <= aValues.length - 1; i++) {
+			var div = document.createElement("DIV");
+			sValue = aValues[i];
+			add = false;
+			for (var j = 0; j < sValue.length; j++) {
+				if (sValue.charCodeAt(j) > 32) {
+					add = true;
+					// window.alert("CHARACTER AT " + sValue.charAt(j) + " CHARCODE " + sValue.charCodeAt(j))
+					break;
+				}
+			}
+			if (add) {
+				if (i == 0) {
+					// Must clone and append label property (e.g. <b>Abstract</b>) to first <DIV>
+					// element, and then remove it from parent if at first element in aValues array.
+					prev = elem.previousSibling;
+					if (Boolean(prev != null)) {
+						var label = prev.cloneNode(true)
+						div.appendChild(label);
+						par.removeChild(prev);
+					}
+				}
+				// Now test to see whether to set style.paddingBottom to 0 or 4 for newline or 
+				// paragraph, respectively.  Look ahead and if all characters in the next element 
+				// in the aValues array (the next DIV element to make) are not white space then set
+				// style.paddingBottom = 0. Otherwise, set style.paddingBottom = 4 to separate the 
+				// the current <DIV> from the next <DIV> element. 			
+				padBottom = Number(0);
+				if (i < aValues.length - 1) {
+					// Assume paragraph-like separation between DIV elements
+					padBottom = Number(4);
+					// Look for non-white space characters in content for next DIV
+					var nextValue = aValues[i+1];
+					for (var k = 0; k < nextValue.length; k++) {
+						if (nextValue.charCodeAt(k) > 32) {
+							// Found a non-white space character
+							padBottom = Number(0);
+							// window.alert("CHARACTER AT " + nextval.charAt(k) + " CHARCODE " + nextval.charCodeAt(k))
+							break;
+						}
+					}
+				}
+				// Pad element
+				div.style.paddingLeft = 0;
+				div.style.paddingRight = 0;
+				div.style.paddingTop = 0;
+				div.style.paddingBottom = padBottom;
+				// Scan text for URL strings before adding text to div element
+				addtext(div,sValue);
+				// Add new div element to parent div element
+				par.appendChild(div);
+			}
+		}
+		par.removeChild(elem);
+	} else {
+		// No white space charaters in text string so can be added directly to parent DIV element.
+		par.removeChild(elem);
+		// Scan text for URL strings before adding text to div element
+		addtext(par,val);
+	}		
+}
+
+/* Add text - This function adds text to (inside) DIV element, but before doing so 
+searches for strings in the text that resemble URLs and converts them to hypertext
+elements and adds them to the div element as well. Searches for strings that begin 
+with "://" or "www." and converts them to <a href> elements. Add text function is 
+called by fixvalue function */ 
+ 
+function addtext(elem,txt) {
+	// Scan entire text value and test for presense of URL strings, 
+	// convert URL strings to Hypertext Elements, convert text strings
+	// between URL strings to Text Nodes and append all Hypertext
+	// Elements and Text Nodes to DIV element.
+	var start = new Number (0);
+	var end = new Number (0);
+	var url = new String("");
+	var urlpattern = /(\w+):\/\/([\w.]+)((\S)*)|www\.([\w.]+)((\S)*)/g;
+	var punctuation = /[\.\,\;\:\?\!\[\]\(\)\{\}\'\"]/;
+	var result
+	var elemText
+	while((result = urlpattern.exec(txt)) != null) {
+		var fullurl = result[0];
+		var protocol = result[1];
+		url = fullurl;
+		end = result.index;
+		if (start < end){
+			// Append Text Node to parent
+			elemText = document.createTextNode(txt.substring(start, end));
+			elem.appendChild(elemText);
+		}
+		var lastchar = fullurl.charAt(fullurl.length - 1);
+		// Remove last character from url if character is punctuation mark, bracket or parenthesis;
+		if (lastchar.match(punctuation) != null) {
+			// Remove next-to-last character from url if character is punctuation mark, bracket or parenthesis. For example the ")" in "),"
+			var nexttolastchar = fullurl.charAt(fullurl.length - 2);
+			if (nexttolastchar.match(punctuation) != null) {
+				url = fullurl.substring(0,fullurl.length - 2);		
+			} else {		
+				url = fullurl.substring(0,fullurl.length - 1);
+			}		
+		}
+		start = (result.index + url.length)
+		// Test to concatinate 'http://' to url if not already begininng with 'http://', 'https://' or 'ftp://'"
+		if (protocol == "") {
+			url = "http://" + url;
+		}
+		// Append Hypertext (anchor) Element to parent
+		elemText = document.createTextNode(url);
+		var elemAnchor = document.createElement("A");
+		elemAnchor.setAttribute("href", url);
+		elemAnchor.setAttribute("target", "viewer");
+		elemAnchor.appendChild(elemText);
+		elem.appendChild(elemAnchor);				
+	}
+	end = txt.length;
+	if (start < end) {
+		// Append Text Node that follows last Hypertext Element
+		elemText = document.createTextNode(txt.substring(start, end));
+		elem.appendChild(elemText);
+	}
+}
+
+// "md-title" onmouseover and onmouseout function
+function overtitle(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-title") {
+				elem.className = "md-titleover";
+			} else if (elem.className == "md-titleover") {
+				elem.className = "md-title";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-link" onmouseover and onmouseout function
+function overlink(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-link") {
+				elem.className = "md-over";
+			} else if (elem.className == "md-over") {
+				elem.className = "md-link";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-menuitem" onmouseover and onmouseout function
+function overmenuitem(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-menuitem") {
+				elem.className = "md-menuitemover";
+			} else if (elem.className == "md-menuitemover") {
+				elem.className = "md-menuitem";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-mastertitle" onmouseover and onmouseout function
+function overmaster(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-mastertitle") {
+				elem.className = "md-mastertitleover";
+			} else if (elem.className == "md-mastertitleover") {
+				elem.className = "md-mastertitle";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-detailtitle" onmouseover and onmouseout function
+function overdetail(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-detailtitle") {
+				elem.className = "md-detailtitleover";
+			} else if (elem.className == "md-detailtitleover") {
+				elem.className = "md-detailtitle";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-itemlist" onmouseover and onmouseout function
+function overitemlist(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-itemlist") {
+				elem.className = "md-itemlistover";
+			} else if (elem.className == "md-itemlistover") {
+				elem.className = "md-itemlist";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-item" onmouseover and onmouseout function
+function overitem(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-item") {
+				elem.className = "md-itemover";
+			} else if (elem.className == "md-itemover") {
+				elem.className = "md-item";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-bgraphic" onmouseover and onmouseout function
+function overbgraphic(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			if (elem.className == "md-bgraphic") {
+				elem.className = "md-bgraphicover";
+			} else if (elem.className == "md-bgraphicover") {
+				elem.className = "md-bgraphic";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-menuitem" onclick function. Tabs to different metadata sections.
+function clickmenuitem(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element
+			// Show other menu tabs
+			var siblingNodes = elem.parentNode.childNodes
+			for (var i = 0; i < siblingNodes.length; i++) {
+				if (siblingNodes[i] != elem) {
+					siblingNodes[i].className = "md-menuitem"
+				} 
+			}
+			// Show active menu tab
+			elem.className = "md-menuitemactive"				
+			// Show active menu metadata.
+			var elemMaster = document.getElementById("md-"+elem.id)
+			elemMaster.style.display = "block";
+			// Hide all other metadata sections
+			var listMasterNodeIds = ["md-description","md-graphic","md-spatial","md-structure","md-quality","md-source","md-distribution","md-metadata"]; 
+			for (var i = 0; i < listMasterNodeIds.length; i++) {
+				if (listMasterNodeIds[i] != elemMaster.id) {
+					otherNode = document.getElementById(listMasterNodeIds[i]);
+					if (Boolean(otherNode != null)) {
+						otherNode.style.display = "none";
+					}
+				}
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-clickdef" onclick function. Opens and closes metadata definitions, which "md-def" class div elements
+function clickdef (evt) {
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var e
+			var aElem
+			var text 
+			var elemDefinition
+			var styleDisplay
+			elemDefinition = document.getElementById("md-clickdef");
+			text = "Show Definitions";
+			styleDisplay = "none";
+			if (elemDefinition.innerHTML == "Show Definitions") {
+				text = "Hide Definitions";
+				styleDisplay = "block";
+			}
+			// hide or show metadata definition elements
+			aElem = document.getElementsByName("md-def")
+			for (var i = 0; i < aElem.length; i++) {
+				e = aElem[i]				
+				e.style.display = styleDisplay;
+			}
+			elem.innerHTML = text;
+		}
+	}
+}
+
+/* "md-title" onclick function. Always opens md-detailshow and either opens or closes md-detailhide,
+and md-itemhide elements, depending on value of title elements toggledisplay value. Toggledisplay
+value is either "block" to "none" and toggles everytime this function runs. */
+function clicktitle(evt) {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var p = elem.parentNode; // parent
+			var c 	// parent's child
+			var gc 	// parent's grandchild
+			var ggc // parent's great grandchild
+			var gggc // parent's great great grandchild
+			var ggggc // parent's great great great grandchild
+			var gggggc // parent's great great great great grandchild
+			var ggggggc // parent's great great great great great grandchild
+			// Create toggledisplay attribute when title element is first clicked and set value to "block"
+			// in order to open content.
+			if (!elem.getAttributeNode("toggledisplay")) {
+			 	elem.setAttribute("toggledisplay","block");
+			}
+			// Loop through child nodes, find those that open and close (md-detail and md-itemhide) 
+			// and set their style.display to that of elem.getAttributeNode("toggledisplay").value
+			for (var i = 0; i < p.childNodes.length; i++) {
+				// Show (open) all metadata sections
+				c = p.childNodes[i];
+				c.style.display = "block";
+				for (var j = 0; j < c.childNodes.length; j++) {
+					gc = c.childNodes[j];
+					for (var k = 0; k < gc.childNodes.length; k++) {
+						ggc = gc.childNodes[k];						
+						if (ggc.className == "md-mastertitle") {
+							// add + or - to master title text
+							if (elem.getAttributeNode("toggledisplay").value == "block") {
+								ggc.innerHTML = "-" + ggc.innerHTML.substring(1,ggc.innerHTML.length);
+							} else {
+								ggc.innerHTML = "+" + ggc.innerHTML.substring(1,ggc.innerHTML.length);
+							}
+						}
+						if (ggc.className == "md-detailhide") {
+							// hide or show md-detailhide element
+							ggc.style.display = elem.getAttributeNode("toggledisplay").value;
+						} else if (ggc.className == "md-detailshow") {
+							// make sure md-detailshow is always shown because user could have previously closed it
+							ggc.style.display = "block"
+						} else if (ggc.className == "md-detailhelp") {
+							// make sure md-detailhelp is always not shown
+							ggc.style.display = "none"
+						}
+						for (var l = 0; l < ggc.childNodes.length; l++) {
+							gggc = ggc.childNodes[l];
+							if (gggc.className == "md-itemhide") {
+								// hide or show md-itemhide element
+								gggc.style.display = elem.getAttributeNode("toggledisplay").value;
+							} else if (gggc.className == "md-itemshow") {
+								// show md-itemshow element
+								gggc.style.display = "block"
+							}					
+							for (var m = 0; m < gggc.childNodes.length; m++) {
+								ggggc = gggc.childNodes[m];
+								if (ggggc.className == "md-itemhide") {
+									// hide or show md-itemhide element
+									ggggc.style.display = elem.getAttributeNode("toggledisplay").value;
+								} else if (ggggc.className == "md-itemshow") {
+									// show md-itemshow element
+									ggggc.style.display = "block"
+								}								
+								for (var n = 0; n < ggggc.childNodes.length; n++) {
+									gggggc = ggggc.childNodes[n];
+									if (gggggc.className == "md-itemhide") {
+										// hide or show md-itemhide element
+										gggggc.style.display = elem.getAttributeNode("toggledisplay").value;
+									} else if (gggggc.className == "md-itemshow") {
+										// show md-itemshow element
+										gggggc.style.display = "block"
+									}			
+									for (var o = 0; o < gggggc.childNodes.length; o++) {
+										ggggggc = gggggc.childNodes[o];
+										if (ggggggc.className == "md-itemhide") {
+											// hide or show md-itemhide element
+											ggggggc.style.display = elem.getAttributeNode("toggledisplay").value;
+										} else if (ggggggc.className == "md-itemshow") {
+											// show md-itemshow element
+											ggggggc.style.display = "block"
+										}			
+									}												
+								}													
+							}							
+						}				
+					}
+				}
+			}
+			if (elem.getAttributeNode("toggledisplay").value == "block") {
+				elem.setAttribute("toggledisplay","none");
+			} else {
+				elem.setAttribute("toggledisplay","block");
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+		// Show all menus tabs active, indicating to user that all metadata sections are open.		
+		var elemMenu = document.getElementById("md-menu");
+		var elemMenuItem		
+		if (Boolean(elemMenu != null)) {
+			for (var i = 0; i < elemMenu.childNodes.length; i++) {
+				elemMenuItem = elemMenu.childNodes[i];			
+				if (elemMenuItem.className == "md-menuitem") {
+					elemMenuItem.className = "md-menuitemactive"
+				}
+			}
+		}
+	}
+}
+
+/* "md-mastertitle" onclick function. Always opens md-detailshow and either opens or closes md-detailhide,
+and md-itemhide elements, depending on whether they are currently all opened or closed. */
+function clickmaster(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var p = elem.parentNode.nextSibling;
+			var c 	// parent's child
+			var gc 	// parent's grandchild
+			var ggc // parent's great grandchild
+			var gggc // parent's great great grandchild
+			var ggggc // parent's great great great grandchild
+			// Are all md-detail children (md-detailhide and md-detailshow) currently open or closed?
+			var allClosed = Boolean("true");
+			var allOpened = Boolean("true");
+			allOpened = allchildrenopenedexcept(p,"md-detail")
+			allClosed = allchildrenclosedexcept(p,"md-detail")
+			allOpened = allchildrenopenedexcept(p,"md-detailhelp")
+			allClosed = allchildrenclosedexcept(p,"md-detailhelp")
+			// Are all grand children (md-itemhide) opened?
+			if (allOpened) {
+				allOpened = allgrandchildrenopened(p)
+			}
+			// window.alert(allOpened)
+			// window.alert(allClosed)
+			// Set new display variable. If one or more element but 
+			// not all are open, open all elements. Otherwise, close
+			// all elements if all of them are open. Also add + or -
+			// to master title text.
+			var newdisplay = "block";
+			if ((allOpened) & (!allClosed)) {
+				newdisplay = "none";
+				elem.innerHTML = "+" + elem.innerHTML.substring(1,elem.innerHTML.length);
+			} else {
+				elem.innerHTML = "-" + elem.innerHTML.substring(1,elem.innerHTML.length);
+			}
+			// Loop through child nodes, find md-detailhide and md-itemhide elements
+			// and set their style.display to value of newdisplay variable. The newdisplay
+			// variable has a value of either "block" or "none". This value is based on the
+			// current display condition of all md-detailhide and md-detailshow elements. If they
+			// are currently all opened, then newdisplay is set to "none" so that they will all close.
+			// If they are all closed, then the newdisplay value is "block" so that they all will
+			// open. If some are opened and closed, the assumption is the user wants to open
+			// all elements so the newdisplay value is "block". Once all opened, if user intended to
+			// close them, they will close when the user natually clicks element again.			
+			for (var i = 0; i < p.childNodes.length; i++) {
+				c = p.childNodes[i];
+				if (c.className == "md-detailhide") {
+					// hide or show md-detailhide element
+					c.style.display = newdisplay;
+				} else if (c.className == "md-detailshow") {
+					// make sure md-detailshow is always shown because user could have previously closed it
+					c.style.display = "block";
+				} else if (c.className == "md-detailhelp") {
+					// make sure md-detailhelp is always not shown
+					c.style.display = "none";
+				}
+				for (var j = 0; j < c.childNodes.length; j++) {
+					gc = c.childNodes[j];
+					if (gc.className == "md-itemhide") {
+						// hide or show md-itemhide element
+						gc.style.display = newdisplay;
+					} else if (gc.className == "md-itemshow") {
+						// show md-itemshow element
+						gc.style.display = "block"	
+					}				
+					for (var k = 0; k < gc.childNodes.length; k++) {
+						ggc = gc.childNodes[k];
+			 			if (ggc.className == "md-itemhide") {
+							// hide or show md-itemhide element
+			 				ggc.style.display = newdisplay;
+						} else if (ggc.className == "md-itemshow") {
+							// show md-itemshow element
+							ggc.style.display = "block"	
+						}							
+						for (var l = 0; l < ggc.childNodes.length; l++) {
+							gggc = ggc.childNodes[l];
+							if (gggc.className == "md-itemhide") {
+								// hide or show md-itemhide element
+								gggc.style.display = newdisplay;
+							} else if (gggc.className == "md-itemshow") {
+								// show md-itemshow element
+								gggc.style.display = "block"	
+							}				
+							for (var m = 0; m < gggc.childNodes.length; m++) {
+								ggggc = gggc.childNodes[m];
+								if (ggggc.className == "md-itemhide") {
+									// hide or show md-itemhide element
+									ggggc.style.display = newdisplay;
+								} else if (ggggc.className == "md-itemshow") {
+									// show md-itemshow element
+									ggggc.style.display = "block"	
+								}				
+							}												
+						}													
+					}							
+				}				
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+			
+// "md-detailtitle" onclick function. Opens and closes md-detailhide and md-detailshow elements.
+function clickdetail(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var p = elem.parentNode.nextSibling; // parent's next sibling element
+			if (getcomputeddisplay(p) == "none") {
+				p.style.display = "block";
+			} else {
+				p.style.display = "none";
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-detailitemlist" onclick function. Opens and closes all children and all grand children md-itemhide and md-itemshow elements.
+function clickitemlist(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var elemNext = elem.nextSibling; // next sibling element
+			// Next sibling is normally md-itemshow class, but if md-itemhide
+			// class then hide or show it.
+			if (elemNext.className == "md-itemhide") {
+				if (getcomputeddisplay(elemNext) == "none") {
+					elemNext.style.display = "block";
+				} else {
+					elemNext.style.display = "none";
+				}
+			}
+			// Are all grand children open or are all children closed?
+			var allClosed = Boolean("true");
+			var allOpened = Boolean("true");
+			allOpened = allchildrenopenedexcept(elemNext,"md-item")
+			allClosed = allchildrenclosedexcept(elemNext,"md-item")
+			var newdisplay = "block";
+			if ((allOpened) & (!allClosed)) {
+				newdisplay = "none";
+			}
+			// if they're all opened, close them. Otherwise, open all of them.
+			for (var i = 0; i < elemNext.childNodes.length; i++) {
+				c = elemNext.childNodes[i];
+				if (c.className == "md-itemhide") {
+					// hide or show md-itemhide
+					c.style.display = newdisplay;
+				} else if (c.className == "md-itemshow") {
+					// make sure md-itemshow is always shown
+					c.style.display = "block";
+				}
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-detailitem" onclick function. Opens and closes nextsibling md-itemhide or md-itemshow element.
+function clickitem(evt)  {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var elemNext = elem.nextSibling; // next sibling element
+			if ((elemNext.className == "md-itemhide") || ( elemNext.className == "md-itemshow")) {
+				if (getcomputeddisplay(elemNext) == "none") {
+					elemNext.style.display = "block";
+				} else {
+					elemNext.style.display = "none";
+				}
+			}
+		}
+		// Prevent event from bubbling past this event handler.
+		evt.cancelBubble = true;
+	}
+}
+
+// "md-bgraphic" onclick function. Opens and closes browsegraphic images (jpg, jpeg, gif, png, bmp).
+function clickbgraphic(evt) {
+	// Get reference to W3C or IE event object
+	evt = (evt) ? evt : ((window.event) ? event : null);
+	if (evt) {
+		// Get reference to element from which event object was created. W3C calls this element target. IE calls it srcElement.
+		var elem = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+		if (elem.nodeType == 3) {
+			// If W3C and element is text node (nodeType = 3), then get reference to container (parent) to equalize with IE event model.
+			elem = elem.parentNode;
+		}
+		if (elem) {
+			// Work with element.
+			var p = elem.parentNode.nextSibling;  // parent's next sibling element
+			if (getcomputeddisplay(p) == "none") {
+				var elemImage = p.childNodes[0];
+				var srcImage = elem.getAttributeNode("browsen").value;
+				p.style.display = "block";
+				elemImage.setAttribute("src",srcImage);
+				elemImage.setAttribute("alt","Image - " + srcImage);
+			} else {
+				p.style.display = "none";
+			}
+		}
+	}
+}
+
+// Returns boolean indicating whether all child elements other than a particular class are opened
+function allchildrenopenedexcept(elem,cname) {
+	var opened = Boolean("true");
+	for (var i = 0; i < elem.childNodes.length; i++) {
+		c = elem.childNodes[i];
+		if (c.className != cname) {
+			if (getcomputeddisplay(c) == "none") {
+				opened = false;
+				break;
+			}
+		}
+	}
+	return opened;
+}
+
+// Returns boolean indicating whether all child elements other than a particular class are closed
+function allchildrenclosedexcept(elem,cname) {
+	var closed = Boolean("true");
+	for (var i = 0; i < elem.childNodes.length; i++) {
+		c = elem.childNodes[i];
+		if (c.className != cname) {
+			if (getcomputeddisplay(c) == "block") {
+				closed = false;
+				break;
+			}
+		}
+	}
+	return closed;
+}
+
+// Returns boolean indicating whether all grand child 
+// and grand child's next sibling child elements are opened
+function allgrandchildrenopened(elem) {
+	var opened = Boolean("true");
+	for (var i = 0; i < elem.childNodes.length; i++) {
+		c = elem.childNodes[i];
+		for (var j = 0; j < c.childNodes.length; j++) {
+			gc = c.childNodes[j];
+			if (gc.className == "md-itemhide") {
+				if (getcomputeddisplay(gc) == "none") {
+					opened = false;
+					break;
+				}
+			} else if (gc.className == "md-itemlist") {
+				gcns = gc.nextSibling
+				for (var k = 0; k < gcns.childNodes.length; k++) {
+					gcnsc = gcns.childNodes[k];
+					if (gcnsc.className == "md-itemhide") {
+						if (getcomputeddisplay(gcnsc) == "none") {
+							opened = false;
+							break;
+						}
+					}
+				}
+			}
+		}
+		if (!opened) {
+			break;
+		}
+	}
+	return opened;
+}
+
+// Returns element style.display property as a text string. Returns "none" or "block".
+function getcomputeddisplay(elem) {
+	var dis
+	if (window.getComputedStyle) {
+		// W3C		
+		dis = window.getComputedStyle(elem, null).display;
+	} else if (elem.currentStyle) {
+		// IE
+		dis = elem.currentStyle.display;
+	}
+	return dis;
+}
+
+</script></head><body id="md-body"><div style="text-align:right; width:100%"><a href="http://www.cteco.uconn.edu/metadata/dep/document/dam_FGDC_Classic.htm">FGDC Classic | 
+						</a><a href="http://www.cteco.uconn.edu/metadata/dep/document/dam_FGDC_FAQ.htm">FGDC FAQ</a> | 
+						FGDC Plus |  
+						<a href="http://www.cteco.uconn.edu/metadata/dep/document/dam.xml">XML</a></div><hr><div id="md-title" class="md-title" title="Open/close all metadata tabs">Connecticut Dams</div><div class="md-subtitle">SDE Feature Class
+				- depgis.DEP.DAM</div><div class="md-subtitle">FGDC, ESRI Metadata</div><div id="md-clickdef" class="md-link">Show Definitions</div><div id="md-menu"><span id="description" class="md-menuitemactive">Description</span><span id="graphic" class="md-menuitemactive">Graphic</span><span id="spatial" class="md-menuitemactive">Spatial</span><span id="structure" class="md-menuitemactive">Data Structure</span><span id="quality" class="md-menuitemactive">Data Quality</span><span id="source" class="md-menuitemactive">Data Source</span><span id="distribution" class="md-menuitemactive">Data Distribution</span><span id="metadata" class="md-menuitemactive">Metadata</span></div><div id="md-description" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Resource Description</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Citation</div></div><div class="md-detailshow"><div id="md-def" name="md-def" class="md-def">Information used to reference the data.</div><div class="md"><b>Title: </b>Connecticut Dams</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection (data compiler, editor and publisher)</div><div class="md"><b>Publisher: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication place: </b>Hartford, Connecticut, USA</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"><b>Data location: </b><a target="viewer" href="http://www.ct.gov/deep">http://www.ct.gov/deep</a></div><div class="md"><b>Other citation details: </b>The State of Connecticut, Department of Environmental Protection is the collector of the data (compiler), the creator and maintainer of the data layer (editor), and producer (publisher) of this information for use. Data compiled at 1:24,000 scale. </div></div><div class="md-detail"><div class="md-detailtitle">Description</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">A characterization of the data, including its intended use and limitations.</div><div class="md"><div style="padding: 0px 0px 4px;"><b>Abstract: </b>Connecticut Dams is a 1:24,000-scale, point feature-based layer that displays the locations of dams in Connecticut that are owned and operated by individuals, businesses, corporations, water and electric utilities, local, state, and federal governments. Each dam is assigned a unique dam number. This information was compiled in 1996 and is based on dam safety information from the Inland Water Resources Division, Connecticut Department of Environmental Protection. The dams were mapped on 7½ Minute U.S. Geological Survey topographic quadrangle maps and digitized at 1:24,000 scale.</div><div style="padding: 0px;">Attributes include dam number and name, dam hazard classification, ownership type, town name and number, and major, regional and subregional basin numbers.  This layer does not include all dams in Connecticut and has not been updated since its creation in 1996.   </div></div><div class="md"><b>Purpose: </b>Connecticut Dams is a 1:24,000 scale spatial data developed for use by the Dam Safety Section of the Inland Water Resources Division, Bureau of Water Protection and Land Reuse, Department of Environmental Protection, State of Connecticut. The Dam Safety Section of the Inland Water Resources Division is charged with the responsibility for administration and enforcement of Connecticut's dam safety laws. The existing statutes require that permits be obtained to construct, repair or alter dams, dikes or similar structures and that existing dams, dikes and similar structures be registered and periodically inspected to assure that their continued operation and use does not constitute a hazard to life, health or property. The dam safety statutes are codified in Section 22a-401 through 22a-411 inclusive of the Connecticut General Statutes. Sections 22a-409-1 and 22a-409-2 of the Regulations of Connecticut State Agencies, have been enacted which govern the registration, classification, and inspection of dams. The Connecticut Dams data depict the locations of dams throughout the state of Connecticut. The information may be dated in some instances and is best used in conjunction with other 1:24,000 scale data such as hydrography, drainage basins, and political boundaries. Attribute information includes a unique dam number and dam hazard classification that rates the potential hazard to life and property as defined by Connecticut State Statute (Section 22a-409-1d), in the event of a dam breach. This information is not intended to be used or printed at map scales greater or more detailed than 1:24,000 scale (1 in. = 2,000 ft.).</div><div class="md"><b>Supplemental information: </b>For additional information, refer to the Dam Safety Program at the Connecticut Department of Environmental Protection found on website  <a href="http://www.ct.gov/dep/dams" target="viewer">http://www.ct.gov/dep/dams</a>. </div><div class="md"><b>Dataset credit: </b>James Bogar from the Natural Resources Center, DEP originally mapped dam locations at 1:24,000 scale by compiling information primarily available from the Dam Safety program, Inland Water Resources Division, Bureau of Water Protection and Land Reuse, DEP. Tom Nosal and Ann Kuzyk, also from DEP, digitized the maps compiled by James Bogar to create the first statewide digital spatial dataset of Connecticut dams.</div><div class="md"><b>Language of dataset: </b>en</div></div><div class="md-detail"><div class="md-detailtitle">Point Of Contact</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Contact information for the individual or organization that is knowledgeable about the data.</div><div class="md"><b>Organization: </b>Inland Water Resources Division, Bureau of Water Protecftion and Land Reuse, Department of Environmental Protection, State of Connecticut</div><div class="md"><b>Phone: </b>860-424-3706</div><div class="md"><b>Email: </b>dep.gisdata@ct.gov</div><div class="md"><b>Hours of service: </b>Monday to Friday, 08:30 to 16:30 Eastern Standard Time</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106-5127</div><div class="md"><b>Country: </b>USA</div></div></div><div class="md-detail"><div class="md-detailtitle">Data Type</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">How the data are represented, formatted and maintained by the data producing organization.</div><div class="md"><b>File or table name: </b>depgis.DEP.DAM</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"><b>Data format: </b>SDE Feature Class</div><div class="md"><b>Native dataset environment: </b>These data are maintained by the State of Connecticut using ArcGIS software developed by Environmental Systems Research Institute (ESRI) in a Microsoft Windows operating system environment.
+</div></div><div class="md-detail"><div class="md-detailtitle">Time Period of Data</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Time period(s) for which the data corresponds to the currentness reference.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-detail"><div class="md-detailtitle">Status</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">The state of and maintenance information for the data.</div><div class="md"><b>Data status: </b>Complete (compiled in 1996)</div><div class="md"><b>Update frequency: </b>None planned (and may be out date, depending on dam)</div></div><div class="md-detail"><div class="md-detailtitle">Key Words</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Words or phrases that summarize certain aspects of the data.</div><div class="md"><b>Theme:</b></div><div class="md-indent"><div class="md"><b>Keywords: </b>environment, inlandWaters, utilitiesCommunication</div><div class="md"><b>Keyword thesaurus: </b>ISO 19115 Topic Category</div></div><div class="md"><b>Theme:</b></div><div class="md-indent"><div class="md"><b>Keywords: </b>dam, impoundment</div><div class="md"><b>Keyword thesaurus: </b>None</div></div><div class="md"><b>Place:</b></div><div class="md-indent"><div class="md"><b>Keywords: </b>Connecticut, CT</div><div class="md"><b>Keyword thesaurus: </b>U.S. Department of Commerce, 1987, Codes for the Identification of the States, the District of Columbia and the Outlying Areas of The United States, and Associated Areas (Federal Information Processing Standard 5-2):  Washington, DC, National Institute of Standards and Technology.</div></div><div class="md"><b>Place:</b></div><div class="md-indent"><div class="md"><b>Keywords: </b>United States of America, USA</div><div class="md"><b>Keyword thesaurus: </b>U.S. Department of Commerce, 1995, Countries, Dependencies, Areas of Special Sovereignty, and Their Principal Administrative Divisions (Federal Information Processing Standard (FIPS) 10-4): Washington, D.C., National Institute of Standards and Technology.</div></div></div><div class="md-detail"><div class="md-detailtitle">Data Access Constraints</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Restrictions and legal prerequisites for accessing or using the data after access is granted.</div><div class="md"><b>Access constraints: </b>None. The data is in the public domain and may be redistributed.</div><div class="md"><b>Use constraints: </b>No restrictions or legal prerequisites for using the data. The data is suitable for use at appropriate scale, and is not intended for maps printed at scales greater or more detailed than 1:24,000 scale (1 inch = 2,000 feet).  Although this data set  has been used by the State of Connecticut, Department of Environmental Protection, no warranty, expressed or implied, is made by the State of Connecticut, Department of Environmental Protection as to the accuracy of the data and or related materials. The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the State of Connecticut, Department of Environmental Protection in the use of these data or related materials. The user assumes the entire risk related to the use of these data. Once the data is distributed to the user, modifications made to the data by the user should be noted in the metadata. When printing this data on a map or using it in a software application, analysis, or report, please acknowledge the State of Connecticut, Department of Environmental Protection as the source for this information. For example, include the following data source description when printing this layer on a map: Dams - From the Connecticut Dams layer, compiled and published by CT DEP. Source map scale is 1:24,000.</div></div></div></div><div id="md-graphic" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Graphic Example</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Browse Graphic</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Graphic illustration of the data.</div><div class="md"><b>Browse graphic 1</b></div><div class="md-indent"><div class="md"><span class="md-bgraphic" browsen="http://www.cteco.uconn.edu/metadata/dep/browsegraphic/damfullview.gif">Open</span> - Full view of dams in Connecticut.</div><div class="md-detailhide"><img class="md-bgraphicimg" src="./ct_dam_metadata_files/nothing" alt="Graphic Image"></div></div><hr><div class="md"><b>Browse graphic 2</b></div><div class="md-indent"><div class="md"><span class="md-bgraphic" browsen="http://www.cteco.uconn.edu/metadata/dep/browsegraphic/damdetailview.gif">Open</span> - Detail view of dams in Connecticut.</div><div class="md-detailhide"><img class="md-bgraphicimg" src="./ct_dam_metadata_files/nothing" alt="Graphic Image"></div></div><hr><div class="md"><b>Browse graphic 3</b></div><div class="md-indent"><div class="md"><span class="md-bgraphic" browsen="http://www.cteco.uconn.edu/metadata/dep/browsegraphic/damclassifiedfullview.gif">Open</span> - Full view of Dams, Classified according to hazard level.</div><div class="md-detailhide"><img class="md-bgraphicimg" src="./ct_dam_metadata_files/nothing" alt="Graphic Image"></div></div><hr><div class="md"><b>Browse graphic 4</b></div><div class="md-indent"><div class="md"><span class="md-bgraphic" browsen="http://www.cteco.uconn.edu/metadata/dep/browsegraphic/damclassifieddetailview.gif">Open</span> - Detail view of Dams, Classified according to hazard level.</div><div class="md-detailhide"><img class="md-bgraphicimg" src="./ct_dam_metadata_files/nothing" alt="Graphic Image"></div></div></div></div></div><div id="md-spatial" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Spatial Reference Information</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Horizontal Coordinate System</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Reference system from which linear or angular quantities are measured and assigned to the position that a point occupies.</div><div class="md"><b>Projected coordinate system:</b></div><div class="md-indent"><div class="md"><b>Name: </b>NAD 1983 StatePlane Connecticut FIPS 0600 Feet</div><div class="md"><b>Map units: </b>survey feet</div></div><div class="md"><b>Geographic coordinate system:</b></div><div class="md-indent"><div class="md"><b>Name: </b>GCS North American 1983</div></div><div class="md-itemlist">Coordinate System Details</div><div class="md-itemshow"><div class="md-item">Map projection</div><div class="md-itemhide"><div class="md"><b>Map projection name: </b>Lambert Conformal Conic</div><div class="md-indent"><b>Standard parallel: </b>41.200000</div><div class="md-indent"><b>Standard parallel: </b>41.866667</div><div class="md-indent"><b>Longitude of central meridian: </b>-72.750000</div><div class="md-indent"><b>Latitude of projection origin: </b>40.833333</div><div class="md-indent"><b>False easting: </b>999999.999996</div><div class="md-indent"><b>False northing: </b>499999.999998</div></div><div class="md-item">Planar Coordinate Information</div><div class="md-itemhide"><div class="md"><b>Planar coordinate encoding method: </b>coordinate pair</div><div class="md"><b>Coordinate representation:</b></div><div class="md-indent"><div class="md"><b>Abscissa resolution: </b>0.000250</div><div class="md"><b>Ordinate resolution: </b>0.000250</div></div><div class="md"><b>Planar distance units: </b>survey feet</div></div></div><div class="md-item">Geodetic model</div><div class="md-itemhide"><div class="md"><b>Horizontal datum name: </b>North American Datum of 1983</div><div class="md"><b>Ellipsoid name: </b>Geodetic Reference System 80</div><div class="md"><b>Semi-major axis: </b>6378137.000000</div><div class="md"><b>Denominator of flattening ratio: </b>298.257222</div></div></div><div class="md-detail"><div class="md-detailtitle">Vertical Coordinate System</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Reference system from which vertical distances (altitudes or depths) are measured.</div><div class="md"><b>Altitude system definition:</b></div><div class="md-indent"><div class="md"><b>Altitude resolution: </b>1.000000</div><div class="md"><b>Altitude encoding method: </b>Explicit elevation coordinate included with horizontal coordinates</div></div></div><div class="md-detail"><div class="md-detailtitle">Spatial Domain</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">The geographic areal domain of the data that describes the western, eastern, northern, and southern geographic limits of data coverage.</div><div class="md-itemlist">Bounding Coordinates</div><div class="md-itemshow"><div class="md-item">In Projected or local coordinates</div><div class="md-itemhide"><div class="md">NAD 1983 StatePlane Connecticut FIPS 0600 Feet</div><table class="md-grid"><tbody><tr><th>Boundary</th><th>Coordinate</th></tr><tr><td>Left</td><td>732153.000000 (survey feet)</td></tr><tr><td>Right</td><td>1261873.250000 (survey feet)</td></tr><tr><td>Top</td><td>942026.500000 (survey feet)</td></tr><tr><td>Bottom</td><td>570025.938000 (survey feet)</td></tr></tbody></table></div><div class="md-item">In Unprojected coordinates (geographic)</div><div class="md-itemhide"><div class="md">GCS North American 1983</div><table class="md-grid"><tbody><tr><th>Boundary</th><th>Coordinate</th></tr><tr><td>West</td><td>-73.736037 (longitude)</td></tr><tr><td>East</td><td>-71.785953 (longitude)</td></tr><tr><td>North</td><td>42.046431 (latitude)</td></tr><tr><td>South</td><td>41.021394 (latitude)</td></tr></tbody></table></div></div></div></div></div><div id="md-structure" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Data Structure and Attribute Information</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Overview</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Summary of the information content of the data, including other references to complete descriptions of entity types, attributes, and attribute values for the data.</div><div class="md"><b>Entity and attribute overview: </b>Includes Dam features such as dam number and name, hazard classification, type of ownership, town name, town number, USGS topo quadrangle number, and major, regional and subregional basin numbers.  Use the DAM_NO to uniquely identify features. Use the dam hazard (DAM_HAZ) attribute to symbolize features by potential hazard on a map.  Use the OWNER attribute to symbolize features by type of ownership (private, public, state, etc.)</div><div class="md"><b>Direct spatial reference method: </b>Vector</div><div class="md"><b>Indirect spatial reference method: </b>State of Connecticut, United States of America</div></div><div class="md-detail"><div class="md-detailtitle">			
+								Attributes of Connecticut Dams</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Detailed descriptions of entity type, attributes, and attribute values for the data.</div><div class="md"><b>Name: </b>depgis.DEP.DAM</div><div class="md"><b>Type of object: </b>Feature Class</div><div class="md"><b>Geometry type: </b>Point</div><div class="md"><b>Number of records: </b>3646</div><div class="md"><b>Description: </b>Dam locations represented as point features.</div><div class="md"><b>Source: </b>State of Connecticut, Department of Environmental Protection</div><div class="md-itemlist">Attributes</div><div class="md-itemshow"><div class="md-item">OBJECTID</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Internal feature number.</div><div class="md"><b>Alias: </b>OBJECTID <b>Type: </b>OID <b>Width: </b>4 <b>Precision: </b>10 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Sequential unique whole numbers that are automatically generated.</div><div class="md"><b>Attribute definition source: </b>ESRI</div></div><div class="md-item">SYMBOL</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Symbolset Code - A field used by ArcInfo Workstion software to symbolize the dams.This field is obsolete and should be eventually be removed from the attribute table in the event the Dam database model is revised in the future.</div><div class="md"><b>Alias: </b>SYMBOL <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md-item">Attribute domain values</div><div class="md-itemshow"><table class="md-grid"><tbody><tr><th>Value</th><th>Definition</th></tr><tr><td>&gt;0</td><td>Numbers</td></tr></tbody></table></div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">DAM_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Unique identification number of feature.</div><div class="md"><b>Alias: </b>DAM_NO <b>Type: </b>Integer <b>Width: </b>4 <b>Precision: </b>10 <b>Scale: </b>0</div><div class="md-item">Attribute domain values</div><div class="md-itemshow"><table class="md-grid"><tbody><tr><th>Value</th><th>Definition</th></tr><tr><td>&gt;0</td><td>Number</td></tr></tbody></table></div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">DAM_HAZ</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Hazard Classification of dam.</div><div class="md"><b>Alias: </b>DAM_HAZ <b>Type: </b>String <b>Width: </b>2 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md-item">Attribute domain values</div><div class="md-itemshow"><table class="md-grid"><tbody><tr><th>Value</th><th>Definition</th></tr><tr><td rowspan="2">AA</td><td>Negligible hazard potential</td></tr><tr><td class="md-italic">Definition Source: State of Connecticut, Department of Environmental Protection</td></tr><tr><td rowspan="2">A</td><td>Low hazard potential </td></tr><tr><td class="md-italic">Definition Source: State of Connecticut, Department of Environmental Protection</td></tr><tr><td rowspan="2">BB</td><td>Moderate hazard potential</td></tr><tr><td class="md-italic">Definition Source: State of Connecticut, Department of Environmental Protection</td></tr><tr><td rowspan="2">B</td><td>Significant hazard potential</td></tr><tr><td class="md-italic">Definition Source: State of Connecticut, Department of Environmental Protection</td></tr><tr><td rowspan="2">C</td><td>High hazard potential</td></tr><tr><td class="md-italic">Definition Source: State of Connecticut, Department of Environmental Protection</td></tr></tbody></table></div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">DAM_NAME</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Name of dam.</div><div class="md"><b>Alias: </b>DAM_NAME <b>Type: </b>String <b>Width: </b>50 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Text value</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">QUAD_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Quadrangle Number - An ID number designated by the State of Connecticut, Department of Environmental Protection, Natural Resources Center in the 1980's to uniquely identify individual quadrangle maps. This value indicates the USGS topographic quadrangle the dam is located on.</div><div class="md"><b>Alias: </b>QUAD_NO <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Numeric value. Quadrangle maps published by the USGS that cover the Connecticut mainland and coastal area are assigned numeric values ranging from 1-116. Other quadrangle areas that encompass the waters of Connecticut in Long Island Sound are assigned numeric values range from 1213 to 1218, 1310 to 1313, and 1407 to 1408.</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">TOWN_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Town Number - ID number for the Connecticut Town (municipality), based on the Town Codes issued by the State of Connecticut, Office of the State Controller, which range from 1 to 169. This value indicates the town the dam point feature is located in.</div><div class="md"><b>Alias: </b>TOWN_NO <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Numeric value ranging from 1 to 169.</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Office of the State Controller</div></div><div class="md-item">TOWN</div><div class="md-itemhide"><div class="md"><b>Definition: </b> Town Name - Text values that correspond to numeric TOWN_NO attribute values. TOWN is the English language equivalent of (decodes) the TOWN_NO field.</div><div class="md"><b>Alias: </b>TOWN <b>Type: </b>String <b>Width: </b>16 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Text value (town name).</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Office of the State Controller</div></div><div class="md-item">OWNER</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Type of Ownership of Dam.</div><div class="md"><b>Alias: </b>OWNER <b>Type: </b>String <b>Width: </b>1 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md-item">Attribute domain values</div><div class="md-itemshow"><table class="md-grid"><tbody><tr><th>Value</th><th>Definition</th></tr><tr><td>D</td><td>Owned by CT DEP</td></tr><tr><td>F</td><td>Federal government owned</td></tr><tr><td>L</td><td>Local (municipal) government owned</td></tr><tr><td>P</td><td>Privately owned</td></tr><tr><td>S</td><td>State goverment other than CT DEP owned</td></tr><tr><td>U</td><td>Utility owned</td></tr><tr><td>(blank)</td><td>meaning of blank field value is uknown</td></tr></tbody></table></div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">PARADOX</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Paradox database flag - A field used to flag whether information for a dam is also originated from and is available in an associated database developed with Paradox software.  This is an obsolete attribute and should be removed from the attribute table in the event the Dam database model is revised in the future.</div><div class="md"><b>Alias: </b>PARADOX <b>Type: </b>String <b>Width: </b>1 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md-item">Attribute domain values</div><div class="md-itemshow"><table class="md-grid"><tbody><tr><th>Value</th><th>Definition</th></tr><tr><td>Y</td><td>Yes, entered into database</td></tr><tr><td>(blank)</td><td>meaning of blank field value is uknown</td></tr></tbody></table></div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">SBAS_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Subregional Drainage Basin Number - Identifies the Subregional drainage basin the dam is located in. The first digit corresponds to the Major basin number (MBAS_NO) and the first 2 digits represent the Regional basin number (RBAS_NO). All Subregional basins in the same Major and Regional basin have the same first and first 2 digits, respectively. A Subregional drainage basin number ending in "00" defines the main-stem basin for the corresponding Regional drainage basin. For example, Subregional basin 4300 is the main-stem basin for Regional basin 43. These main-stem Subregional basins are usually named after the corresponding Regional basin.</div><div class="md"><b>Alias: </b>SBAS_NO <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">RBAS_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Regional Drainage Basin Number - Identifies the regional drainage basin the dam is located in. The first digit corresponds to the Major basin number (MBAS_NO). All Regional basins in the same Major basin have the same first digit. A Regional drainage basin number ending in "0" defines the greater main-stem basin for the corresponding Major drainage basin. For example, Regional basin 40 is the main-stem basin for Major basin 4. These main-stem Regional basins are usually named after the corresponding Major basin.</div><div class="md"><b>Alias: </b>RBAS_NO <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Number</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">MBAS_NO</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Major Drainage Basin Number - Identifies the major drainage basin the dam is located in. There are 8 Major basins in Connecticut.</div><div class="md"><b>Alias: </b>MBAS_NO <b>Type: </b>SmallInteger <b>Width: </b>2 <b>Precision: </b>5 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Number</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">X</div><div class="md-itemhide"><div class="md"><b>Definition: </b>X Coordinate of dam in CT state plane feet, NAD 83 - This data field is no longer necessary and should be removed from the attribute table in the event the Dam database model is revised in the future.</div><div class="md"><b>Alias: </b>X <b>Type: </b>Integer <b>Width: </b>4 <b>Precision: </b>10 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Calculated number based on latitude.  </div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">Y</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Y Coordinate of dam in CT state plane feet, NAD 83 - This data field is no longer necessary and should be removed from the attribute table in the event the Dam database model is revised in the future.</div><div class="md"><b>Alias: </b>Y <b>Type: </b>Integer <b>Width: </b>4 <b>Precision: </b>10 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Calculated number based on longitude.</div><div class="md"><b>Attribute definition source: </b>State of Connecticut, Department of Environmental Protection</div></div><div class="md-item">SHAPE</div><div class="md-itemhide"><div class="md"><b>Definition: </b>Feature geometry.</div><div class="md"><b>Alias: </b>Shape <b>Type: </b>Geometry <b>Width: </b>4 <b>Precision: </b>0 <b>Scale: </b>0</div><div class="md"><b>Attribute values: </b>Coordinates defining the features.</div><div class="md"><b>Attribute definition source: </b>ESRI</div></div></div></div><div class="md-detail"><div class="md-detailtitle">ESRI Feature Description</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Description of spatial objects in the data using the Environmental Systems Research Institute (ESRI) terminology.</div><div class="md-itemlist">Environmental Systems Research Institute (ESRI) terms</div><div class="md-itemshow"><div class="md-item">depgis.DEP.DAM</div><div class="md-itemhide"><div class="md"><b>ESRI feature type: </b>Simple</div><div class="md"><b>Geometry type: </b>Point</div><div class="md"><b>Topology: </b>FALSE</div><div class="md"><b>Feature count: </b>3646</div><div class="md"><b>Spatial index: </b>TRUE</div><div class="md"><b>Linear referencing: </b>FALSE</div></div></div></div><div class="md-detail"><div class="md-detailtitle">SDTS Feature Description</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Description of point and vector spatial objects in the data using the Spatial Data Transfer Standards (SDTS) terminology.</div><div class="md-itemlist">Spatial data transfer standard (SDTS) terms</div><div class="md-itemshow"><div class="md-item">depgis.DEP.DAM</div><div class="md-itemhide"><div class="md"><b>Type: </b>Entity point</div><div class="md"><b>Count: </b>3646</div></div></div></div></div></div><div id="md-quality" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Data Quality and Accuracy Information</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">General</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Information about the fidelity of relationships, data quality and accuracy tests, omissions, selection criteria, generalization, and definitions used to derive the data.</div><div class="md"><b>Logical consistency report: </b>Point features conform to the following topological rules. Points are single part. There are no duplicate points. Points do not overlap. Establishment of logical consistency was performed by the State of Connecticut, Department of Environmental Protection using ESRI ArcGIS software to manually create and control feature topology in originally in ArcInfo coverage format. No automated procedures or tests were performed to guarantee desired topology other than visual inspection.</div><div class="md"><b>Completeness report: </b>The completeness of the data reflects the feature content of the data sources, which include the dam safety program records and maps on file at the Connecticut Department of Environmental Protection in 1996.  This layer is complete in the sense that it accurately reflects the information available at the time the State of Connecticut, Department of Environmental Protection initially created the Dam layer (1996). However, it is not a complete compilation relative of dams in existence today.</div></div><div class="md-detail"><div class="md-detailtitle">Attribute Accuracy</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Accuracy of the identification of data entities, features and assignment of attribute values.</div><div class="md"><b>Attribute accuracy report: </b>The Connecticut Dams layer retains the feature types and information identified by the State of Connecticut, Department of Environmental Protection and obtained from the Dam Safety Program database.  Values are within defined domains, but attributes may not have correct or valid values. Information may be incorrect or out of date. Accuracy check of attribute data is unknown.</div></div><div class="md-detail"><div class="md-detailtitle">Positional Accuracy</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Accuracy of the positional aspects of the data.</div><div class="md"><b>Horizontal accuracy report: </b>The horizontal positional accuracy of this data is no better than the United States National Map Accuracy Standards for 1:24,000 scale maps. According to this standard, not more than 10 percent of the locations tested are to be in error by more than 1/50 inch (40 feet) measured on the publication scale of a USGS 7.5 minute topographic quadrangle map.  Point features may not be accurately positioned because the locations were interpolated relative to features on USGS 7.5 minute topographic quadrangle maps such as dams, waterbodies, roads, trails, buildings, and elevation contours.</div></div></div></div><div id="md-source" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Data Source and Process Information</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Data Sources</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Information about the source data used to construct or derive the data.</div><div class="md-itemlist">Data source information</div><div class="md-itemshow"><div class="md-item">Source 1 - DEP Dam Safety Program Records</div><div class="md-itemhide"><div class="md"><b>Title: </b>DEP Dam Safety Program Records</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>Unpublished Material</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>unknown</div><div class="md"><b>Media: </b>database  records and maps</div><div class="md"><b>Source contribution: </b>This data source refers to the original  dam safety records, files, and maps maintained by the Dam Safety program, Inland Water Resources Division, CT Department of Environmental Protection.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 2 - USGS Topographic Quadrangle Maps</div><div class="md-itemhide"><div class="md"><b>Title: </b>USGS Topographic Quadrangle Maps</div><div class="md"><b>Originators: </b>United States Geological Survey</div><div class="md"><b>Publisher: </b>US Geological Survey</div><div class="md"><b>Publication place: </b>Reston Virginia</div><div class="md"><b>Publication date: </b>varies</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>Maps</div><div class="md"><b>Source contribution: </b>This data source refers to a set of 1:24,000-scale 7.5 Minute USGS Topographic Quadrangle maps used as mapping base for locating dams on a set of corresponding Mylar overlays. Includes 116 USGS topographic quadrangle maps.</div><div class="md"><b>Beginning date: </b>1969</div><div class="md"><b>Ending date: </b>1984</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 3 - DEP Dam Mylars</div><div class="md-itemhide"><div class="md"><b>Title: </b>Dam Mylar Overlay</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publisher: </b>State of Connecticut</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>Mylar overlay</div><div class="md"><b>Source contribution: </b>Point locations shown on these mylars were digitized.  Includes 116 Mylay overlays, one for each 1:24,000-scale 7.5 Minute USGS topographic quadrangle map.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 4 - Connecticut Dams ArcInfo Coverage</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in ArcInfo Coverage format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams in ESRI ArcInfo coverage format initially created in 1996.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 5 - Connecticut Dams Shapefile</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in Shapefile format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams converted to ESRI Shapefile format in 2000.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 6 - Connecticut Dams Geodatabase Feature Class</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in Geodatabase Feature Class format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"><b>Data location: </b><a target="viewer" href="http://www.ct.gov/deep">http://www.ct.gov/deep</a></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams converted to ESRI Geodatabase feature class format in 2005</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div></div><div class="md-detail"><div class="md-detailtitle">Process Steps</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Information about events, parameters, tolerances and techniques applied to construct or derive the data.</div><div class="md-itemlist">Process step information</div><div class="md-itemshow"><div class="md-itemlist">Process Step 1</div><div class="md-itemhide"><div class="md"><b>Process description: </b>A separate Mylar overlay was prepared and registered to each USGS topographic quadrangle map. At 1:24,000 scale, a point location for each dam located on the quadrangle map was plotted on the Mylar overlay and labeled with the corresponding dam number, the unique identifier, and dam name. Includes 116 Mylar overlays, one for each 7.5 minute USGS topographic quadrangle area in Connecticut</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Person: </b>James Bogar</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106</div><div class="md"><b>Country: </b>USA</div></div><div class="md"><b>Process date: </b>Unknown</div><div class="md-itemlist">Data Source used</div><div class="md-itemshow"><div class="md-item">Source 1 - DEP Dam Safety Program Records</div><div class="md-itemhide"><div class="md"><b>Title: </b>DEP Dam Safety Program Records</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>Unpublished Material</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>unknown</div><div class="md"><b>Media: </b>database  records and maps</div><div class="md"><b>Source contribution: </b>This data source refers to the original  dam safety records, files, and maps maintained by the Dam Safety program, Inland Water Resources Division, CT Department of Environmental Protection.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div><div class="md-item">Source 2 - USGS Topographic Quadrangle Maps</div><div class="md-itemhide"><div class="md"><b>Title: </b>USGS Topographic Quadrangle Maps</div><div class="md"><b>Originators: </b>United States Geological Survey</div><div class="md"><b>Publisher: </b>US Geological Survey</div><div class="md"><b>Publication place: </b>Reston Virginia</div><div class="md"><b>Publication date: </b>varies</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>Maps</div><div class="md"><b>Source contribution: </b>This data source refers to a set of 1:24,000-scale 7.5 Minute USGS Topographic Quadrangle maps used as mapping base for locating dams on a set of corresponding Mylar overlays. Includes 116 USGS topographic quadrangle maps.</div><div class="md"><b>Beginning date: </b>1969</div><div class="md"><b>Ending date: </b>1984</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div><div class="md-itemlist">Data Source produced</div><div class="md-itemshow"><div class="md-item">Source 3 - DEP Dam Mylars</div><div class="md-itemhide"><div class="md"><b>Title: </b>Dam Mylar Overlay</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publisher: </b>State of Connecticut</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>Mylar overlay</div><div class="md"><b>Source contribution: </b>Point locations shown on these mylars were digitized.  Includes 116 Mylay overlays, one for each 1:24,000-scale 7.5 Minute USGS topographic quadrangle map.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div></div><div class="md-itemlist">Process Step 2</div><div class="md-itemhide"><div class="md"><b>Process description: </b>Feature digitizing and attribution (digitizing tablet method) - Using ESRI ArcInfo Workstation software, point features were digitized by registering the source map (Mylars) to the digitizing tablet and using the crosshairs of the digitizer's mouse to manually capture the geometry (location) of features drafted on the map. The corners of the USGS 7.5 minute topographic quadrangle maps are used as registration points and are depicted on the source map. The source map was registered to the digitizing tablet by digitizing (entering) the locations of four quadrangle corner registration points shown on the map. ArcInfo software compared the values of the digitized coordinates with the actual (true) values for the quadrangle corner (tic) features. The Root Mean Square (RMS) error generated by the ArcInfo software indicated the amount of error involved in transforming coordinates from the registered map to the digital layer. RMS errors higher than 0.004 were not acceptable and required re-registering the source map by digitizing the tic locations again. With a correct registration, individual features were manually digitized off the source map and assigned their unique DAM_NO values. Feature location and attribute accuracy was visually checked and inspected by symbolizing and labeling features according to attribute value on the computer screen, comparing it to the original source data. Dam name and dam hazard information was also manually entered. Town, major, regional, and subregional basin numbers were assigned using the ArcInfo Identity command in conjunction with town and basin layers.</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Person: </b>Tom Nosal, Ann Kuzyk</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106</div><div class="md"><b>Country: </b>USA</div></div><div class="md"><b>Process date: </b>1996</div><div class="md"><b>Process software and version: </b>ArcInfo Workstation 7</div><div class="md-itemlist">Data Source used</div><div class="md-itemshow"><div class="md-item">Source 3 - DEP Dam Mylars</div><div class="md-itemhide"><div class="md"><b>Title: </b>Dam Mylar Overlay</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publisher: </b>State of Connecticut</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>map</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>Mylar overlay</div><div class="md"><b>Source contribution: </b>Point locations shown on these mylars were digitized.  Includes 116 Mylay overlays, one for each 1:24,000-scale 7.5 Minute USGS topographic quadrangle map.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div><div class="md-itemlist">Data Source produced</div><div class="md-itemshow"><div class="md-item">Source 4 - Connecticut Dams ArcInfo Coverage</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in ArcInfo Coverage format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams in ESRI ArcInfo coverage format initially created in 1996.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div></div><div class="md-itemlist">Process Step 3</div><div class="md-itemhide"><div class="md"><b>Process description: </b>Convert to Shapfile format - Converted all point features from ArcInfo coverage to shapefile format and omitted the following standard ArcInfo coverage items: AREA, PERIMETER, {cover}-ID, and {cover}#.</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Person: </b>Howie Sternberg</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106</div><div class="md"><b>Country: </b>USA</div></div><div class="md"><b>Process date: </b>2000</div><div class="md"><b>Process software and version: </b>ArcGIS Desktop 8</div><div class="md-itemlist">Data Source used</div><div class="md-itemshow"><div class="md-item">Source 4 - Connecticut Dams ArcInfo Coverage</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in ArcInfo Coverage format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams in ESRI ArcInfo coverage format initially created in 1996.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div><div class="md-itemlist">Data Source produced</div><div class="md-itemshow"><div class="md-item">Source 5 - Connecticut Dams Shapefile</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in Shapefile format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams converted to ESRI Shapefile format in 2000.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div></div><div class="md-itemlist">Process Step 4</div><div class="md-itemhide"><div class="md"><b>Process description: </b>Convert to Geodatabase Feature Class format - Connecticut Dams Shapefile was converted to geodatabase format feature classe according to the following steps: defined new geodatabase feature class, imported the spatial reference, defined attribute definitions, loaded features from shapefile, and created metadata.</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Person: </b>Howie Sternberg</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106</div><div class="md"><b>Country: </b>USA</div></div><div class="md"><b>Process date: </b>2005</div><div class="md"><b>Process software and version: </b>ArcGIS Desktop 9</div><div class="md-itemlist">Data Source used</div><div class="md-itemshow"><div class="md-item">Source 5 - Connecticut Dams Shapefile</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in Shapefile format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams converted to ESRI Shapefile format in 2000.</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div><div class="md-itemlist">Data Source produced</div><div class="md-itemshow"><div class="md-item">Source 6 - Connecticut Dams Geodatabase Feature Class</div><div class="md-itemhide"><div class="md"><b>Title: </b>Connecticut Dams in Geodatabase Feature Class format</div><div class="md"><b>Originators: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Publication date: </b>1996</div><div class="md"><b>Data type: </b>vector digital data</div><div class="md"><b>Data location: </b><a target="viewer" href="http://www.ct.gov/deep">http://www.ct.gov/deep</a></div><div class="md"><b>Map scale denominator: </b>24000</div><div class="md"><b>Media: </b>disc</div><div class="md"><b>Source contribution: </b>This is a statewide dataset of Connecticut dams converted to ESRI Geodatabase feature class format in 2005</div><div class="md"><b>Date: </b>1996</div><div class="md"><b>Currentness reference: </b>publication date</div></div></div></div></div></div></div></div><div id="md-distribution" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Data Distribution Information</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">General</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Description of the data known by the party from whom the data may be obtained, liability of party distributing data, and technical capabilities required to use the data. </div><div class="md"><b>Resource description: </b>Connecticut Dams</div><div class="md"><b>Distribution liability: </b>Although this data set  has been used by the State of Connecticut, Department of Environmental Protection, no warranty, expressed or implied, is made by the State of Connecticut, Department of Environmental Protection as to the accuracy of the data and or related materials.  The act of distribution shall not constitute any such warranty, and no responsibility is assumed by the State of Connecticut, Department of Environmental Protection in the use of these data or related materials. The user assumes the entire risk related to the use of these data. Once the data is distributed to the user, modifications made to the data by the user should be noted in the metadata.</div><div class="md"><b>Technical prerequisites: </b>Geographic information sytem (GIS), computer-aided drawing or other mapping software is necessary to display, view and access the information.</div></div><div class="md-detail"><div class="md-detailtitle">Distribution Point of Contact</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Contact information for the individual or organization distributing the data.</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Enviromental Protection</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Fax: </b>860-424-4058</div><div class="md"><b>Email: </b>dep.gisdata@ct.gov</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106-5127</div><div class="md"><b>Country: </b>USA</div></div></div><div class="md-detail"><div class="md-detailtitle">Standard Order Process</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Common ways in which data may be obtained.</div><div class="md"><b>Digital form:</b></div><div class="md-indent"><div class="md"><b>Format name: </b>Shapefile, Feature Class</div><div class="md"><b>Format version number: </b>ArcGIS</div><div class="md"><b>File decompression technique: </b>Zip file</div><div class="md"><b>Digital transfer option:</b></div><div class="md-indent"><div class="md"><b>Online option:</b></div><div class="md-indent"><div class="md"><b>Computer information:</b></div><div class="md-indent"><div class="md"><b>Network address:</b></div><div class="md-indent"><div class="md"><b>Network resource name: </b><a target="viewer" href="http://www.ct.gov/deep">http://www.ct.gov/deep</a></div></div></div></div></div></div><div class="md"><b>Fees: </b>An online copy of the data may be accessed without charge.</div></div><div class="md-detail"><div class="md-detailtitle">Custom Order Process</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Description of custom distribution services available.</div><div class="md"><b>Custom order process: </b>The data distributor does not provide custom GIS analysis or mapping services. Data is available in a standard format and may be converted to other formats, projections, coordinate systems, or selected for specific geographic regions by the party receiving the data.</div></div></div></div><div id="md-metadata" class="md-color"><div class="md-master"><div class="md-mastertitle">+ Metadata Reference</div></div><div class="md-masterhide"><div class="md-detail"><div class="md-detailtitle">Metadata Date</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Dates associated with creating, updating and reviewing the metadata.</div><div class="md"><b>Last updated: </b>20111216</div><div class="md"><b>Language of metadata: </b>en</div></div><div class="md-detail"><div class="md-detailtitle">Metadata Point of Contact</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Contact information for the individual or organization responsible for the metadata information.</div><div class="md"><b>Organization: </b>State of Connecticut, Department of Environmental Protection</div><div class="md"><b>Person: </b>Jacqueline Mickiewicz, Howie Sternberg</div><div class="md"><b>Phone: </b>860-424-3540</div><div class="md"><b>Fax: </b>860-424-4058</div><div class="md"><b>Email: </b>dep.gisdata@ct.gov</div><div class="md"><b>Hours of service: </b>Monday to Friday, 08:30 to 16:30 Eastern Standard Time</div><div class="md"><b>Address type: </b>mailing and physical address</div><div class="md-indent"><div class="md"><b>Address: </b>79 Elm Street</div><div class="md"><b>City: </b>Hartford</div><div class="md"><b>State or Province: </b>Connecticut</div><div class="md"><b>Postal code: </b>06106-5127</div><div class="md"><b>Country: </b>USA</div></div></div><div class="md-detail"><div class="md-detailtitle">Metadata Standards</div></div><div class="md-detailhide"><div id="md-def" name="md-def" class="md-def">Description of the metadata standard used to document the data and reference to any additional extended profiles to the standard used by the metadata producer.</div><div class="md"><b>Standard name: </b>FGDC Content Standards for Digital Geospatial Metadata</div><div class="md"><b>Standard version: </b>FGDC-STD-001-1998</div><div class="md"><b>Time convention: </b>local time</div><div class="md"><b>Metadata profiles defining additonal information:</b></div><div class="md-indent"><div class="md"><b>Profile: </b>ESRI Metadata Profile</div><div class="md-indent"><b>Online linkage: </b><a target="viewer" href="http://www.esri.com/metadata/esriprof80.html">http://www.esri.com/metadata/esriprof80.html</a></div></div></div><div class="md-detail"><div class="md-detailtitle">FGDC Plus Metadata Stylesheet</div></div><div class="md-detailhelp"><div class="md"><b>Stylesheet: </b>FGDC Plus Stylesheet</div><div class="md"><b>File name: </b>FGDC Plus.xsl</div><div class="md"><b>Version: </b>2.2 </div><div class="md"><b>Description: </b>This metadata is displayed using the FGDC Plus Stylesheet, which is an XSL template that can be used with ArcGIS software to display metadata. It displays metadata elements defined in the Content Standard for Digital Geospatial Metadata (<a target="viewer" href="http://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/base-metadata/v2_0698.pdf">CSDGM</a>) - aka FGDC Standard, the <a target="viewer" href="http://www.esri.com/metadata/esriprof80.html">ESRI Profile</a> of CSDGM, the <a target="viewer" href="http://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/biometadata/biodatap.pdf">Biological Data Profile</a> of CSDGM, and the <a target="viewer" href="http://www.csc.noaa.gov/metadata/sprofile.pdf">Shoreline Data Profile</a> of CSDGM. CSDGM is the US Federal Metadata standard. The <a href="http://www.fgdc.gov/">Federal Geographic Data Committee</a> originally adopted the CSDGM in 1994 and revised it in 1998. According to Executive Order 12096 all Federal agencies are ordered to use this standard to document geospatial data created as of January, 1995. The standard is often referred to as the FGDC Metadata Standard and has been implemented beyond the federal level with State and local governments adopting the metadata standard as well.
+The Biological Data Profile broadens the application of the CSDGM so that it is more easily applied to biological data that are not explicitly geographic (laboratory results, field notes, specimen collections, research reports) but can be associated with a geographic location. Includes taxonomical vocabulary. The Shoreline Data Profile addresses variability in the definition and mapping of shorelines by providing a standardized set of terms and data elements required to support metadata for shoreline and coastal data sets. The FGDC Plus Stylesheet includes the <a target="viewer" href="http://dublincore.org/">Dublin Core Metadata Element Set</a>. It supports W3C DOM compatible browsers such as IE7, IE6, Netscape 7, and Mozilla Firefox. It is in the public domain and may be freely used, modified, and redistributed. It is provided "AS-IS" without warranty or technical support.</div><div class="md"><b>Instructions: </b>On the top of the page, click on the title of the dataset to toggle opening and closing of all metadata content sections or click section links listed horizontally below the title to open individual sections. Click on a section name (e.g. Description) to open and close section content. Within a section, click on a item name (Status, Key Words, etc.) to open and close individual content items. By default, the Citation information within the Description section is always open for display.</div><div class="md"><b>Download: </b>FGDC Plus Stylesheet is available from the ArcScripts downloads at <a target="viewer" href="http://www.esri.com/">www.esri.com</a>.</div></div></div></div><div class="md-footer"><a target="viewer" href="http://www.fgdc.gov/">Federal Geographic Data Committee</a></div></body></html>
