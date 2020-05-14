@@ -10,6 +10,8 @@ The goal of this project is to script the creation of various GeoJSON datasets f
 
 ## Installation
 
+### Setting up the code environment
+
 These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary - though they may be backwards compatible with ArcGIS Desktop 32-bit python 2). ArcGIS Pro ships with Conda pre-installed which allows you to create an environment specific for a project without destroying your base environment. If you'd like to set up a project specific environment, you can do the following (If you have admin rights on your machine, you can install the packages to the base environment):
 
 1. In Start Menu, navigate to `ArcGIS > Python Command Prompt`, _not_ `Python (Command Line)`. You'll know if you got the right one because you'll see:
@@ -55,23 +57,24 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
         See [Mapbox Data Creation](doc/mapbox_data_creation.md).
 
+### Setting up data that's not included in this repository
+
+NHDPlus HR data is not included in this repository for size reasons. 
+
 ## Running
 
 The only caveat with this project is that some scripts depend on the output of other scripts. You must first run, in order:
 
-1. `00_filter_dam_data.py` - filters known problematic data from the source datasets.
-2. `01_aggregate_harmonize_dam_data.py` - combines all the filtered datasets into one dataset and crosswalks the attributes to common names.
-3. `02_snap_dam_to_nhdplushr.py` - snaps all the dams to NHD flowlines for HUC 01*
-4. `03_cut_dam_dataset_to_ri.py` - this is an optional step but one that we'll do for now. it eliminates all the dams that either don't drain into a RI watershed and aren't within the RI boundary. if either condition is true, the dam is retained.
+1. `00_aggregate_harmonize_dam_data.py` - combines all the filtered datasets into one dataset and crosswalks the attributes to common names.
+2. `02_snap_dam_to_nhdplushr.py` - snaps all the dams to NHD flowlines for HUC 01*
+3. `03_cut_dam_dataset_to_ri.py` - eliminates all the dams that either don't drain into a RI watershed and aren't within the RI boundary. if either condition is true, the dam is retained.
 
 At this point, you will have:
 
-- A feature class containing all harmonized attribute data, snapped where possible to NHDPlus HR, with a column indicating whether snapping was successful, `all_dams_harmonized`
-- A feature class containing the attribute data and points for only those dams which were succesfully snapped, `all_dams_snapped`
-
-Every subsequent script builds upon `all_dams_snapped`, using the unique ID to generate either associated polygon data or additional attribute data.
-
-When ready to load data into MapBox, run the final script `build_geojson_data.py` which will generates .geojson files for upload to mapbox.
+- Two feature classes containing harmonized attribute data - one of snapped dams,
+  and one of dams that couldn't snap. These feature classes are located in:
+  - 1
+  - 2
 
 ## Contents
 
@@ -81,14 +84,15 @@ When ready to load data into MapBox, run the final script `build_geojson_data.py
 - `doc`
 - `src` - The scripts which generate additional dam data. Specifically:
   - `00_aggregate_harmonize_dam_data` crosswalks the RI / CT / MA data and joins it to NID data and American Rivers data.
-  - `02_snap_dam_to_nhdplushr.py` aligns dam points (with arcpy `Snap`) to NHD Plus HR, generating lat / long values and a column describing whether it snapped. it then recalculates the hucs - 2-digit through 12-digit for the new locations.
-  - `03_associated_dams_with_huc12.py`
-  - `04_cut_dam_dataset_to_ri.py`
+  - `02_snap_dam_to_nhdplushr.py` aligns dam points (with arcpy `Snap`) to NHD Plus HR, generating lat / long values, and two datasets - one with snapped dams, one without.
+  - `03_associated_dams_with_huc12.py` associates snapped dams (really, any point feature class) with NHD HUCs.
+  - `04_cut_dam_dataset_to_ri.py` reduces the dam set further to only those dams within the RI state boundary and within watersheds which drain in RI. Note: this is a slight problem, as dams in western / eastern RI may drain to different watersheds outside of the state, but the full collection of dams within that watershed have not been retained. As such, any watershed-spanning metrics (i.e., ecological metrics around functional networks) will be erroneous for those dams.
   - `50_build_geojson_files.py`
-  - `nhd_to_geojson.py`
+  - `nhd_to_geojson.py` takes nhd flowlines, hucs and water bodies and converts them to geojson files for use within mapbox.
   - `nhd_geojson_to_mapbox` is a bash script that adds geojson as sources to mapbox and then creates tilesets from the recipes in `results/mapbox-recipes`. It needs a real access token and probably a new ID to run.
+  - `identify_dam_reservoirs.py` follows the guidelines in Franey 2018 & Gold et al. 2016 for identifying reservoirs of dams based on proximity. Note: it doesn't differentiate between upstream or downstream reservoirs, so visual inspection is required.
 - `results` - This folder contains the output of the scripts located in `src`, _when the size is reasonable_. For instance, a file geodatabase containing NHDPlus HR products is not included - but a GeoJSON file describing dams might be.
-  - `geojson` contains data in GeoJSON format for use with Mapbox.
+  - `geojson` contains data in GeoJSON format for use with Mapbox. The only file that's actually is the GeoJSON file for the dams - NHD files are too large and must be generated via `nhd_to_geojson.py`.
   - `mapbox-recipes` contains the recipes used to create tilesets within mapbox.
 
 ## References
