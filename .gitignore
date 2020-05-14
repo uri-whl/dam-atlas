@@ -143,3 +143,5 @@ results.gdb
 *.geojson
 
 .vscode/
+
+results/scratch*
