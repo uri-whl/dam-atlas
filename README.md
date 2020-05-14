@@ -59,7 +59,9 @@ These scripts utilize `arcpy` from ArcGIS Pro (i.e., the 64 bit python 3 binary 
 
 ### Setting up data that's not included in this repository
 
-NHDPlus HR data is not included in this repository for size reasons. 
+NHDPlus HR data is not included in this repository for size reasons. That said,
+in `data` there's a `nhdplus_h` folder where you should place the GDB files
+downloaded from the National Map Viewer.
 
 ## Running
 
