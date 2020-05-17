@@ -4,7 +4,7 @@
         "nhd_wbody": {
             "source": "mapbox://tileset-source/jsawyeruri/nhd_wbodies",
             "minzoom": 1,
-            "maxzoom": 22
+            "maxzoom": 16
         }
     }
 }

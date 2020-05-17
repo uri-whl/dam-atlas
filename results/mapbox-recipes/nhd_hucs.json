@@ -3,18 +3,18 @@
     "layers": {
         "nhd_huc8": {
             "source": "mapbox://tileset-source/jsawyeruri/nhd_huc8",
-            "minzoom": 4,
-            "maxzoom": 8
+            "minzoom": 0,
+            "maxzoom": 10
         },
         "nhd_huc10": {
             "source": "mapbox://tileset-source/jsawyeruri/nhd_huc10",
-            "minzoom": 4,
-            "maxzoom": 8
+            "minzoom": 10,
+            "maxzoom": 11
         },
         "nhd_huc12": {
             "source": "mapbox://tileset-source/jsawyeruri/nhd_huc12",
-            "minzoom": 4,
-            "maxzoom": 8
+            "minzoom": 11,
+            "maxzoom": 16
         }
     }
 }

@@ -3,8 +3,8 @@
     "layers": {
         "nhd_flowlines": {
             "source": "mapbox://tileset-source/jsawyeruri/nhd_flowlines",
-            "minzoom": 1,
-            "maxzoom": 22
+            "minzoom": 0,
+            "maxzoom": 16
         }
     }
 }
