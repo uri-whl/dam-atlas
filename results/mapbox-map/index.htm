@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Rhode Island Watershed Dam Atlas</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+	.filter-group {
+		font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		font-weight: 600;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 1;
+		border-radius: 3px;
+		width: 120px;
+		color: #fff;
+	}
+	
+	.filter-group input[type='checkbox']:first-child + label {
+		border-radius: 3px 3px 0 0;
+	}
+	
+	.filter-group label:last-child {
+		border-radius: 0 0 3px 3px;
+		border: none;
+	}
+	
+	.filter-group input[type='checkbox'] {
+		display: none;
+	}
+	
+	.filter-group input[type='checkbox'] + label {
+		background-color: #3386c0;
+		display: block;
+		cursor: pointer;
+		padding: 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	}
+	
+	.filter-group input[type='checkbox'] + label {
+		background-color: #3386c0;
+		text-transform: capitalize;
+	}
+	
+	.filter-group input[type='checkbox'] + label:hover,
+	.filter-group input[type='checkbox']:checked + label {
+		background-color: #4ea0da;
+	}
+	
+	.filter-group input[type='checkbox']:checked + label:before {
+		content: '✔';
+		margin-right: 5px;
+	}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoianNhd3llcnVyaSIsImEiOiJjazU1bG5rNTIwdmlxM3JxaDlsc2d0cG1wIn0.SSTGVawTA-QzZhhvB_qogg';
+
+	var bounds = [
+		[-73.466495, 41.056998], // Southwest coordinates
+		[-69.003299, 42.786745] // Northeast coordinates
+	];
+
+	// construct a new map with the uri/risd style centered over rhode island
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/jsawyeruri/ck88z32aj1xz31in08l8jebon',
+		center: [-71.483412, 41.730622],
+		minZoom: 8.5,
+		maxZoom: 15,
+		maxBounds: bounds // Sets bounds as max
+	});
+
+	// var filterGroup = document.getElementById('filter-group');
+
+	// var input = document.createElement('input');
+	// input.type = 'checkbox';
+	// input.id = "test";
+	// input.checked = true;
+	// filterGroup.appendChild(input);
+	
+	// var label = document.createElement('label');
+	// label.setAttribute('for', "test");
+	// label.textContent = "test";
+	// filterGroup.appendChild(label);
+
+	// Control implemented as ES6 class
+	class HelloWorldControl {
+		onAdd(map) {
+			this._map = map;
+			this._container = document.createElement('div');
+			this._container.className = 'mapboxgl-ctrl';
+			this._container.textContent = 'Hello, world';
+			return this._container;
+		}
+
+		onRemove() {
+			this._container.parentNode.removeChild(this._container);
+			this._map = undefined;
+		}
+	}
+
+	map.on('load', function() {
+		// map.addSource('huc8', {
+		// 	'type': 'geojson',
+		// 	'data': 'wbdhu8.geojson'
+		// 	});
+
+		// map.addSource('huc10', {
+		// 	'type': 'geojson',
+		// 	'data': 'wbdhu10.geojson'
+		// 	});
+
+		// map.addSource('huc12', {
+		// 	'type': 'geojson',
+		// 	'data': 'wbdhu12.geojson'
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc8',
+		// 	'type': 'line',
+		// 	'source': 'huc8',
+		// 	'layout': {},
+		// 	'minzoom': 8.5,
+		// 	'maxzoom': 10,
+		// 	'paint': {
+		// 		'line-color': '#F5C52C',
+		// 		'line-width': 2,
+		// 		// 'fill-color': '#627BC1',
+		// 		// 'fill-opacity': [
+		// 		// 'case',
+		// 		// ['boolean', ['feature-state', 'hover'], false],
+		// 		// 1,
+		// 		// 0.5
+		// 		// ]
+		// 	}
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc8-fills',
+		// 	'type': 'fill',
+		// 	'source': 'huc8',
+		// 	'layout': {},
+		// 	'minzoom': 8.5,
+		// 	'maxzoom': 10,
+		// 	'paint': {
+		// 		// 'line-color': '#627BC1',
+		// 		// 'line-width': 2,
+		// 		'fill-color': '#F5C52C',
+		// 		'fill-opacity': 0.1
+		// 		// 'case',
+		// 		// ['boolean', ['feature-state', 'hover'], false],
+		// 		// 1,
+		// 		// 0.5
+		// 		// ]
+		// 	}
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc10',
+		// 	'type': 'line',
+		// 	'source': 'huc10',
+		// 	'layout': {},
+		// 	'minzoom': 10,
+		// 	'maxzoom': 11,
+		// 	'paint': {
+		// 		'line-color': '#F5C52C',
+		// 		'line-width': 2,
+		// 		// 'background-color': '#627BC1',
+		// 		// 'background-opacity': 1
+		// 	}
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc10-fills',
+		// 	'type': 'fill',
+		// 	'source': 'huc10',
+		// 	'layout': {},
+		// 	'minzoom': 10,
+		// 	'maxzoom': 11,
+		// 	'paint': {
+		// 		'fill-color': '#F5C52C',
+		// 		'fill-opacity': 0.1
+		// 	}
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc12',
+		// 	'type': 'line',
+		// 	'source': 'huc12',
+		// 	'layout': {},
+		// 	'minzoom': 11,
+		// 	// 'maxZoom': 12,
+		// 	'paint': {
+		// 		'line-color': '#F5C52C',
+		// 		'line-width': 2,
+		// 		// 'background-color': '#627BC1',
+		// 		// 'background-opacity': 1
+		// 	}
+		// });
+
+		// map.addLayer({
+		// 	'id': 'huc12-fills',
+		// 	'type': 'fill',
+		// 	'source': 'huc12',
+		// 	'layout': {},
+		// 	'minzoom': 11,
+		// 	// 'maxZoom': 12,
+		// 	'paint': {
+		// 		'fill-color': '#F5C52C',
+		// 		'fill-opacity': 0.1
+		// 	}
+		// });
+
+		map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+
+
+		var helloWorld = new HelloWorldControl();
+		map.addControl(helloWorld, 'top-left');
+
+		function HelloWorldControl() { }
+
+		HelloWorldControl.prototype.onAdd = function(map) {
+			this._map = map;
+			this._container = document.createElement('div');
+			this._container.className = 'mapboxgl-ctrl';
+			this._container.textContent = 'Hello, world';
+			return this._container;
+		};
+
+		HelloWorldControl.prototype.onRemove = function () {
+			this._container.parentNode.removeChild(this._container);
+			this._map = undefined;
+		};
+
+
+		// hover over dams
+ 
+		map.on('mouseenter', 'dams-gj-6zvrg8', function(e) {
+			var coordinates = e.features[0].geometry.coordinates.slice();
+			var description = e.features[0].properties.DAM_NAME;
+			
+			// Ensure that if the map is zoomed out such that multiple
+			// copies of the feature are visible, the popup appears
+			// over the copy being pointed to.
+			while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+			coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+			}
+			
+			// Populate the popup and set its coordinates
+			// based on the feature found.
+			popup
+			.setLngLat(coordinates)
+			.setHTML(description)
+			.addTo(map);
+			});
+			
+		map.on('mouseleave', 'dams-gj-6zvrg8', function() {
+ 			popup.remove();
+		});
+
+		var popup = new mapboxgl.Popup({
+			closeButton: false,
+			closeOnClick: false
+		});
+
+		// click dams
+
+		// When a click event occurs on a feature in the places layer, open a popup at the
+		// location of the feature, with description HTML from its properties.
+		map.on('click', 'dams-gj-6zvrg8', function(e) {
+			var coordinates = e.features[0].geometry.coordinates.slice();
+			var state = e.features[0].properties.STATE;
+		
+			// Ensure that if the map is zoomed out such that multiple
+			// copies of the feature are visible, the popup appears
+			// over the copy being pointed to.
+			while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+				coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+			}
+			
+			new mapboxgl.Popup()
+				.setLngLat(coordinates)
+				.setHTML(state)
+				.addTo(map);
+
+			popup.remove();
+
+		});
+		
+		// Change the cursor to a pointer when the mouse is over the places layer.
+		map.on('mouseenter', 'dams-gj-6zvrg8', function() {
+			map.getCanvas().style.cursor = 'pointer';
+		});
+		
+		// Change it back to a pointer when it leaves.
+		map.on('mouseleave', 'dams-gj-6zvrg8', function() {
+			map.getCanvas().style.cursor = '';
+		});
+
+
+	});
+	
+
+
+</script>
+ 
+</body>
+</html>
