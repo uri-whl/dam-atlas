@@ -24,12 +24,6 @@ nhd_gdb_s = "_HU4_GDB.gdb"
 from definitions import nhd_hucs
 
 nhd_hucs = [
-    '0101',
-    '0102',
-    '0103',
-    '0104',
-    '0105',
-    '0106',
     '0107',
     '0108',
     '0109',
@@ -80,7 +74,7 @@ if __name__ == "__main__":
     arcpy.Merge_management(huc12s, m_huc12s)
       
     # use identify to associated dam FIDs with huc12s
-    merged_dams = str(here("results", "results.gdb", "all_snapped_dams"))
+    merged_dams = str(here("results", "results.gdb", "all_snapped_dams_v2"))
     
     m_dam_huc12s = ea.obj.get_unused_scratch_gdb_obj() 
     
@@ -109,7 +103,7 @@ if __name__ == "__main__":
 
 
     # save to results folder
-    output_loc = str(here("results", "results.gdb", "all_snapped_dams_w_hucs"))
+    output_loc = str(here("results", "results.gdb", "all_snapped_dams_w_hucs_v2"))
     
     arcpy.CopyFeatures_management(m_dam_huc12s, output_loc)
 

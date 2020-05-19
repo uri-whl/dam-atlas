@@ -22,12 +22,6 @@ nhd_gdb_p = "NHDPLUS_H_"
 nhd_gdb_s = "_HU4_GDB.gdb"
 
 nhd_hucs = [
-    '0101',
-    '0102',
-    '0103',
-    '0104',
-    '0105',
-    '0106',
     '0107',
     '0108',
     '0109',
@@ -43,7 +37,7 @@ if __name__ == "__main__":
     logger.info("Snapping dams to NHD HR Flowline")
 
     # starting with combined dataset
-    merged_dams = str(here("results", "results.gdb", "merged_dams_2"))
+    merged_dams = str(here("results", "results.gdb", "merged_dams_v2"))
     
     # make a copy - snap edits in place
     dam_copy = ea.obj.get_unused_scratch_gdb_obj()
@@ -92,13 +86,16 @@ if __name__ == "__main__":
     arcpy.Snap_edit(dam_sub, [[flow_sub, "EDGE", snap_distance]])
     
     # interesect with flowline to get only those that were snapped
-    dam_snapped = str(here("results", "results.gdb", "all_snapped_dams"))
+    dam_snapped = str(here("results", "results.gdb", "all_snapped_dams_v2"))
     
     arcpy.Intersect_analysis([dam_sub, flow_sub],
                              dam_snapped)
 
     # add new x / y & rename to sane names
     arcpy.AddXY_management(dam_snapped)
+    # rename old lat / long
+    arcpy.AlterField_management(dam_snapped, "LONGITUDE", "LONG_PRESNAP", "LONG_PRESNAP")
+    arcpy.AlterField_management(dam_snapped, "LATITUDE", "LAT_PRESNAP", "LAT_PRESNAP")
     arcpy.AlterField_management(dam_snapped, "POINT_X", "LONGITUDE", "LONGITUDE")
     arcpy.AlterField_management(dam_snapped, "POINT_Y", "LATITUDE", "LATITUDE")
     
