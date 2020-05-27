@@ -21,8 +21,6 @@ arcpy.env.overwriteOutput = True
 nhd_gdb_p = "NHDPLUS_H_"
 nhd_gdb_s = "_HU4_GDB.gdb"
 
-from definitions import nhd_hucs
-
 nhd_hucs = [
     '0107',
     '0108',

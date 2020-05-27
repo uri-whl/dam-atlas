@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """
+THIS SHOULD ONLY BE RUN ONCE!
+
 Created on Tue Jan 14 15:20:42 2020
 
 The below script takes data files which describe dams within RI, MA and CT
@@ -18,8 +20,14 @@ them together. Specifically, it:
 
 In this way, all steps related to data crosswalking are preserved and reproducible.
 
+THAT SAID, THIS SHOULD ONLY BE RUN ONCE! If you edit it and re-run it, it will
+potentially corrupt the order the dams appear in and so change the FIDs and
+the dam atlas IDs. Instead, do your secondary data manipulation in 01_split*.py
+
 @author: Josh P. Sawyer
 """
+
+quit()
 
 import arcpy
 from pyhere import here
@@ -66,6 +74,20 @@ def expand_nid_hazard_names(x):
     else:
         return "Not Available"
 
+def expand_ct_ownership(x):
+    if (x == 'D'):
+        return "Owned by CT DEP"
+    elif (x == 'F'):
+        return "Federal government owned"
+    elif (x == 'L'):
+        return "Local (municipal) government owned"
+    elif (x == 'P'):
+        return "Privately owned"
+    elif (x == 'S'):
+        return "State goverment other than CT DEP owned"
+    elif (x == 'U'):
+        return "Utility owned"
+    return x
 
 if __name__ == "__main__":
     ea.logger.setup_logging(here("src", "logging.yaml"))
@@ -208,8 +230,7 @@ if __name__ == "__main__":
     ct_nid = pd.read_excel(here("data/NID_CT_U.xlsx"))
     ct_nid = clean_column_names(ct_nid)
 
-
-
+    ct_dam_df['owner'] = ct_dam_df['owner'].apply(expand_ct_ownership)
 
     # at this point it's worth pausing and considering what's in those dataset
     # that were just created. all the GIS data available from the states +
@@ -300,9 +321,10 @@ if __name__ == "__main__":
     # copy over missing data names / alt names, then drop from nid
     fin_df['dam_name'] = fin_df['dam_name'].where(fin_df['dam_name'].isna(), fin_df['dam_name_nid'])
     fin_df['alt_name'] = fin_df['alt_name'].where(fin_df['alt_name'].isna(), fin_df['other_dam_name'])
-    fin_df['yr_completed'] = fin_df['yr_completed'].where(fin_df['yr_completed'].isna(), fin_df['year_completed'])
+    fin_df['year_completed'] = fin_df['year_completed'].where(fin_df['year_completed'].isna(), fin_df['yr_completed'])
     fin_df['hazard_nid'] = fin_df['hazard_nid'].apply(expand_nid_hazard_names)
     fin_df['hazard'] = fin_df['hazard'].where(fin_df['hazard'].isna(), fin_df['hazard_nid'])
+    fin_df['owntype1'] = fin_df['owntype1'].where(fin_df['owntype1'].isna(), fin_df['owner'])
 
     # drop redundant columns
     fin_df = fin_df.drop(columns=[
@@ -312,17 +334,21 @@ if __name__ == "__main__":
         'latitude_nid',
         'city',
         'hazard_nid',
-        'state_nid'
+        'state_nid',
+        'yr_completed',
+        'owner'
     ])
 
     # clean up names on remaining columns
     fin_df = fin_df.rename(columns={
         'recordid' : 'nid_recordid',
-        'index' : 'nid_id'
+        'index' : 'nid_id',
+        'action' : 'fish_passage_modification',
+        'other_action' : 'other_fish_passage_modification'
     })
 
     # now turn it back into a feature class...
-    fin_df.to_csv(here("results/dam_database_temp.csv"), index=True)
+    fin_df.to_csv(here("results/dam_database_temp.csv"), index=False)
 
     # load it as an XY layer
     dam_db_flayer = "dam_db_flayer"
@@ -335,53 +361,53 @@ if __name__ == "__main__":
     )
 
     # and stash it in a gdb for later scripts
-    output_loc = str(here("results", "results.gdb", "merged_dams_v2"))
+    output_loc = str(here("results", "results.gdb", "all_raw_dam_data"))
     arcpy.CopyFeatures_management(dam_db_flayer, output_loc)
 
-    # get the old dam IDs
-    new_dam_to_old_id_map = ea.obj.get_unused_scratch_gdb_obj()
-    original_dam_ids = str(here("data/merged_dam_id.gdb/merged_dams_with_ids"))
+    # # get the old dam IDs
+    # new_dam_to_old_id_map = ea.obj.get_unused_scratch_gdb_obj()
+    # original_dam_ids = str(here("data/merged_dam_id.gdb/merged_dams_with_ids"))
 
-    # perfom identity to get relationships
-    arcpy.Identity_analysis(
-        output_loc,
-        original_dam_ids,
-        new_dam_to_old_id_map,
-        "ONLY_FID",
-        "20 Meters",
-        "NO_RELATIONSHIPS"
-    )
+    # # perfom identity to get relationships
+    # arcpy.Identity_analysis(
+    #     output_loc,
+    #     original_dam_ids,
+    #     new_dam_to_old_id_map,
+    #     "ONLY_FID",
+    #     "20 Meters",
+    #     "NO_RELATIONSHIPS"
+    # )
 
-    # join the nedat_id to the map
-    arcpy.JoinField_management(
-        new_dam_to_old_id_map,
-        "FID_merged_dams_with_ids",
-        original_dam_ids,
-        ea.table.get_oid_fieldname(original_dam_ids), 
-        ["NEDAT_ID"]
-    )
+    # # join the nedat_id to the map
+    # arcpy.JoinField_management(
+    #     new_dam_to_old_id_map,
+    #     "FID_merged_dams_with_ids",
+    #     original_dam_ids,
+    #     ea.table.get_oid_fieldname(original_dam_ids), 
+    #     ["NEDAT_ID"]
+    # )
 
-    # now join the nedat_id to the final dataset
-    arcpy.JoinField_management(
-        output_loc,
-        ea.table.get_oid_fieldname(output_loc),
-        new_dam_to_old_id_map,
-        "FID_merged_dams_v2", 
-        ["NEDAT_ID"]
-    )
+    # # now join the nedat_id to the final dataset
+    # arcpy.JoinField_management(
+    #     output_loc,
+    #     ea.table.get_oid_fieldname(output_loc),
+    #     new_dam_to_old_id_map,
+    #     "FID_merged_dams_v2", 
+    #     ["NEDAT_ID"]
+    # )
 
     # finally, make a v2 id
 
-    dam_proj_id = "NEDAT_ID_V2"
+    dam_proj_id = "dam_atlas_id"
     
     oid_fname = "!" + ea.table.get_oid_fieldname(output_loc) + "!"
     
     arcpy.AddField_management(output_loc, dam_proj_id, "LONG")
     arcpy.CalculateField_management(output_loc, dam_proj_id, oid_fname)
 
-    # stash a csv
+    # at this point, we pause: we've combined all the various data sets, never
+    # removing anything, and harmonized various columns. we've also added an id.
+    # before we split datasets or remove columns, we save a copy for future use.
+
     complete_df = ea.table.get_arcgis_table_as_df(output_loc)
     complete_df.to_csv(here("results/dam_database.csv"), index=True)
-    
-
-

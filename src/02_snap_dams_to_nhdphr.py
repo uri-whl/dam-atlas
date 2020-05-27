@@ -37,7 +37,7 @@ if __name__ == "__main__":
     logger.info("Snapping dams to NHD HR Flowline")
 
     # starting with combined dataset
-    merged_dams = str(here("results", "results.gdb", "merged_dams_v2"))
+    merged_dams = str(here("results", "results.gdb", "reduced_dam_data"))
     
     # make a copy - snap edits in place
     dam_copy = ea.obj.get_unused_scratch_gdb_obj()
@@ -86,18 +86,65 @@ if __name__ == "__main__":
     arcpy.Snap_edit(dam_sub, [[flow_sub, "EDGE", snap_distance]])
     
     # interesect with flowline to get only those that were snapped
-    dam_snapped = str(here("results", "results.gdb", "all_snapped_dams_v2"))
+    dam_intersection = ea.obj.get_unused_scratch_gdb_obj()
     
-    arcpy.Intersect_analysis([dam_sub, flow_sub],
-                             dam_snapped)
+    # dams at an nhd vertex will actually double - an intersection with the end
+    # will add a row. after intersection, dissolve on the fid of the dams...
+    arcpy.Intersect_analysis(
+        [dam_sub, flow_sub],
+        dam_intersection,
+        join_attributes="ONLY_FID"
+    )
+
+    dam_intersection_d = ea.obj.get_unused_scratch_gdb_obj()
+
+    dam_sub_fid_str = 'FID_' + arcpy.Describe(dam_sub).name
+
+    arcpy.Dissolve_management(
+        dam_intersection,
+        dam_intersection_d,
+        [dam_sub_fid_str],
+        "", 
+        "SINGLE_PART"
+    )
+
+    # ...then join it back to the dams. duplicate rows
+    # and noise in the attributes are gone
+    dam_joined_table = arcpy.AddJoin_management(
+        dam_intersection_d,
+        dam_sub_fid_str,
+        dam_sub,
+        ea.table.get_oid_fieldname(dam_sub)
+    )
+
+    dam_snapped = str(here("results", "results.gdb", "all_snapped_dams_v2"))
+
+    arcpy.CopyFeatures_management(dam_joined_table, dam_snapped)
+    arcpy.DeleteField_management(dam_snapped, [dam_sub_fid_str])
+
+    # all the ACTUAL names of fields don't match their aliases - ugh
+    field_list = arcpy.ListFields(dam_snapped)
+
+    for field in field_list:
+        if (not field.required and field.aliasName != "OBJECTID" and field.name != field.aliasName):
+            field_name = str(field.name)
+            field_alias = str(field.aliasName)
+
+            arcpy.AlterField_management(
+                dam_snapped,
+                field_name,
+                field_alias,
+                clear_field_alias = "CLEAR_ALIAS"
+            )
+
 
     # add new x / y & rename to sane names
     arcpy.AddXY_management(dam_snapped)
     # rename old lat / long
-    arcpy.AlterField_management(dam_snapped, "LONGITUDE", "LONG_PRESNAP", "LONG_PRESNAP")
-    arcpy.AlterField_management(dam_snapped, "LATITUDE", "LAT_PRESNAP", "LAT_PRESNAP")
-    arcpy.AlterField_management(dam_snapped, "POINT_X", "LONGITUDE", "LONGITUDE")
-    arcpy.AlterField_management(dam_snapped, "POINT_Y", "LATITUDE", "LATITUDE")
+    arcpy.AlterField_management(dam_snapped, "longitude", "long_presnap", "long_presnap")
+    arcpy.AlterField_management(dam_snapped, "latitude", "lat_presnap", "lat_presnap")
+    arcpy.AlterField_management(dam_snapped, "POINT_X", "longitude", "longitude")
+    arcpy.AlterField_management(dam_snapped, "POINT_Y", "latitude", "latitude")
     
     logger.info("finished snapping dams")
     logger.info("results in {}".format(dam_snapped))
