@@ -27,7 +27,12 @@ import sys
 
 sys.path.append(str(here("src")))
 
-from definitions import nhd_hucs
+nhd_hucs = [
+    '0107',
+    '0108',
+    '0109',
+    '0110'
+]
 
 # set environment flags - we don't want Z / M, we do want overwrite on
 # the final product
@@ -47,7 +52,7 @@ if __name__ == "__main__":
     
     logger.info("identifying dam reservoirs")
     
-    snapped_dams = str(here("results", "results.gdb", "snapped_aoi_dams"))
+    snapped_dams = str(here("results", "dam_database.gdb", "dam_database"))
     
     nhd_wbids = []
     
@@ -97,6 +102,7 @@ if __name__ == "__main__":
     m_wbids_f = "m_wbids_f"
     arcpy.MakeFeatureLayer_management(m_wbids, m_wbids_f)
       
+    # get all water bodies near dams
     arcpy.SelectLayerByLocation_management(
         m_wbids_f,
         "WITHIN_A_DISTANCE",
@@ -126,7 +132,7 @@ if __name__ == "__main__":
     )
 
     # stash in final
-    wbids_near_dams= str(here("results", "results.gdb", "wbids_near_dams"))
+    wbids_near_dams= str(here("results", "dam_database.gdb", "wbids_near_dams"))
     arcpy.CopyFeatures_management(near_wbids, wbids_near_dams)
 
     

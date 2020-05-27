@@ -58,7 +58,7 @@ if __name__ == "__main__":
     )
     
     # save to results folder
-    output_loc = str(here("results", "results.gdb", "snapped_aoi_dams_v2"))
+    output_loc = str(here("results", "dam_database.gdb", "dam_database"))
     
     arcpy.CopyFeatures_management(dams_flayer, output_loc)
     
