@@ -410,4 +410,4 @@ if __name__ == "__main__":
     # before we split datasets or remove columns, we save a copy for future use.
 
     complete_df = ea.table.get_arcgis_table_as_df(output_loc)
-    complete_df.to_csv(here("results/dam_database.csv"), index=True)
+    complete_df.to_csv(here("results/all_original_dam_data_aggregated.csv"), index=True)
