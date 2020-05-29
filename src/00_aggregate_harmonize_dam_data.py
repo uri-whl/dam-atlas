@@ -364,40 +364,6 @@ if __name__ == "__main__":
     output_loc = str(here("results", "results.gdb", "all_raw_dam_data"))
     arcpy.CopyFeatures_management(dam_db_flayer, output_loc)
 
-    # # get the old dam IDs
-    # new_dam_to_old_id_map = ea.obj.get_unused_scratch_gdb_obj()
-    # original_dam_ids = str(here("data/merged_dam_id.gdb/merged_dams_with_ids"))
-
-    # # perfom identity to get relationships
-    # arcpy.Identity_analysis(
-    #     output_loc,
-    #     original_dam_ids,
-    #     new_dam_to_old_id_map,
-    #     "ONLY_FID",
-    #     "20 Meters",
-    #     "NO_RELATIONSHIPS"
-    # )
-
-    # # join the nedat_id to the map
-    # arcpy.JoinField_management(
-    #     new_dam_to_old_id_map,
-    #     "FID_merged_dams_with_ids",
-    #     original_dam_ids,
-    #     ea.table.get_oid_fieldname(original_dam_ids), 
-    #     ["NEDAT_ID"]
-    # )
-
-    # # now join the nedat_id to the final dataset
-    # arcpy.JoinField_management(
-    #     output_loc,
-    #     ea.table.get_oid_fieldname(output_loc),
-    #     new_dam_to_old_id_map,
-    #     "FID_merged_dams_v2", 
-    #     ["NEDAT_ID"]
-    # )
-
-    # finally, make a v2 id
-
     dam_proj_id = "dam_atlas_id"
     
     oid_fname = "!" + ea.table.get_oid_fieldname(output_loc) + "!"
